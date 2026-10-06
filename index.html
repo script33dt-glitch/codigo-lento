@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09090b">
 
     <meta
         name="description"
@@ -11,20 +12,840 @@
 
     <title>Código Lento | Comunidade de Programação</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* =========================
+           CONFIGURAÇÕES
+        ========================== */
+
+        :root {
+            --bg: #09090b;
+            --bg-secondary: #0f0f13;
+            --card: #15151b;
+            --card-hover: #1b1b23;
+
+            --purple: #9b5cff;
+            --purple-light: #bd8cff;
+            --purple-dark: #6d35c5;
+
+            --green: #71d99e;
+            --white: #f5f5f7;
+            --gray: #a1a1aa;
+            --border: rgba(255, 255, 255, 0.08);
+
+            --max-width: 1180px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at 50% -20%, rgba(155, 92, 255, 0.18), transparent 35%),
+                var(--bg);
+
+            color: var(--white);
+            font-family:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =========================
+           FUNDO
+        ========================== */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background-image:
+                linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(9, 9, 11, 0.75);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            max-width: var(--max-width);
+            margin: auto;
+
+            min-height: 76px;
+            padding: 0 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .logo img {
+            width: 46px;
+            height: 46px;
+            object-fit: cover;
+
+            border-radius: 50%;
+            border: 2px solid rgba(155, 92, 255, .5);
+
+            box-shadow: 0 0 25px rgba(155, 92, 255, .22);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            transition: .2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        /* =========================
+           BOTÕES
+        ========================== */
+
+        .discord-button,
+        .secondary-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+            font-weight: 700;
+
+            transition:
+                transform .2s,
+                box-shadow .2s,
+                background .2s;
+        }
+
+        .discord-button {
+            padding: 14px 22px;
+
+            background: linear-gradient(
+                135deg,
+                var(--purple),
+                var(--purple-dark)
+            );
+
+            color: white;
+
+            box-shadow: 0 10px 35px rgba(155, 92, 255, .20);
+        }
+
+        .discord-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(155, 92, 255, .32);
+        }
+
+        .discord-button.small {
+            padding: 10px 17px;
+            font-size: 14px;
+        }
+
+        .secondary-button {
+            padding: 13px 20px;
+
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,.025);
+
+            color: var(--gray);
+        }
+
+        .secondary-button:hover {
+            background: rgba(255,255,255,.06);
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            max-width: var(--max-width);
+            min-height: calc(100vh - 76px);
+
+            margin: auto;
+            padding: 90px 24px;
+
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .status {
+            width: fit-content;
+
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-bottom: 25px;
+            padding: 7px 13px;
+
+            border: 1px solid var(--border);
+            border-radius: 100px;
+
+            background: rgba(255,255,255,.025);
+
+            color: var(--gray);
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+            background: var(--green);
+
+            box-shadow: 0 0 10px var(--green);
+        }
+
+        .terminal-text {
+            color: var(--purple-light);
+            font-family: monospace;
+            font-size: 14px;
+
+            margin-bottom: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 6vw, 78px);
+            line-height: 1.03;
+            letter-spacing: -4px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(
+                90deg,
+                var(--purple-light),
+                var(--purple)
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            max-width: 600px;
+
+            color: var(--gray);
+            font-size: 18px;
+
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        /* =========================
+           LOGO / MASCOTE
+        ========================== */
+
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mascot-area {
+            width: 100%;
+            max-width: 460px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .mascot-glow {
+            position: absolute;
+            width: 330px;
+            height: 330px;
+
+            top: 10px;
+
+            border-radius: 50%;
+
+            background: rgba(155, 92, 255, .23);
+            filter: blur(80px);
+
+            z-index: -1;
+        }
+
+        .main-logo {
+            width: 310px;
+            height: 310px;
+
+            object-fit: cover;
+            border-radius: 50%;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            box-shadow:
+                0 0 0 10px rgba(155,92,255,.025),
+                0 30px 100px rgba(0,0,0,.6);
+        }
+
+        /* =========================
+           TERMINAL
+        ========================== */
+
+        .terminal-card {
+            width: 100%;
+            max-width: 440px;
+
+            margin-top: -12px;
+
+            background: rgba(15, 15, 19, .92);
+
+            border: 1px solid var(--border);
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: 0 30px 80px rgba(0,0,0,.45);
+        }
+
+        .terminal-header {
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 15px;
+
+            background: rgba(255,255,255,.025);
+            border-bottom: 1px solid var(--border);
+
+            color: var(--gray);
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 7px;
+        }
+
+        .terminal-dots span {
+            width: 9px;
+            height: 9px;
+
+            background: #555;
+            border-radius: 50%;
+        }
+
+        .terminal-body {
+            padding: 24px;
+
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            line-height: 1.9;
+
+            color: #d5d5da;
+        }
+
+        .purple {
+            color: var(--purple-light);
+        }
+
+        .green {
+            color: var(--green);
+        }
+
+        .yellow {
+            color: #e5c07b;
+        }
+
+        .red {
+            color: #e06c75;
+        }
+
+        .comment {
+            color: #6f737d;
+        }
+
+        .indent {
+            padding-left: 25px;
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================== */
+
+        .section {
+            max-width: var(--max-width);
+
+            margin: auto;
+            padding: 110px 24px;
+        }
+
+        .section-label {
+            margin-bottom: 15px;
+
+            color: var(--purple-light);
+            font-family: monospace;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .section h2 {
+            max-width: 760px;
+
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            max-width: 700px;
+
+            color: var(--gray);
+            font-size: 17px;
+
+            margin-bottom: 45px;
+        }
+
+        /* =========================
+           CARDS
+        ========================== */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            min-height: 250px;
+
+            padding: 28px;
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            background: linear-gradient(
+                145deg,
+                rgba(255,255,255,.035),
+                rgba(255,255,255,.012)
+            );
+
+            transition:
+                transform .25s,
+                border-color .25s,
+                background .25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(155,92,255,.35);
+            background: var(--card-hover);
+        }
+
+        .card-icon {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--gray);
+        }
+
+        /* =========================
+           TECNOLOGIAS
+        ========================== */
+
+        .technologies-section {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 13px;
+        }
+
+        .tech-card {
+            min-height: 100px;
+
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            padding: 20px;
+
+            border: 1px solid var(--border);
+            border-radius: 13px;
+
+            background: rgba(255,255,255,.02);
+
+            transition: .2s;
+        }
+
+        .tech-card:hover {
+            border-color: rgba(155,92,255,.45);
+            transform: translateY(-3px);
+        }
+
+        .tech-card span {
+            font-size: 25px;
+        }
+
+        /* =========================
+           PROJETO
+        ========================== */
+
+        .project-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+
+            padding: 35px;
+
+            border: 1px solid rgba(155,92,255,.25);
+            border-radius: 18px;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(155,92,255,.10),
+                    transparent 40%
+                ),
+                var(--card);
+        }
+
+        .project-card > div {
+            max-width: 680px;
+        }
+
+        .project-status {
+            color: var(--green);
+
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        .project-card h3 {
+            margin: 10px 0;
+
+            font-family: monospace;
+            font-size: 27px;
+        }
+
+        .project-card p {
+            color: var(--gray);
+        }
+
+        /* =========================
+           COMUNIDADE
+        ========================== */
+
+        .community-section {
+            padding: 120px 24px;
+        }
+
+        .community-content {
+            max-width: 950px;
+            margin: auto;
+
+            text-align: center;
+
+            padding: 80px 30px;
+
+            border: 1px solid rgba(155,92,255,.22);
+            border-radius: 24px;
+
+            background:
+                radial-gradient(
+                    circle at center top,
+                    rgba(155,92,255,.18),
+                    transparent 50%
+                ),
+                rgba(255,255,255,.018);
+        }
+
+        .sloth {
+            display: block;
+            font-size: 65px;
+            margin-bottom: 20px;
+        }
+
+        .community-content h2 {
+            max-width: 700px;
+            margin: 0 auto 18px;
+
+            font-size: clamp(35px, 5vw, 55px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .community-content > p:not(.terminal-text) {
+            max-width: 600px;
+
+            margin: 0 auto 30px;
+
+            color: var(--gray);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .footer {
+            max-width: var(--max-width);
+
+            margin: auto;
+            padding: 45px 24px;
+
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 25px;
+
+            border-top: 1px solid var(--border);
+        }
+
+        .footer p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+
+            color: var(--gray);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            grid-column: 1 / -1;
+        }
+
+        /* =========================
+           RESPONSIVO
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+
+                padding-top: 65px;
+            }
+
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                margin-top: 20px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                min-height: 68px;
+                padding: 0 16px;
+            }
+
+            .logo strong {
+                font-size: 15px;
+            }
+
+            .logo img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .navbar .discord-button {
+                display: none;
+            }
+
+            .hero {
+                padding: 55px 18px 80px;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .hero-buttons a {
+                width: 100%;
+            }
+
+            .main-logo {
+                width: 230px;
+                height: 230px;
+            }
+
+            .terminal-body {
+                font-size: 12px;
+                padding: 18px;
+            }
+
+            .section {
+                padding: 80px 18px;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .community-section {
+                padding: 70px 18px;
+            }
+
+            .community-content {
+                padding: 55px 20px;
+            }
+
+            .footer {
+                grid-template-columns: 1fr;
+            }
+
+            .copyright {
+                grid-column: auto;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
     <!-- =========================
-         CABEÇALHO
+         HEADER
     ========================== -->
+
     <header class="header">
         <nav class="navbar">
 
             <a href="#inicio" class="logo">
-                <span>🦥</span>
-                <strong>Código Lento</strong>
+                <img
+                    src="./assets/logo.png"
+                    alt="Logo Código Lento"
+                >
+                <strong>𝗖ó𝗱𝗶𝗴𝗼 𝗟𝗲𝗻𝘁𝗼</strong>
             </a>
 
             <div class="nav-links">
@@ -50,30 +871,32 @@
     <main>
 
         <!-- =========================
-             INÍCIO / HERO
+             INÍCIO
         ========================== -->
+
         <section id="inicio" class="hero">
 
             <div class="hero-content">
 
                 <div class="status">
                     <span class="status-dot"></span>
-                    comunidade.dev
+                    codigo-lento.dev
                 </div>
 
                 <p class="terminal-text">
-                    &gt; iniciando_codigo_lento...
+                    &gt; iniciando_comunidade...
                 </p>
 
                 <h1>
-                    Aprenda no seu ritmo.<br>
+                    Aprenda no seu ritmo.
+                    <br>
                     <span>Programe sem pressa.</span>
                 </h1>
 
                 <p class="hero-description">
                     Uma comunidade brasileira para quem quer aprender,
                     praticar e evoluir no mundo da programação.
-                    Do primeiro código ao próximo grande projeto.
+                    Do seu primeiro código ao próximo grande projeto.
                 </p>
 
                 <div class="hero-buttons">
@@ -87,7 +910,10 @@
                         💬 Entrar no Discord
                     </a>
 
-                    <a href="#sobre" class="secondary-button">
+                    <a
+                        href="#sobre"
+                        class="secondary-button"
+                    >
                         Conhecer a comunidade ↓
                     </a>
 
@@ -96,66 +922,84 @@
             </div>
 
 
+            <!-- LOGO + TERMINAL -->
+
             <div class="hero-visual">
 
-                <div class="terminal-card">
+                <div class="mascot-area">
 
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                    <div class="mascot-glow"></div>
+
+                    <img
+                        src="./assets/logo.png"
+                        alt="Bicho-preguiça mascote do Código Lento"
+                        class="main-logo"
+                    >
+
+
+                    <div class="terminal-card">
+
+                        <div class="terminal-header">
+
+                            <div class="terminal-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <p>codigo-lento.js</p>
+
                         </div>
 
-                        <p>codigo-lento.js</p>
-                    </div>
 
-                    <div class="terminal-body">
+                        <div class="terminal-body">
 
-                        <p>
-                            <span class="purple">const</span>
-                            comunidade =
-                            <span class="green">"Código Lento"</span>;
-                        </p>
+                            <p>
+                                <span class="purple">const</span>
+                                comunidade =
+                                <span class="green">"Código Lento"</span>;
+                            </p>
 
-                        <p>
-                            <span class="purple">const</span>
-                            ritmo =
-                            <span class="green">"seu"</span>;
-                        </p>
+                            <p>
+                                <span class="purple">const</span>
+                                ritmo =
+                                <span class="green">"seu"</span>;
+                            </p>
 
-                        <p>
-                            <span class="purple">const</span>
-                            pressa =
-                            <span class="red">false</span>;
-                        </p>
+                            <p>
+                                <span class="purple">const</span>
+                                pressa =
+                                <span class="red">false</span>;
+                            </p>
 
-                        <br>
+                            <br>
 
-                        <p>
-                            <span class="purple">function</span>
-                            <span class="yellow"> aprender</span>() {
-                        </p>
+                            <p>
+                                <span class="purple">function</span>
+                                <span class="yellow"> aprender</span>() {
+                            </p>
 
-                        <p class="indent">
-                            compartilhar();
-                        </p>
+                            <p class="indent">
+                                compartilhar();
+                            </p>
 
-                        <p class="indent">
-                            praticar();
-                        </p>
+                            <p class="indent">
+                                praticar();
+                            </p>
 
-                        <p class="indent">
-                            evoluir();
-                        </p>
+                            <p class="indent">
+                                evoluir();
+                            </p>
 
-                        <p>}</p>
+                            <p>}</p>
 
-                        <br>
+                            <br>
 
-                        <p class="comment">
-                            // devagar também é progresso 🦥
-                        </p>
+                            <p class="comment">
+                                // devagar também é progresso 🦥
+                            </p>
+
+                        </div>
 
                     </div>
 
@@ -169,6 +1013,7 @@
         <!-- =========================
              SOBRE
         ========================== -->
+
         <section id="sobre" class="section">
 
             <div class="section-label">
@@ -180,47 +1025,57 @@
             </h2>
 
             <p class="section-description">
-                O <strong>Código Lento</strong> nasceu para criar um espaço
-                onde desenvolvedores iniciantes, estudantes e apaixonados
-                por tecnologia possam aprender juntos.
+                O <strong>Código Lento</strong> nasceu com uma ideia
+                simples: criar um lugar onde desenvolvedores iniciantes,
+                estudantes e apaixonados por tecnologia possam aprender
+                juntos, sem pressão e sem medo de perguntar.
             </p>
 
 
             <div class="cards">
 
                 <article class="card">
+
                     <div class="card-icon">🌱</div>
 
                     <h3>Comece do zero</h3>
 
                     <p>
-                        Está escrevendo suas primeiras linhas de código?
-                        Aqui você pode aprender sem medo de perguntar.
+                        Nunca programou? Sem problema.
+                        Aprenda no seu ritmo e tire suas dúvidas
+                        junto com outros membros.
                     </p>
+
                 </article>
 
 
                 <article class="card">
+
                     <div class="card-icon">🧠</div>
 
                     <h3>Compartilhe conhecimento</h3>
 
                     <p>
-                        Tire dúvidas, ajude outros desenvolvedores
-                        e descubra novas formas de resolver problemas.
+                        Ajude outros desenvolvedores, compartilhe
+                        descobertas e aprenda diferentes formas
+                        de resolver problemas.
                     </p>
+
                 </article>
 
 
                 <article class="card">
+
                     <div class="card-icon">🚀</div>
 
-                    <h3>Construa projetos</h3>
+                    <h3>Crie projetos</h3>
 
                     <p>
-                        Transforme o que você aprende em projetos
-                        e compartilhe sua evolução com a comunidade.
+                        Transforme seus estudos em projetos reais
+                        e compartilhe sua evolução com toda
+                        a comunidade.
                     </p>
+
                 </article>
 
             </div>
@@ -231,7 +1086,11 @@
         <!-- =========================
              TECNOLOGIAS
         ========================== -->
-        <section id="tecnologias" class="section technologies-section">
+
+        <section
+            id="tecnologias"
+            class="section technologies-section"
+        >
 
             <div class="section-label">
                 02 / TECNOLOGIAS
@@ -242,8 +1101,8 @@
             </h2>
 
             <p class="section-description">
-                Aprenda, pratique e converse sobre diferentes áreas
-                do desenvolvimento.
+                Do desenvolvimento web à programação em geral.
+                Explore diferentes tecnologias junto com a comunidade.
             </p>
 
 
@@ -297,6 +1156,7 @@
         <!-- =========================
              PROJETOS
         ========================== -->
+
         <section id="projetos" class="section">
 
             <div class="section-label">
@@ -308,26 +1168,32 @@
             </h2>
 
             <p class="section-description">
-                O Código Lento também é um espaço para mostrar ideias,
-                receber feedback e criar projetos colaborativos.
+                Compartilhe projetos, receba feedback e transforme
+                aquilo que você está estudando em algo real.
             </p>
 
 
             <div class="project-card">
 
                 <div>
+
                     <span class="project-status">
                         ● PROJETO DA COMUNIDADE
                     </span>
 
-                    <h3>codigo-lento</h3>
+                    <h3>
+                        codigo-lento
+                    </h3>
 
                     <p>
-                        Este próprio site é um projeto aberto da comunidade.
-                        Conforme o servidor crescer, novos membros poderão
-                        ajudar a criar recursos e melhorar a experiência.
+                        Você está olhando para um dos primeiros
+                        projetos da comunidade. Este site também
+                        poderá evoluir conforme novos membros
+                        chegarem e começarem a contribuir.
                     </p>
+
                 </div>
+
 
                 <a
                     href="https://github.com/script33dt-glitch/codigo-lento"
@@ -346,11 +1212,17 @@
         <!-- =========================
              COMUNIDADE
         ========================== -->
-        <section id="comunidade" class="community-section">
+
+        <section
+            id="comunidade"
+            class="community-section"
+        >
 
             <div class="community-content">
 
-                <span class="sloth">🦥</span>
+                <span class="sloth">
+                    🦥
+                </span>
 
                 <p class="terminal-text">
                     &gt; esperando_novo_dev...
@@ -362,7 +1234,8 @@
 
                 <p>
                     Entre para o Código Lento, conheça outros
-                    desenvolvedores e evolua um código de cada vez.
+                    desenvolvedores, tire dúvidas, compartilhe
+                    projetos e evolua um código de cada vez.
                 </p>
 
                 <a
@@ -382,17 +1255,24 @@
 
 
     <!-- =========================
-         RODAPÉ
+         FOOTER
     ========================== -->
+
     <footer class="footer">
 
         <div>
-            <strong>🦥 Código Lento</strong>
+
+            <strong>
+                🦥 𝗖ó𝗱𝗶𝗴𝗼 𝗟𝗲𝗻𝘁𝗼
+            </strong>
 
             <p>
-                Aprenda no seu ritmo. Programe sem pressa.
+                Aprenda no seu ritmo.
+                Programe sem pressa.
             </p>
+
         </div>
+
 
         <div class="footer-links">
 
@@ -414,14 +1294,13 @@
 
         </div>
 
+
         <p class="copyright">
-            © 2026 Código Lento — Feito pela comunidade, para a comunidade. 💜
+            © 2026 Código Lento —
+            Feito pela comunidade, para a comunidade. 💜
         </p>
 
     </footer>
-
-
-    <script src="script.js"></script>
 
 </body>
 </html>
