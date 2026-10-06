@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#07050d">
-
+    <meta name="theme-color" content="#09090b">
     <meta
         name="description"
         content="Código Lento — comunidade brasileira de programação para aprender, compartilhar projetos e evoluir junto."
@@ -12,39 +11,19 @@
 
     <title>Código Lento | Comunidade de Programação</title>
 
-    <!-- FAVICON (ícone da aba) — mascote -->
-    <link rel="icon" type="image/png" href="./assets/mascote.png">
-    <link rel="apple-touch-icon" href="./assets/mascote.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
-
     <style>
-        /* =========================
-           PALETA
-        ========================== */
-
         :root {
-            --black: #07050d;
-            --black-2: #0d0816;
-            --card: #150d24;
-            --card-hover: #1d1233;
-
-            --purple-dark: #4c1d95;
-            --purple: #8b5cf6;
-            --purple-light: #c4b5fd;
-            --lilac: #e9d5ff;
-
+            --bg: #09090b;
+            --bg-secondary: #0f0f13;
+            --card: #15151b;
+            --card-hover: #1b1b23;
+            --purple: #9b5cff;
+            --purple-light: #bd8cff;
+            --purple-dark: #6d35c5;
             --green: #71d99e;
-            --white: #f6f2ff;
-            --gray: #b4a8cf;
-            --border: rgba(196, 181, 253, 0.12);
-
-            --font-title: "Sora", Inter, system-ui, sans-serif;
-            --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-            --font-mono: "JetBrains Mono", "Courier New", monospace;
-
+            --white: #f5f5f7;
+            --gray: #a1a1aa;
+            --border: rgba(255, 255, 255, 0.08);
             --max-width: 1180px;
         }
 
@@ -60,13 +39,25 @@
 
         body {
             background:
-                radial-gradient(circle at 50% -15%, rgba(139, 92, 246, 0.28), transparent 40%),
-                radial-gradient(circle at 90% 60%, rgba(76, 29, 149, 0.20), transparent 35%),
-                var(--black);
+                radial-gradient(
+                    circle at 50% -20%,
+                    rgba(155, 92, 255, 0.18),
+                    transparent 35%
+                ),
+                var(--bg);
 
             color: var(--white);
-            font-family: var(--font-body);
-            line-height: 1.65;
+
+            font-family:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
@@ -80,40 +71,37 @@
             display: block;
         }
 
-        ::selection {
-            background: var(--purple);
-            color: white;
-        }
-
-        /* =========================
-           FUNDO
-        ========================== */
-
         body::before {
             content: "";
             position: fixed;
             inset: 0;
 
             background-image:
-                linear-gradient(rgba(196,181,253,.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(196,181,253,.035) 1px, transparent 1px);
+                linear-gradient(
+                    rgba(255,255,255,.018) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.018) 1px,
+                    transparent 1px
+                );
 
             background-size: 40px 40px;
             pointer-events: none;
             z-index: -1;
         }
 
-        /* =========================
-           HEADER
-        ========================== */
+        /* HEADER */
 
         .header {
             position: sticky;
             top: 0;
             z-index: 100;
 
-            background: rgba(7, 5, 13, 0.75);
+            background: rgba(9, 9, 11, 0.75);
             backdrop-filter: blur(18px);
+
             border-bottom: 1px solid var(--border);
         }
 
@@ -127,6 +115,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+
             gap: 30px;
         }
 
@@ -135,28 +124,21 @@
             align-items: center;
             gap: 12px;
 
-            font-family: var(--font-title);
-            font-size: 19px;
+            font-size: 18px;
             font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .logo .accent,
-        .footer-brand .accent {
-            background: linear-gradient(90deg, var(--lilac), var(--purple));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
         }
 
         .logo img {
-            width: 48px;
-            height: 48px;
-            object-fit: cover;
+            width: 46px;
+            height: 46px;
 
+            object-fit: cover;
             border-radius: 50%;
 
-            box-shadow: 0 0 28px rgba(139, 92, 246, .45);
+            border: 2px solid rgba(155, 92, 255, .5);
+
+            box-shadow:
+                0 0 25px rgba(155, 92, 255, .22);
         }
 
         .nav-links {
@@ -165,7 +147,6 @@
 
             color: var(--gray);
             font-size: 14px;
-            font-weight: 500;
         }
 
         .nav-links a {
@@ -173,13 +154,10 @@
         }
 
         .nav-links a:hover {
-            color: var(--lilac);
-            text-shadow: 0 0 14px rgba(196, 181, 253, .6);
+            color: var(--white);
         }
 
-        /* =========================
-           BOTÕES
-        ========================== */
+        /* BOTÕES */
 
         .discord-button,
         .secondary-button {
@@ -187,60 +165,58 @@
             align-items: center;
             justify-content: center;
 
-            border-radius: 12px;
-            font-family: var(--font-title);
+            border-radius: 10px;
             font-weight: 700;
 
             transition:
                 transform .2s,
                 box-shadow .2s,
-                background .2s,
-                border-color .2s;
+                background .2s;
         }
 
         .discord-button {
-            padding: 14px 24px;
+            padding: 14px 22px;
 
-            background: linear-gradient(
-                135deg,
-                var(--purple),
-                var(--purple-dark)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--purple),
+                    var(--purple-dark)
+                );
 
             color: white;
-            border: 1px solid rgba(196, 181, 253, .35);
 
-            box-shadow: 0 10px 35px rgba(139, 92, 246, .30);
+            box-shadow:
+                0 10px 35px rgba(155, 92, 255, .20);
         }
 
         .discord-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 45px rgba(139, 92, 246, .50);
+
+            box-shadow:
+                0 14px 40px rgba(155, 92, 255, .32);
         }
 
         .discord-button.small {
-            padding: 10px 18px;
+            padding: 10px 17px;
             font-size: 14px;
         }
 
         .secondary-button {
-            padding: 13px 22px;
+            padding: 13px 20px;
 
             border: 1px solid var(--border);
-            background: rgba(196,181,253,.04);
+            background: rgba(255,255,255,.025);
 
-            color: var(--purple-light);
+            color: var(--gray);
         }
 
         .secondary-button:hover {
-            background: rgba(196,181,253,.10);
-            border-color: rgba(196,181,253,.4);
-            color: var(--lilac);
+            background: rgba(255,255,255,.06);
+            color: white;
         }
 
-        /* =========================
-           HERO
-        ========================== */
+        /* HERO */
 
         .hero {
             max-width: var(--max-width);
@@ -251,6 +227,7 @@
 
             display: grid;
             grid-template-columns: 1.05fr .95fr;
+
             align-items: center;
             gap: 70px;
         }
@@ -263,15 +240,15 @@
             gap: 9px;
 
             margin-bottom: 25px;
-            padding: 7px 14px;
+            padding: 7px 13px;
 
             border: 1px solid var(--border);
             border-radius: 100px;
 
-            background: rgba(196,181,253,.05);
+            background: rgba(255,255,255,.025);
 
-            color: var(--purple-light);
-            font-family: var(--font-mono);
+            color: var(--gray);
+            font-family: monospace;
             font-size: 13px;
         }
 
@@ -280,42 +257,43 @@
             height: 8px;
 
             border-radius: 50%;
+
             background: var(--green);
 
-            box-shadow: 0 0 10px var(--green);
+            box-shadow:
+                0 0 10px var(--green);
         }
 
         .terminal-text {
             color: var(--purple-light);
-            font-family: var(--font-mono);
+
+            font-family: monospace;
             font-size: 14px;
 
             margin-bottom: 14px;
         }
 
         .hero h1 {
-            font-family: var(--font-title);
-            font-weight: 800;
-            font-size: clamp(44px, 6vw, 76px);
-            line-height: 1.05;
-            letter-spacing: -3px;
+            font-size: clamp(48px, 6vw, 78px);
+
+            line-height: 1.03;
+            letter-spacing: -4px;
 
             margin-bottom: 25px;
         }
 
         .hero h1 span {
-            background: linear-gradient(
-                90deg,
-                var(--lilac),
-                var(--purple-light) 40%,
-                var(--purple)
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--purple-light),
+                    var(--purple)
+                );
 
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent;
 
-            filter: drop-shadow(0 0 22px rgba(139, 92, 246, .45));
+            color: transparent;
         }
 
         .hero-description {
@@ -330,12 +308,11 @@
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
+
             gap: 13px;
         }
 
-        /* =========================
-           LOGO / MASCOTE
-        ========================== */
+        /* MASCOTE */
 
         .hero-visual {
             display: flex;
@@ -356,15 +333,18 @@
 
         .mascot-glow {
             position: absolute;
-            width: 340px;
-            height: 340px;
+
+            width: 330px;
+            height: 330px;
 
             top: 10px;
 
             border-radius: 50%;
 
-            background: rgba(139, 92, 246, .38);
-            filter: blur(85px);
+            background:
+                rgba(155, 92, 255, .23);
+
+            filter: blur(80px);
 
             z-index: -1;
         }
@@ -374,16 +354,18 @@
             height: 310px;
 
             object-fit: cover;
+
             border-radius: 50%;
 
+            border:
+                1px solid rgba(255,255,255,.08);
+
             box-shadow:
-                0 0 60px rgba(139,92,246,.35),
-                0 30px 100px rgba(0,0,0,.65);
+                0 0 0 10px rgba(155,92,255,.025),
+                0 30px 100px rgba(0,0,0,.6);
         }
 
-        /* =========================
-           TERMINAL
-        ========================== */
+        /* TERMINAL */
 
         .terminal-card {
             width: 100%;
@@ -391,16 +373,18 @@
 
             margin-top: -12px;
 
-            background: rgba(13, 8, 22, .94);
+            background:
+                rgba(15, 15, 19, .92);
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
+
             border-radius: 15px;
 
             overflow: hidden;
 
             box-shadow:
-                0 0 40px rgba(139,92,246,.12),
-                0 30px 80px rgba(0,0,0,.5);
+                0 30px 80px rgba(0,0,0,.45);
         }
 
         .terminal-header {
@@ -412,11 +396,15 @@
 
             padding: 0 15px;
 
-            background: rgba(139,92,246,.08);
-            border-bottom: 1px solid var(--border);
+            background:
+                rgba(255,255,255,.025);
 
-            color: var(--purple-light);
-            font-family: var(--font-mono);
+            border-bottom:
+                1px solid var(--border);
+
+            color: var(--gray);
+
+            font-family: monospace;
             font-size: 12px;
         }
 
@@ -429,21 +417,22 @@
             width: 9px;
             height: 9px;
 
+            background: #555;
+
             border-radius: 50%;
         }
-
-        .terminal-dots span:nth-child(1) { background: var(--purple-dark); }
-        .terminal-dots span:nth-child(2) { background: var(--purple); }
-        .terminal-dots span:nth-child(3) { background: var(--lilac); }
 
         .terminal-body {
             padding: 24px;
 
-            font-family: var(--font-mono);
+            font-family:
+                "Courier New",
+                monospace;
+
             font-size: 14px;
             line-height: 1.9;
 
-            color: #e0d8f5;
+            color: #d5d5da;
         }
 
         .purple {
@@ -455,24 +444,22 @@
         }
 
         .yellow {
-            color: #f0d9a0;
+            color: #e5c07b;
         }
 
         .red {
-            color: #f08ba0;
+            color: #e06c75;
         }
 
         .comment {
-            color: #7d6fa3;
+            color: #6f737d;
         }
 
         .indent {
             padding-left: 25px;
         }
 
-        /* =========================
-           SEÇÕES
-        ========================== */
+        /* SEÇÕES */
 
         .section {
             max-width: var(--max-width);
@@ -485,21 +472,20 @@
             margin-bottom: 15px;
 
             color: var(--purple-light);
-            font-family: var(--font-mono);
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 2px;
 
-            text-shadow: 0 0 16px rgba(139,92,246,.6);
+            font-family: monospace;
+            font-size: 13px;
+
+            letter-spacing: 1px;
         }
 
         .section h2 {
             max-width: 760px;
 
-            font-family: var(--font-title);
-            font-weight: 800;
-            font-size: clamp(32px, 5vw, 50px);
-            line-height: 1.12;
+            font-size:
+                clamp(34px, 5vw, 52px);
+
+            line-height: 1.1;
             letter-spacing: -2px;
 
             margin-bottom: 20px;
@@ -509,22 +495,20 @@
             max-width: 700px;
 
             color: var(--gray);
+
             font-size: 17px;
 
             margin-bottom: 45px;
         }
 
-        .section-description strong {
-            color: var(--lilac);
-        }
-
-        /* =========================
-           CARDS
-        ========================== */
+        /* CARDS */
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 18px;
         }
 
@@ -533,28 +517,32 @@
 
             padding: 28px;
 
-            border: 1px solid var(--border);
-            border-radius: 18px;
+            border:
+                1px solid var(--border);
 
-            background: linear-gradient(
-                145deg,
-                rgba(139,92,246,.10),
-                rgba(76,29,149,.04)
-            );
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.035),
+                    rgba(255,255,255,.012)
+                );
 
             transition:
                 transform .25s,
                 border-color .25s,
-                background .25s,
-                box-shadow .25s;
+                background .25s;
         }
 
         .card:hover {
             transform: translateY(-5px);
 
-            border-color: rgba(196,181,253,.5);
-            background: var(--card-hover);
-            box-shadow: 0 18px 50px rgba(139,92,246,.20);
+            border-color:
+                rgba(155,92,255,.35);
+
+            background:
+                var(--card-hover);
         }
 
         .card-icon {
@@ -563,10 +551,7 @@
         }
 
         .card h3 {
-            font-family: var(--font-title);
             font-size: 20px;
-            font-weight: 700;
-            color: var(--lilac);
             margin-bottom: 12px;
         }
 
@@ -574,18 +559,22 @@
             color: var(--gray);
         }
 
-        /* =========================
-           TECNOLOGIAS
-        ========================== */
+        /* TECNOLOGIAS */
 
         .technologies-section {
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
         }
 
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 13px;
         }
 
@@ -594,55 +583,58 @@
 
             display: flex;
             align-items: center;
+
             gap: 15px;
 
             padding: 20px;
 
-            border: 1px solid var(--border);
-            border-radius: 14px;
+            border:
+                1px solid var(--border);
 
-            background: rgba(196,181,253,.03);
+            border-radius: 13px;
 
-            font-family: var(--font-title);
+            background:
+                rgba(255,255,255,.02);
 
             transition: .2s;
         }
 
         .tech-card:hover {
-            border-color: rgba(196,181,253,.55);
-            background: rgba(139,92,246,.12);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(139,92,246,.20);
+            border-color:
+                rgba(155,92,255,.45);
+
+            transform:
+                translateY(-3px);
         }
 
         .tech-card span {
             font-size: 25px;
         }
 
-        /* =========================
-           PROJETO
-        ========================== */
+        /* PROJETOS */
 
         .project-card {
             display: flex;
+
             justify-content: space-between;
             align-items: center;
+
             gap: 40px;
 
             padding: 35px;
 
-            border: 1px solid rgba(196,181,253,.28);
-            border-radius: 20px;
+            border:
+                1px solid rgba(155,92,255,.25);
+
+            border-radius: 18px;
 
             background:
                 radial-gradient(
                     circle at top right,
-                    rgba(139,92,246,.22),
-                    transparent 45%
+                    rgba(155,92,255,.10),
+                    transparent 40%
                 ),
                 var(--card);
-
-            box-shadow: 0 0 50px rgba(139,92,246,.10);
         }
 
         .project-card > div {
@@ -652,25 +644,22 @@
         .project-status {
             color: var(--green);
 
-            font-family: var(--font-mono);
+            font-family: monospace;
             font-size: 12px;
         }
 
         .project-card h3 {
             margin: 10px 0;
 
-            font-family: var(--font-mono);
+            font-family: monospace;
             font-size: 27px;
-            color: var(--lilac);
         }
 
         .project-card p {
             color: var(--gray);
         }
 
-        /* =========================
-           COMUNIDADE
-        ========================== */
+        /* COMUNIDADE */
 
         .community-section {
             padding: 120px 24px;
@@ -678,77 +667,75 @@
 
         .community-content {
             max-width: 950px;
+
             margin: auto;
 
             text-align: center;
 
             padding: 80px 30px;
 
-            border: 1px solid rgba(196,181,253,.28);
-            border-radius: 26px;
+            border:
+                1px solid rgba(155,92,255,.22);
+
+            border-radius: 24px;
 
             background:
                 radial-gradient(
                     circle at center top,
-                    rgba(139,92,246,.32),
-                    transparent 55%
+                    rgba(155,92,255,.18),
+                    transparent 50%
                 ),
-                rgba(76,29,149,.08);
-
-            box-shadow: 0 0 80px rgba(139,92,246,.15);
+                rgba(255,255,255,.018);
         }
 
         .sloth {
             display: block;
+
             font-size: 65px;
+
             margin-bottom: 20px;
         }
 
         .community-content h2 {
             max-width: 700px;
-            margin: 0 auto 18px;
 
-            font-family: var(--font-title);
-            font-weight: 800;
-            font-size: clamp(32px, 5vw, 52px);
-            line-height: 1.12;
+            margin:
+                0 auto 18px;
+
+            font-size:
+                clamp(35px, 5vw, 55px);
+
+            line-height: 1.1;
             letter-spacing: -2px;
-
-            background: linear-gradient(90deg, var(--white), var(--lilac), var(--purple-light));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
         }
 
         .community-content > p:not(.terminal-text) {
             max-width: 600px;
 
-            margin: 0 auto 30px;
+            margin:
+                0 auto 30px;
 
             color: var(--gray);
         }
 
-        /* =========================
-           FOOTER
-        ========================== */
+        /* FOOTER */
 
         .footer {
             max-width: var(--max-width);
 
             margin: auto;
+
             padding: 45px 24px;
 
             display: grid;
-            grid-template-columns: 1fr auto;
+
+            grid-template-columns:
+                1fr auto;
+
             gap: 25px;
 
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-brand {
-            font-family: var(--font-title);
-            font-weight: 800;
-            font-size: 18px;
+            border-top:
+                1px solid var(--border);
         }
 
         .footer p {
@@ -758,22 +745,21 @@
 
         .footer-links {
             display: flex;
+
             gap: 20px;
 
             color: var(--gray);
         }
 
         .footer-links a:hover {
-            color: var(--lilac);
+            color: white;
         }
 
         .copyright {
             grid-column: 1 / -1;
         }
 
-        /* =========================
-           RESPONSIVO
-        ========================== */
+        /* RESPONSIVO */
 
         @media (max-width: 900px) {
 
@@ -783,6 +769,7 @@
 
             .hero {
                 grid-template-columns: 1fr;
+
                 text-align: center;
 
                 padding-top: 65px;
@@ -811,14 +798,14 @@
             }
 
             .tech-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
             .project-card {
                 flex-direction: column;
                 align-items: flex-start;
             }
-
         }
 
         @media (max-width: 600px) {
@@ -833,8 +820,8 @@
             }
 
             .logo img {
-                width: 42px;
-                height: 42px;
+                width: 40px;
+                height: 40px;
             }
 
             .navbar .discord-button {
@@ -842,12 +829,14 @@
             }
 
             .hero {
-                padding: 55px 18px 80px;
+                padding:
+                    55px 18px 80px;
+
                 min-height: auto;
             }
 
             .hero h1 {
-                font-size: 42px;
+                font-size: 45px;
             }
 
             .hero-description {
@@ -864,8 +853,8 @@
             }
 
             .main-logo {
-                width: 250px;
-                height: 250px;
+                width: 230px;
+                height: 230px;
             }
 
             .terminal-body {
@@ -897,32 +886,49 @@
                 grid-column: auto;
             }
         }
-
     </style>
 </head>
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+    <!-- HEADER -->
 
     <header class="header">
+
         <nav class="navbar">
 
             <a href="#inicio" class="logo">
+
+                <!-- LOGO DIRETO DA RAIZ -->
                 <img
-                    src="./assets/logo.png"
-                    alt="Logo do Código Lento"
+                    src="./logo.png"
+                    alt="Logo Código Lento"
                 >
-                <strong>Código <span class="accent">Lento</span></strong>
+
+                <strong>
+                    𝗖ó𝗱𝗶𝗴𝗼 𝗟𝗲𝗻𝘁𝗼
+                </strong>
+
             </a>
 
             <div class="nav-links">
-                <a href="#sobre">Sobre</a>
-                <a href="#tecnologias">Tecnologias</a>
-                <a href="#projetos">Projetos</a>
-                <a href="#comunidade">Comunidade</a>
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#tecnologias">
+                    Tecnologias
+                </a>
+
+                <a href="#projetos">
+                    Projetos
+                </a>
+
+                <a href="#comunidade">
+                    Comunidade
+                </a>
+
             </div>
 
             <a
@@ -935,22 +941,27 @@
             </a>
 
         </nav>
+
     </header>
 
 
     <main>
 
-        <!-- =========================
-             INÍCIO
-        ========================== -->
+        <!-- INÍCIO -->
 
-        <section id="inicio" class="hero">
+        <section
+            id="inicio"
+            class="hero"
+        >
 
             <div class="hero-content">
 
                 <div class="status">
+
                     <span class="status-dot"></span>
+
                     codigo-lento.dev
+
                 </div>
 
                 <p class="terminal-text">
@@ -958,15 +969,24 @@
                 </p>
 
                 <h1>
+
                     Aprenda no seu ritmo.
+
                     <br>
-                    <span>Programe sem pressa.</span>
+
+                    <span>
+                        Programe sem pressa.
+                    </span>
+
                 </h1>
 
                 <p class="hero-description">
+
                     Uma comunidade brasileira para quem quer aprender,
                     praticar e evoluir no mundo da programação.
+
                     Do seu primeiro código ao próximo grande projeto.
+
                 </p>
 
                 <div class="hero-buttons">
@@ -992,7 +1012,7 @@
             </div>
 
 
-            <!-- LOGO + TERMINAL -->
+            <!-- MASCOTE + TERMINAL -->
 
             <div class="hero-visual">
 
@@ -1000,24 +1020,28 @@
 
                     <div class="mascot-glow"></div>
 
+                    <!-- MASCOTE DIRETO DA RAIZ -->
                     <img
-                        src="./assets/logo.png"
-                        alt="Logo do Código Lento: bicho-preguiça abraçado a uma árvore sob a lua roxa"
+                        src="./mascote.png"
+                        alt="Bicho-preguiça mascote do Código Lento"
                         class="main-logo"
                     >
-
 
                     <div class="terminal-card">
 
                         <div class="terminal-header">
 
                             <div class="terminal-dots">
+
                                 <span></span>
                                 <span></span>
                                 <span></span>
+
                             </div>
 
-                            <p>codigo-lento.js</p>
+                            <p>
+                                codigo-lento.js
+                            </p>
 
                         </div>
 
@@ -1025,28 +1049,53 @@
                         <div class="terminal-body">
 
                             <p>
-                                <span class="purple">const</span>
+                                <span class="purple">
+                                    const
+                                </span>
+
                                 comunidade =
-                                <span class="green">"Código Lento"</span>;
+
+                                <span class="green">
+                                    "Código Lento"
+                                </span>;
                             </p>
 
                             <p>
-                                <span class="purple">const</span>
+                                <span class="purple">
+                                    const
+                                </span>
+
                                 ritmo =
-                                <span class="green">"seu"</span>;
+
+                                <span class="green">
+                                    "seu"
+                                </span>;
                             </p>
 
                             <p>
-                                <span class="purple">const</span>
+                                <span class="purple">
+                                    const
+                                </span>
+
                                 pressa =
-                                <span class="red">false</span>;
+
+                                <span class="red">
+                                    false
+                                </span>;
                             </p>
 
                             <br>
 
                             <p>
-                                <span class="purple">function</span>
-                                <span class="yellow"> aprender</span>() {
+
+                                <span class="purple">
+                                    function
+                                </span>
+
+                                <span class="yellow">
+                                    aprender
+                                </span>() {
+
                             </p>
 
                             <p class="indent">
@@ -1061,7 +1110,9 @@
                                 evoluir();
                             </p>
 
-                            <p>}</p>
+                            <p>
+                                }
+                            </p>
 
                             <br>
 
@@ -1080,11 +1131,12 @@
         </section>
 
 
-        <!-- =========================
-             SOBRE
-        ========================== -->
+        <!-- SOBRE -->
 
-        <section id="sobre" class="section">
+        <section
+            id="sobre"
+            class="section"
+        >
 
             <div class="section-label">
                 01 / SOBRE
@@ -1095,10 +1147,12 @@
             </h2>
 
             <p class="section-description">
+
                 O <strong>Código Lento</strong> nasceu com uma ideia
                 simples: criar um lugar onde desenvolvedores iniciantes,
                 estudantes e apaixonados por tecnologia possam aprender
                 juntos, sem pressão e sem medo de perguntar.
+
             </p>
 
 
@@ -1106,9 +1160,13 @@
 
                 <article class="card">
 
-                    <div class="card-icon">🌱</div>
+                    <div class="card-icon">
+                        🌱
+                    </div>
 
-                    <h3>Comece do zero</h3>
+                    <h3>
+                        Comece do zero
+                    </h3>
 
                     <p>
                         Nunca programou? Sem problema.
@@ -1121,14 +1179,18 @@
 
                 <article class="card">
 
-                    <div class="card-icon">🧠</div>
+                    <div class="card-icon">
+                        🧠
+                    </div>
 
-                    <h3>Compartilhe conhecimento</h3>
+                    <h3>
+                        Compartilhe conhecimento
+                    </h3>
 
                     <p>
-                        Ajude outros desenvolvedores, compartilhe
-                        descobertas e aprenda diferentes formas
-                        de resolver problemas.
+                        Ajude outros desenvolvedores,
+                        compartilhe descobertas e aprenda
+                        diferentes formas de resolver problemas.
                     </p>
 
                 </article>
@@ -1136,9 +1198,13 @@
 
                 <article class="card">
 
-                    <div class="card-icon">🚀</div>
+                    <div class="card-icon">
+                        🚀
+                    </div>
 
-                    <h3>Crie projetos</h3>
+                    <h3>
+                        Crie projetos
+                    </h3>
 
                     <p>
                         Transforme seus estudos em projetos reais
@@ -1153,9 +1219,7 @@
         </section>
 
 
-        <!-- =========================
-             TECNOLOGIAS
-        ========================== -->
+        <!-- TECNOLOGIAS -->
 
         <section
             id="tecnologias"
@@ -1171,8 +1235,10 @@
             </h2>
 
             <p class="section-description">
+
                 Do desenvolvimento web à programação em geral.
                 Explore diferentes tecnologias junto com a comunidade.
+
             </p>
 
 
@@ -1223,11 +1289,12 @@
         </section>
 
 
-        <!-- =========================
-             PROJETOS
-        ========================== -->
+        <!-- PROJETOS -->
 
-        <section id="projetos" class="section">
+        <section
+            id="projetos"
+            class="section"
+        >
 
             <div class="section-label">
                 03 / PROJETOS
@@ -1238,8 +1305,10 @@
             </h2>
 
             <p class="section-description">
+
                 Compartilhe projetos, receba feedback e transforme
                 aquilo que você está estudando em algo real.
+
             </p>
 
 
@@ -1256,10 +1325,14 @@
                     </h3>
 
                     <p>
+
                         Você está olhando para um dos primeiros
-                        projetos da comunidade. Este site também
-                        poderá evoluir conforme novos membros
-                        chegarem e começarem a contribuir.
+                        projetos da comunidade.
+
+                        Este site também poderá evoluir conforme
+                        novos membros chegarem e começarem
+                        a contribuir.
+
                     </p>
 
                 </div>
@@ -1279,9 +1352,7 @@
         </section>
 
 
-        <!-- =========================
-             COMUNIDADE
-        ========================== -->
+        <!-- COMUNIDADE -->
 
         <section
             id="comunidade"
@@ -1303,10 +1374,14 @@
                 </h2>
 
                 <p>
-                    Entre para o Código Lento, conheça outros
-                    desenvolvedores, tire dúvidas, compartilhe
-                    projetos e evolua um código de cada vez.
+
+                    Entre para o Código Lento,
+                    conheça outros desenvolvedores,
+                    tire dúvidas, compartilhe projetos
+                    e evolua um código de cada vez.
+
                 </p>
+
 
                 <a
                     href="https://discord.gg/waTE9gQYPR"
@@ -1324,16 +1399,14 @@
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+    <!-- FOOTER -->
 
     <footer class="footer">
 
         <div>
 
-            <strong class="footer-brand">
-                🦥 Código <span class="accent">Lento</span>
+            <strong>
+                🦥 𝗖ó𝗱𝗶𝗴𝗼 𝗟𝗲𝗻𝘁𝗼
             </strong>
 
             <p>
