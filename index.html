@@ -2,29 +2,45 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#09090b">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#09090b"
+    >
 
     <meta
         name="description"
         content="Código Lento — comunidade brasileira de programação para aprender, compartilhar projetos e evoluir junto."
     >
 
-    <title>Código Lento | Comunidade de Programação</title>
+    <title>
+        Código Lento | Comunidade de Programação
+    </title>
 
     <style>
+
         :root {
             --bg: #09090b;
             --bg-secondary: #0f0f13;
             --card: #15151b;
             --card-hover: #1b1b23;
+
             --purple: #9b5cff;
             --purple-light: #bd8cff;
             --purple-dark: #6d35c5;
+
             --green: #71d99e;
+
             --white: #f5f5f7;
             --gray: #a1a1aa;
+
             --border: rgba(255, 255, 255, 0.08);
+
             --max-width: 1180px;
         }
 
@@ -62,18 +78,9 @@
             overflow-x: hidden;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
         body::before {
             content: "";
+
             position: fixed;
             inset: 0;
 
@@ -89,31 +96,56 @@
                 );
 
             background-size: 40px 40px;
+
             pointer-events: none;
+
             z-index: -1;
         }
 
-        /* HEADER */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
 
         .header {
             position: sticky;
             top: 0;
+
             z-index: 100;
 
-            background: rgba(9, 9, 11, 0.75);
-            backdrop-filter: blur(18px);
+            background:
+                rgba(9, 9, 11, 0.75);
 
-            border-bottom: 1px solid var(--border);
+            backdrop-filter:
+                blur(18px);
+
+            border-bottom:
+                1px solid var(--border);
         }
 
         .navbar {
-            max-width: var(--max-width);
-            margin: auto;
+            max-width:
+                var(--max-width);
 
             min-height: 76px;
-            padding: 0 24px;
+
+            margin: auto;
+
+            padding:
+                0 24px;
 
             display: flex;
+
             align-items: center;
             justify-content: space-between;
 
@@ -122,7 +154,9 @@
 
         .logo {
             display: flex;
+
             align-items: center;
+
             gap: 12px;
 
             font-size: 18px;
@@ -134,9 +168,11 @@
             height: 46px;
 
             object-fit: cover;
+
             border-radius: 50%;
 
-            border: 2px solid rgba(155, 92, 255, .5);
+            border:
+                2px solid rgba(155, 92, 255, .5);
 
             box-shadow:
                 0 0 25px rgba(155, 92, 255, .22);
@@ -144,9 +180,11 @@
 
         .nav-links {
             display: flex;
+
             gap: 25px;
 
             color: var(--gray);
+
             font-size: 14px;
         }
 
@@ -158,15 +196,20 @@
             color: var(--white);
         }
 
-        /* BOTÕES */
+
+        /* =========================
+           BOTÕES
+        ========================= */
 
         .discord-button,
         .secondary-button {
             display: inline-flex;
+
             align-items: center;
             justify-content: center;
 
             border-radius: 10px;
+
             font-weight: 700;
 
             transition:
@@ -176,7 +219,8 @@
         }
 
         .discord-button {
-            padding: 14px 22px;
+            padding:
+                14px 22px;
 
             background:
                 linear-gradient(
@@ -192,44 +236,65 @@
         }
 
         .discord-button:hover {
-            transform: translateY(-2px);
+            transform:
+                translateY(-2px);
 
             box-shadow:
                 0 14px 40px rgba(155, 92, 255, .32);
         }
 
         .discord-button.small {
-            padding: 10px 17px;
+            padding:
+                10px 17px;
+
             font-size: 14px;
         }
 
         .secondary-button {
-            padding: 13px 20px;
+            padding:
+                13px 20px;
 
-            border: 1px solid var(--border);
-            background: rgba(255,255,255,.025);
+            border:
+                1px solid var(--border);
 
-            color: var(--gray);
+            background:
+                rgba(255,255,255,.025);
+
+            color:
+                var(--gray);
         }
 
         .secondary-button:hover {
-            background: rgba(255,255,255,.06);
+            background:
+                rgba(255,255,255,.06);
+
             color: white;
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            max-width: var(--max-width);
-            min-height: calc(100vh - 76px);
+            max-width:
+                var(--max-width);
+
+            min-height:
+                calc(100vh - 76px);
 
             margin: auto;
-            padding: 90px 24px;
+
+            padding:
+                90px 24px;
 
             display: grid;
-            grid-template-columns: 1.05fr .95fr;
+
+            grid-template-columns:
+                1.05fr .95fr;
 
             align-items: center;
+
             gap: 70px;
         }
 
@@ -237,19 +302,28 @@
             width: fit-content;
 
             display: flex;
+
             align-items: center;
+
             gap: 9px;
 
             margin-bottom: 25px;
-            padding: 7px 13px;
 
-            border: 1px solid var(--border);
+            padding:
+                7px 13px;
+
+            border:
+                1px solid var(--border);
+
             border-radius: 100px;
 
-            background: rgba(255,255,255,.025);
+            background:
+                rgba(255,255,255,.025);
 
             color: var(--gray);
+
             font-family: monospace;
+
             font-size: 13px;
         }
 
@@ -259,25 +333,31 @@
 
             border-radius: 50%;
 
-            background: var(--green);
+            background:
+                var(--green);
 
             box-shadow:
                 0 0 10px var(--green);
         }
 
         .terminal-text {
-            color: var(--purple-light);
+            color:
+                var(--purple-light);
 
-            font-family: monospace;
+            font-family:
+                monospace;
+
             font-size: 14px;
 
             margin-bottom: 14px;
         }
 
         .hero h1 {
-            font-size: clamp(48px, 6vw, 78px);
+            font-size:
+                clamp(48px, 6vw, 78px);
 
             line-height: 1.03;
+
             letter-spacing: -4px;
 
             margin-bottom: 25px;
@@ -291,16 +371,21 @@
                     var(--purple)
                 );
 
-            -webkit-background-clip: text;
-            background-clip: text;
+            -webkit-background-clip:
+                text;
 
-            color: transparent;
+            background-clip:
+                text;
+
+            color:
+                transparent;
         }
 
         .hero-description {
             max-width: 600px;
 
             color: var(--gray);
+
             font-size: 18px;
 
             margin-bottom: 32px;
@@ -308,24 +393,33 @@
 
         .hero-buttons {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 13px;
         }
 
-        /* MASCOTE */
+
+        /* =========================
+           MASCOTE
+        ========================= */
 
         .hero-visual {
             display: flex;
+
             align-items: center;
             justify-content: center;
         }
 
         .mascot-area {
             width: 100%;
+
             max-width: 460px;
 
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
 
             position: relative;
@@ -344,7 +438,8 @@
             background:
                 rgba(155, 92, 255, .23);
 
-            filter: blur(80px);
+            filter:
+                blur(80px);
 
             z-index: -1;
         }
@@ -365,10 +460,14 @@
                 0 30px 100px rgba(0,0,0,.6);
         }
 
-        /* TERMINAL */
+
+        /* =========================
+           TERMINAL
+        ========================= */
 
         .terminal-card {
             width: 100%;
+
             max-width: 440px;
 
             margin-top: -12px;
@@ -391,10 +490,12 @@
             height: 45px;
 
             display: flex;
+
             align-items: center;
             justify-content: space-between;
 
-            padding: 0 15px;
+            padding:
+                0 15px;
 
             background:
                 rgba(255,255,255,.025);
@@ -402,14 +503,18 @@
             border-bottom:
                 1px solid var(--border);
 
-            color: var(--gray);
+            color:
+                var(--gray);
 
-            font-family: monospace;
+            font-family:
+                monospace;
+
             font-size: 12px;
         }
 
         .terminal-dots {
             display: flex;
+
             gap: 7px;
         }
 
@@ -417,9 +522,11 @@
             width: 9px;
             height: 9px;
 
-            background: #555;
+            background:
+                #555;
 
-            border-radius: 50%;
+            border-radius:
+                50%;
         }
 
         .terminal-body {
@@ -430,50 +537,66 @@
                 monospace;
 
             font-size: 14px;
+
             line-height: 1.9;
 
             color: #d5d5da;
         }
 
         .purple {
-            color: var(--purple-light);
+            color:
+                var(--purple-light);
         }
 
         .green {
-            color: var(--green);
+            color:
+                var(--green);
         }
 
         .yellow {
-            color: #e5c07b;
+            color:
+                #e5c07b;
         }
 
         .red {
-            color: #e06c75;
+            color:
+                #e06c75;
         }
 
         .comment {
-            color: #6f737d;
+            color:
+                #6f737d;
         }
 
         .indent {
-            padding-left: 25px;
+            padding-left:
+                25px;
         }
 
-        /* SEÇÕES */
+
+        /* =========================
+           SEÇÕES
+        ========================= */
 
         .section {
-            max-width: var(--max-width);
+            max-width:
+                var(--max-width);
 
             margin: auto;
-            padding: 110px 24px;
+
+            padding:
+                110px 24px;
         }
 
         .section-label {
             margin-bottom: 15px;
 
-            color: var(--purple-light);
+            color:
+                var(--purple-light);
 
-            font-family: monospace;
+            font-family:
+                monospace;
+
             font-size: 13px;
 
             letter-spacing: 1px;
@@ -486,6 +609,7 @@
                 clamp(34px, 5vw, 52px);
 
             line-height: 1.1;
+
             letter-spacing: -2px;
 
             margin-bottom: 20px;
@@ -494,14 +618,18 @@
         .section-description {
             max-width: 700px;
 
-            color: var(--gray);
+            color:
+                var(--gray);
 
             font-size: 17px;
 
             margin-bottom: 45px;
         }
 
-        /* CARDS */
+
+        /* =========================
+           CARDS
+        ========================= */
 
         .cards {
             display: grid;
@@ -536,7 +664,8 @@
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform:
+                translateY(-5px);
 
             border-color:
                 rgba(155,92,255,.35);
@@ -547,19 +676,25 @@
 
         .card-icon {
             font-size: 30px;
+
             margin-bottom: 30px;
         }
 
         .card h3 {
             font-size: 20px;
+
             margin-bottom: 12px;
         }
 
         .card p {
-            color: var(--gray);
+            color:
+                var(--gray);
         }
 
-        /* TECNOLOGIAS */
+
+        /* =========================
+           TECNOLOGIAS
+        ========================= */
 
         .technologies-section {
             border-top:
@@ -582,6 +717,7 @@
             min-height: 100px;
 
             display: flex;
+
             align-items: center;
 
             gap: 15px;
@@ -611,13 +747,19 @@
             font-size: 25px;
         }
 
-        /* PROJETOS */
+
+        /* =========================
+           PROJETOS
+        ========================= */
 
         .project-card {
             display: flex;
 
-            justify-content: space-between;
-            align-items: center;
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
 
             gap: 40px;
 
@@ -626,7 +768,8 @@
             border:
                 1px solid rgba(155,92,255,.25);
 
-            border-radius: 18px;
+            border-radius:
+                18px;
 
             background:
                 radial-gradient(
@@ -638,46 +781,70 @@
         }
 
         .project-card > div {
-            max-width: 680px;
+            max-width:
+                680px;
         }
 
         .project-status {
-            color: var(--green);
+            color:
+                var(--green);
 
-            font-family: monospace;
-            font-size: 12px;
+            font-family:
+                monospace;
+
+            font-size:
+                12px;
         }
 
         .project-card h3 {
-            margin: 10px 0;
+            margin:
+                10px 0;
 
-            font-family: monospace;
-            font-size: 27px;
+            font-family:
+                monospace;
+
+            font-size:
+                27px;
         }
 
         .project-card p {
-            color: var(--gray);
+            color:
+                var(--gray);
         }
 
-        /* SONEQUINHA */
+
+        /* =========================
+           SONEQUINHA
+        ========================= */
 
         .bot-section {
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
         }
 
         .bot-hero {
             display: grid;
-            grid-template-columns: .85fr 1.15fr;
+
+            grid-template-columns:
+                .85fr 1.15fr;
+
             gap: 24px;
+
             align-items: stretch;
+
             margin-bottom: 25px;
         }
 
         .bot-profile,
         .bot-terminal {
-            border: 1px solid rgba(155,92,255,.22);
-            border-radius: 18px;
+            border:
+                1px solid rgba(155,92,255,.22);
+
+            border-radius:
+                18px;
 
             background:
                 radial-gradient(
@@ -689,69 +856,105 @@
         }
 
         .bot-profile {
+            min-height: 390px;
+
             padding: 32px;
 
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
 
-            min-height: 350px;
+            flex-direction: column;
+
+            justify-content:
+                space-between;
         }
 
-        .bot-avatar {
-            width: 86px;
-            height: 86px;
 
-            display: grid;
-            place-items: center;
+        /*
+           FOTO OFICIAL DO SONEQUINHA
+        */
+
+        .bot-avatar {
+            width: 125px;
+            height: 125px;
 
             margin-bottom: 24px;
 
-            border: 1px solid rgba(155,92,255,.35);
+            padding: 4px;
+
+            border:
+                1px solid rgba(155,92,255,.55);
+
             border-radius: 50%;
 
-            background: rgba(155,92,255,.10);
+            background:
+                rgba(155,92,255,.08);
 
             box-shadow:
-                0 0 40px rgba(155,92,255,.16);
+                0 0 0 6px rgba(155,92,255,.035),
+                0 0 45px rgba(155,92,255,.28);
 
-            font-size: 44px;
+            overflow: hidden;
+        }
+
+        .bot-avatar img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
         }
 
         .bot-profile h3 {
             font-size: 30px;
+
             margin-bottom: 8px;
         }
 
         .bot-profile p {
-            color: var(--gray);
+            color:
+                var(--gray);
         }
 
         .bot-badges {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 8px;
 
             margin-top: 25px;
         }
 
         .bot-badge {
-            padding: 7px 11px;
+            padding:
+                7px 11px;
 
-            border: 1px solid var(--border);
-            border-radius: 100px;
+            border:
+                1px solid var(--border);
 
-            background: rgba(255,255,255,.025);
+            border-radius:
+                100px;
 
-            color: var(--gray);
+            background:
+                rgba(255,255,255,.025);
 
-            font-family: monospace;
-            font-size: 12px;
+            color:
+                var(--gray);
+
+            font-family:
+                monospace;
+
+            font-size:
+                12px;
         }
 
         .bot-badge.online {
-            color: var(--green);
-            border-color: rgba(113,217,158,.25);
+            color:
+                var(--green);
+
+            border-color:
+                rgba(113,217,158,.25);
         }
 
         .bot-terminal {
@@ -766,10 +969,13 @@
             margin: 0;
 
             border: 0;
+
             border-radius: 18px;
 
             box-shadow: none;
-            background: transparent;
+
+            background:
+                transparent;
         }
 
         .bot-grid {
@@ -784,18 +990,25 @@
         }
 
         .bot-command {
-            min-height: 185px;
+            min-height:
+                185px;
         }
 
         .bot-command code {
-            display: inline-block;
+            display:
+                inline-block;
 
-            margin-bottom: 13px;
+            margin-bottom:
+                13px;
 
-            color: var(--purple-light);
+            color:
+                var(--purple-light);
 
-            font-size: 16px;
-            font-weight: 700;
+            font-size:
+                16px;
+
+            font-weight:
+                700;
         }
 
         .bot-features {
@@ -810,45 +1023,64 @@
         }
 
         .bot-feature {
-            padding: 18px 20px;
+            padding:
+                18px 20px;
 
-            border: 1px solid var(--border);
-            border-radius: 13px;
+            border:
+                1px solid var(--border);
 
-            background: rgba(255,255,255,.02);
+            border-radius:
+                13px;
 
-            color: var(--gray);
+            background:
+                rgba(255,255,255,.02);
+
+            color:
+                var(--gray);
         }
 
         .bot-feature strong {
             display: block;
 
-            color: var(--white);
+            color:
+                var(--white);
 
-            margin-bottom: 4px;
+            margin-bottom:
+                4px;
         }
 
         .bot-feature code {
-            color: var(--purple-light);
+            color:
+                var(--purple-light);
         }
 
         .bot-note {
             margin-top: 24px;
 
-            padding: 20px 22px;
+            padding:
+                20px 22px;
 
-            border-left: 3px solid var(--purple);
-            border-radius: 0 12px 12px 0;
+            border-left:
+                3px solid var(--purple);
 
-            background: rgba(155,92,255,.06);
+            border-radius:
+                0 12px 12px 0;
 
-            color: var(--gray);
+            background:
+                rgba(155,92,255,.06);
+
+            color:
+                var(--gray);
         }
 
-        /* COMUNIDADE */
+
+        /* =========================
+           COMUNIDADE
+        ========================= */
 
         .community-section {
-            padding: 120px 24px;
+            padding:
+                120px 24px;
         }
 
         .community-content {
@@ -858,12 +1090,14 @@
 
             text-align: center;
 
-            padding: 80px 30px;
+            padding:
+                80px 30px;
 
             border:
                 1px solid rgba(155,92,255,.22);
 
-            border-radius: 24px;
+            border-radius:
+                24px;
 
             background:
                 radial-gradient(
@@ -892,6 +1126,7 @@
                 clamp(35px, 5vw, 55px);
 
             line-height: 1.1;
+
             letter-spacing: -2px;
         }
 
@@ -901,17 +1136,23 @@
             margin:
                 0 auto 30px;
 
-            color: var(--gray);
+            color:
+                var(--gray);
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         .footer {
-            max-width: var(--max-width);
+            max-width:
+                var(--max-width);
 
             margin: auto;
 
-            padding: 45px 24px;
+            padding:
+                45px 24px;
 
             display: grid;
 
@@ -925,8 +1166,11 @@
         }
 
         .footer p {
-            color: var(--gray);
-            font-size: 14px;
+            color:
+                var(--gray);
+
+            font-size:
+                14px;
         }
 
         .footer-links {
@@ -934,7 +1178,8 @@
 
             gap: 20px;
 
-            color: var(--gray);
+            color:
+                var(--gray);
         }
 
         .footer-links a:hover {
@@ -942,10 +1187,14 @@
         }
 
         .copyright {
-            grid-column: 1 / -1;
+            grid-column:
+                1 / -1;
         }
 
-        /* RESPONSIVO */
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
 
         @media (max-width: 900px) {
 
@@ -954,7 +1203,8 @@
             }
 
             .hero {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
 
                 text-align: center;
 
@@ -963,24 +1213,30 @@
 
             .hero-content {
                 display: flex;
+
                 flex-direction: column;
+
                 align-items: center;
             }
 
             .hero h1 {
-                letter-spacing: -2px;
+                letter-spacing:
+                    -2px;
             }
 
             .hero-buttons {
-                justify-content: center;
+                justify-content:
+                    center;
             }
 
             .hero-visual {
-                margin-top: 20px;
+                margin-top:
+                    20px;
             }
 
             .cards {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
 
             .tech-grid {
@@ -989,28 +1245,37 @@
             }
 
             .project-card {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
             }
 
             .bot-hero {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
 
             .bot-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
         }
+
 
         @media (max-width: 600px) {
 
             .navbar {
                 min-height: 68px;
-                padding: 0 16px;
+
+                padding:
+                    0 16px;
             }
 
             .logo strong {
-                font-size: 15px;
+                font-size:
+                    15px;
             }
 
             .logo img {
@@ -1026,20 +1291,25 @@
                 padding:
                     55px 18px 80px;
 
-                min-height: auto;
+                min-height:
+                    auto;
             }
 
             .hero h1 {
-                font-size: 45px;
+                font-size:
+                    45px;
             }
 
             .hero-description {
-                font-size: 16px;
+                font-size:
+                    16px;
             }
 
             .hero-buttons {
                 width: 100%;
-                flex-direction: column;
+
+                flex-direction:
+                    column;
             }
 
             .hero-buttons a {
@@ -1053,49 +1323,70 @@
 
             .terminal-body {
                 font-size: 12px;
+
                 padding: 18px;
             }
 
             .section {
-                padding: 80px 18px;
+                padding:
+                    80px 18px;
             }
 
             .tech-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
 
             .bot-features {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
+            }
+
+            .bot-avatar {
+                width: 105px;
+                height: 105px;
             }
 
             .community-section {
-                padding: 70px 18px;
+                padding:
+                    70px 18px;
             }
 
             .community-content {
-                padding: 55px 20px;
+                padding:
+                    55px 20px;
             }
 
             .footer {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
 
             .copyright {
-                grid-column: auto;
+                grid-column:
+                    auto;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- HEADER -->
+
+    <!-- =========================
+         HEADER
+    ========================== -->
 
     <header class="header">
 
         <nav class="navbar">
 
-            <a href="#inicio" class="logo">
+            <a
+                href="#inicio"
+                class="logo"
+            >
 
                 <img
                     src="./logo.png"
@@ -1107,6 +1398,7 @@
                 </strong>
 
             </a>
+
 
             <div class="nav-links">
 
@@ -1132,6 +1424,7 @@
 
             </div>
 
+
             <a
                 href="https://discord.gg/waTE9gQYPR"
                 target="_blank"
@@ -1145,9 +1438,14 @@
 
     </header>
 
+
+
     <main>
 
-        <!-- INÍCIO -->
+
+        <!-- =========================
+             INÍCIO
+        ========================== -->
 
         <section
             id="inicio"
@@ -1164,9 +1462,11 @@
 
                 </div>
 
+
                 <p class="terminal-text">
                     &gt; iniciando_comunidade...
                 </p>
+
 
                 <h1>
 
@@ -1180,6 +1480,7 @@
 
                 </h1>
 
+
                 <p class="hero-description">
 
                     Uma comunidade brasileira para quem quer aprender,
@@ -1188,6 +1489,7 @@
                     Do seu primeiro código ao próximo grande projeto.
 
                 </p>
+
 
                 <div class="hero-buttons">
 
@@ -1200,6 +1502,7 @@
                         💬 Entrar no Discord
                     </a>
 
+
                     <a
                         href="#sobre"
                         class="secondary-button"
@@ -1211,6 +1514,8 @@
 
             </div>
 
+
+
             <!-- MASCOTE + TERMINAL -->
 
             <div class="hero-visual">
@@ -1219,11 +1524,13 @@
 
                     <div class="mascot-glow"></div>
 
+
                     <img
                         src="./mascote.png"
                         alt="Bicho-preguiça mascote do Código Lento"
                         class="main-logo"
                     >
+
 
                     <div class="terminal-card">
 
@@ -1243,32 +1550,63 @@
 
                         </div>
 
+
                         <div class="terminal-body">
 
                             <p>
-                                <span class="purple">const</span>
+                                <span class="purple">
+                                    const
+                                </span>
+
                                 comunidade =
-                                <span class="green">"Código Lento"</span>;
+
+                                <span class="green">
+                                    "Código Lento"
+                                </span>;
                             </p>
 
+
                             <p>
-                                <span class="purple">const</span>
+                                <span class="purple">
+                                    const
+                                </span>
+
                                 ritmo =
-                                <span class="green">"seu"</span>;
+
+                                <span class="green">
+                                    "seu"
+                                </span>;
                             </p>
 
+
                             <p>
-                                <span class="purple">const</span>
+                                <span class="purple">
+                                    const
+                                </span>
+
                                 pressa =
-                                <span class="red">false</span>;
+
+                                <span class="red">
+                                    false
+                                </span>;
                             </p>
+
 
                             <br>
 
+
                             <p>
-                                <span class="purple">function</span>
-                                <span class="yellow">aprender</span>() {
+
+                                <span class="purple">
+                                    function
+                                </span>
+
+                                <span class="yellow">
+                                    aprender
+                                </span>() {
+
                             </p>
+
 
                             <p class="indent">
                                 compartilhar();
@@ -1286,7 +1624,9 @@
                                 }
                             </p>
 
+
                             <br>
+
 
                             <p class="comment">
                                 // devagar também é progresso 🦥
@@ -1302,7 +1642,11 @@
 
         </section>
 
-        <!-- SOBRE -->
+
+
+        <!-- =========================
+             SOBRE
+        ========================== -->
 
         <section
             id="sobre"
@@ -1313,9 +1657,11 @@
                 01 / SOBRE
             </div>
 
+
             <h2>
                 Programação não precisa ser uma corrida.
             </h2>
+
 
             <p class="section-description">
 
@@ -1326,7 +1672,9 @@
 
             </p>
 
+
             <div class="cards">
+
 
                 <article class="card">
 
@@ -1346,6 +1694,8 @@
 
                 </article>
 
+
+
                 <article class="card">
 
                     <div class="card-icon">
@@ -1363,6 +1713,8 @@
                     </p>
 
                 </article>
+
+
 
                 <article class="card">
 
@@ -1382,11 +1734,16 @@
 
                 </article>
 
+
             </div>
 
         </section>
 
-        <!-- TECNOLOGIAS -->
+
+
+        <!-- =========================
+             TECNOLOGIAS
+        ========================== -->
 
         <section
             id="tecnologias"
@@ -1397,9 +1754,11 @@
                 02 / TECNOLOGIAS
             </div>
 
+
             <h2>
                 Um galho para cada tecnologia.
             </h2>
+
 
             <p class="section-description">
 
@@ -1407,6 +1766,7 @@
                 Explore diferentes tecnologias junto com a comunidade.
 
             </p>
+
 
             <div class="tech-grid">
 
@@ -1454,7 +1814,11 @@
 
         </section>
 
-        <!-- PROJETOS -->
+
+
+        <!-- =========================
+             PROJETOS
+        ========================== -->
 
         <section
             id="projetos"
@@ -1465,9 +1829,11 @@
                 03 / PROJETOS
             </div>
 
+
             <h2>
                 Aprender é melhor construindo.
             </h2>
+
 
             <p class="section-description">
 
@@ -1475,6 +1841,7 @@
                 aquilo que você está estudando em algo real.
 
             </p>
+
 
             <div class="project-card">
 
@@ -1501,6 +1868,7 @@
 
                 </div>
 
+
                 <a
                     href="https://github.com/script33dt-glitch/codigo-lento"
                     target="_blank"
@@ -1514,7 +1882,11 @@
 
         </section>
 
-        <!-- SONEQUINHA -->
+
+
+        <!-- =========================
+             SONEQUINHA
+        ========================== -->
 
         <section
             id="sonequinha"
@@ -1525,38 +1897,57 @@
                 04 / SONEQUINHA
             </div>
 
+
             <h2>
                 O bot oficial do Código Lento.
             </h2>
 
+
             <p class="section-description">
 
-                O <strong>Sonequinha</strong> é o braço direito da comunidade:
-                recebe novos membros, orienta quem acabou de chegar,
-                ajuda a moderação e mantém registros importantes do servidor.
+                O <strong>Sonequinha</strong> é o braço direito
+                da comunidade: recebe novos membros, orienta
+                quem acabou de chegar, ajuda a moderação
+                e mantém registros importantes do servidor.
 
                 Tudo isso sem perder a personalidade tranquila
                 do Código Lento.
 
             </p>
 
+
+
             <div class="bot-hero">
+
+
+                <!-- PERFIL DO BOT -->
 
                 <article class="bot-profile">
 
                     <div>
 
+
+                        <!-- IMAGEM OFICIAL DO SONEQUINHA -->
+
                         <div class="bot-avatar">
-                            🦥
+
+                            <img
+                                src="./sonequinha.png"
+                                alt="Sonequinha — bot oficial do Código Lento"
+                            >
+
                         </div>
+
 
                         <p class="terminal-text">
                             &gt; sonequinha.status
                         </p>
 
+
                         <h3>
                             Sonequinha
                         </h3>
+
 
                         <p>
                             Bot oficial da comunidade Código Lento.
@@ -1564,6 +1955,7 @@
                         </p>
 
                     </div>
+
 
                     <div class="bot-badges">
 
@@ -1587,6 +1979,10 @@
 
                 </article>
 
+
+
+                <!-- TERMINAL DO BOT -->
+
                 <div class="bot-terminal">
 
                     <div class="terminal-card">
@@ -1594,9 +1990,11 @@
                         <div class="terminal-header">
 
                             <div class="terminal-dots">
+
                                 <span></span>
                                 <span></span>
                                 <span></span>
+
                             </div>
 
                             <p>
@@ -1605,34 +2003,69 @@
 
                         </div>
 
+
                         <div class="terminal-body">
 
                             <p>
-                                <span class="purple">const</span>
+
+                                <span class="purple">
+                                    const
+                                </span>
+
                                 bot =
-                                <span class="green">"Sonequinha"</span>;
+
+                                <span class="green">
+                                    "Sonequinha"
+                                </span>;
+
                             </p>
 
+
                             <p>
-                                <span class="purple">const</span>
+
+                                <span class="purple">
+                                    const
+                                </span>
+
                                 servidor =
-                                <span class="green">"Código Lento"</span>;
+
+                                <span class="green">
+                                    "Código Lento"
+                                </span>;
+
                             </p>
 
+
                             <p>
-                                <span class="purple">const</span>
+
+                                <span class="purple">
+                                    const
+                                </span>
+
                                 acordado =
-                                <span class="yellow">talvez</span>;
+
+                                <span class="yellow">
+                                    talvez
+                                </span>;
+
                             </p>
+
 
                             <br>
 
+
                             <p>
-                                <span class="purple">function</span>
+
+                                <span class="purple">
+                                    function
+                                </span>
+
                                 <span class="yellow">
                                     cuidarDaComunidade
                                 </span>() {
+
                             </p>
+
 
                             <p class="indent">
                                 receberNovosMembros();
@@ -1650,11 +2083,14 @@
                                 registrarEventos();
                             </p>
 
+
                             <p>
                                 }
                             </p>
 
+
                             <br>
+
 
                             <p class="comment">
                                 // devagar, atento e quase dormindo 🦥
@@ -1668,15 +2104,23 @@
 
             </div>
 
+
+
+            <!-- COMANDOS PÚBLICOS -->
+
             <p class="terminal-text">
                 &gt; comandos_publicos
             </p>
 
+
             <div class="bot-grid">
+
 
                 <article class="card bot-command">
 
-                    <code>/ping</code>
+                    <code>
+                        /ping
+                    </code>
 
                     <h3>
                         Será que ele acordou?
@@ -1689,24 +2133,33 @@
 
                 </article>
 
+
+
                 <article class="card bot-command">
 
-                    <code>/ajuda</code>
+                    <code>
+                        /ajuda
+                    </code>
 
                     <h3>
                         Central de comandos
                     </h3>
 
                     <p>
-                        Mostra os comandos disponíveis e ajuda
-                        os membros a entender o que o bot pode fazer.
+                        Mostra os comandos disponíveis
+                        e ajuda os membros a entender
+                        o que o bot pode fazer.
                     </p>
 
                 </article>
 
+
+
                 <article class="card bot-command">
 
-                    <code>/servidor</code>
+                    <code>
+                        /servidor
+                    </code>
 
                     <h3>
                         Informações do servidor
@@ -1720,7 +2173,12 @@
 
                 </article>
 
+
             </div>
+
+
+
+            <!-- AUTOMAÇÃO E MODERAÇÃO -->
 
             <p
                 class="terminal-text"
@@ -1729,92 +2187,142 @@
                 &gt; automacao_e_moderacao
             </p>
 
+
             <div class="bot-features">
 
+
                 <div class="bot-feature">
+
                     <strong>
                         🏠 Boas-vindas automáticas
                     </strong>
 
-                    Recebe novos membros com mensagem personalizada,
-                    avatar e os próximos passos dentro da comunidade.
+                    Recebe novos membros com uma mensagem
+                    personalizada, avatar e os próximos passos
+                    dentro da comunidade.
+
                 </div>
 
+
+
                 <div class="bot-feature">
+
                     <strong>
                         📜 Orientação para novos membros
                     </strong>
 
-                    Direciona quem acabou de entrar para
-                    as regras e para o chat geral.
+                    Direciona quem acabou de entrar
+                    para as regras e para o chat geral.
+
                 </div>
 
+
+
                 <div class="bot-feature">
+
                     <strong>
                         ⚠️ Avisos
                     </strong>
 
-                    A equipe pode usar <code>/avisar</code>
-                    para enviar um aviso de moderação a um membro.
+                    A equipe pode usar
+                    <code>/avisar</code>
+                    para enviar um aviso de moderação
+                    a um membro.
+
                 </div>
 
+
+
                 <div class="bot-feature">
+
                     <strong>
                         🔇 Silenciamento
                     </strong>
 
-                    O comando <code>/silenciar</code> permite
-                    aplicar um timeout temporário com duração e motivo.
+                    O comando
+                    <code>/silenciar</code>
+                    permite aplicar um timeout temporário
+                    com duração e motivo.
+
                 </div>
 
+
+
                 <div class="bot-feature">
+
                     <strong>
                         🧹 Limpeza de mensagens
                     </strong>
 
-                    Moderadores podem usar <code>/limpar</code>
-                    para remover várias mensagens de um canal.
+                    Moderadores podem usar
+                    <code>/limpar</code>
+                    para remover várias mensagens
+                    de um canal.
+
                 </div>
 
+
+
                 <div class="bot-feature">
+
                     <strong>
                         👢 Expulsões
                     </strong>
 
-                    O comando <code>/expulsar</code>
-                    remove membros e registra a ação de moderação.
+                    O comando
+                    <code>/expulsar</code>
+                    remove membros e registra
+                    a ação de moderação.
+
                 </div>
 
+
+
                 <div class="bot-feature">
+
                     <strong>
                         🔨 Banimentos
                     </strong>
 
-                    O comando <code>/banir</code>
+                    O comando
+                    <code>/banir</code>
                     permite banir membros e registrar
                     o motivo da ação.
+
                 </div>
 
+
+
                 <div class="bot-feature">
+
                     <strong>
                         🚪 Registro de saídas
                     </strong>
 
                     Quando alguém deixa o servidor,
-                    o Sonequinha registra automaticamente a saída.
+                    o Sonequinha registra automaticamente
+                    a saída.
+
                 </div>
 
+
+
                 <div class="bot-feature">
+
                     <strong>
                         🛡️ Logs de moderação
                     </strong>
 
-                    Expulsões e banimentos recebem registros próprios,
-                    incluindo usuário, moderador e motivo
-                    quando disponível.
+                    Expulsões e banimentos recebem
+                    registros próprios, incluindo usuário,
+                    moderador e motivo quando disponível.
+
                 </div>
 
+
+
                 <div class="bot-feature">
+
                     <strong>
                         💜 Presença personalizada
                     </strong>
@@ -1823,13 +2331,19 @@
                     “Cuidando do Código Lento”,
                     “Use /ajuda” e
                     “Tentando não dormir...”.
+
                 </div>
+
 
             </div>
 
+
+
             <div class="bot-note">
 
-                <strong style="color: var(--white);">
+                <strong
+                    style="color: var(--white);"
+                >
                     💜 Criado por Dostoiévski — @Saenger1997
                 </strong>
 
@@ -1843,7 +2357,11 @@
 
         </section>
 
-        <!-- COMUNIDADE -->
+
+
+        <!-- =========================
+             COMUNIDADE
+        ========================== -->
 
         <section
             id="comunidade"
@@ -1856,13 +2374,16 @@
                     🦥
                 </span>
 
+
                 <p class="terminal-text">
                     &gt; esperando_novo_dev...
                 </p>
 
+
                 <h2>
                     Seu próximo projeto pode começar aqui.
                 </h2>
+
 
                 <p>
 
@@ -1872,6 +2393,7 @@
                     e evolua um código de cada vez.
 
                 </p>
+
 
                 <a
                     href="https://discord.gg/waTE9gQYPR"
@@ -1886,9 +2408,14 @@
 
         </section>
 
+
     </main>
 
-    <!-- FOOTER -->
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer class="footer">
 
@@ -1905,6 +2432,7 @@
 
         </div>
 
+
         <div class="footer-links">
 
             <a
@@ -1914,6 +2442,7 @@
             >
                 Discord
             </a>
+
 
             <a
                 href="https://github.com/script33dt-glitch/codigo-lento"
@@ -1925,12 +2454,14 @@
 
         </div>
 
+
         <p class="copyright">
             © 2026 Código Lento —
             Feito pela comunidade, para a comunidade. 💜
         </p>
 
     </footer>
+
 
 </body>
 </html>
