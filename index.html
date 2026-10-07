@@ -2,28 +2,17 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="theme-color"
-        content="#09090b"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09090b">
 
     <meta
         name="description"
         content="Código Lento — comunidade brasileira de programação para aprender, compartilhar projetos e evoluir junto."
     >
 
-    <title>
-        Código Lento | Comunidade de Programação
-    </title>
+    <title>Código Lento | Comunidade de Programação</title>
 
     <style>
-
         :root {
             --bg: #09090b;
             --bg-secondary: #0f0f13;
@@ -35,7 +24,6 @@
             --purple-dark: #6d35c5;
 
             --green: #71d99e;
-
             --white: #f5f5f7;
             --gray: #a1a1aa;
 
@@ -80,7 +68,6 @@
 
         body::before {
             content: "";
-
             position: fixed;
             inset: 0;
 
@@ -98,7 +85,6 @@
             background-size: 40px 40px;
 
             pointer-events: none;
-
             z-index: -1;
         }
 
@@ -112,40 +98,27 @@
             display: block;
         }
 
-
-        /* =========================
-           HEADER
-        ========================= */
+        /* HEADER */
 
         .header {
             position: sticky;
             top: 0;
-
             z-index: 100;
 
-            background:
-                rgba(9, 9, 11, 0.75);
+            background: rgba(9, 9, 11, 0.75);
+            backdrop-filter: blur(18px);
 
-            backdrop-filter:
-                blur(18px);
-
-            border-bottom:
-                1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
         .navbar {
-            max-width:
-                var(--max-width);
-
+            max-width: var(--max-width);
             min-height: 76px;
 
             margin: auto;
-
-            padding:
-                0 24px;
+            padding: 0 24px;
 
             display: flex;
-
             align-items: center;
             justify-content: space-between;
 
@@ -154,9 +127,7 @@
 
         .logo {
             display: flex;
-
             align-items: center;
-
             gap: 12px;
 
             font-size: 18px;
@@ -168,11 +139,9 @@
             height: 46px;
 
             object-fit: cover;
-
             border-radius: 50%;
 
-            border:
-                2px solid rgba(155, 92, 255, .5);
+            border: 2px solid rgba(155, 92, 255, .5);
 
             box-shadow:
                 0 0 25px rgba(155, 92, 255, .22);
@@ -180,11 +149,9 @@
 
         .nav-links {
             display: flex;
-
-            gap: 25px;
+            gap: 30px;
 
             color: var(--gray);
-
             font-size: 14px;
         }
 
@@ -196,15 +163,12 @@
             color: var(--white);
         }
 
-
-        /* =========================
-           BOTÕES
-        ========================= */
+        /* BOTÕES */
 
         .discord-button,
-        .secondary-button {
+        .secondary-button,
+        .template-button {
             display: inline-flex;
-
             align-items: center;
             justify-content: center;
 
@@ -215,12 +179,12 @@
             transition:
                 transform .2s,
                 box-shadow .2s,
-                background .2s;
+                background .2s,
+                border-color .2s;
         }
 
         .discord-button {
-            padding:
-                14px 22px;
+            padding: 14px 22px;
 
             background:
                 linear-gradient(
@@ -236,32 +200,26 @@
         }
 
         .discord-button:hover {
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
 
             box-shadow:
                 0 14px 40px rgba(155, 92, 255, .32);
         }
 
         .discord-button.small {
-            padding:
-                10px 17px;
-
+            padding: 10px 17px;
             font-size: 14px;
         }
 
         .secondary-button {
-            padding:
-                13px 20px;
+            padding: 13px 20px;
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
             background:
                 rgba(255,255,255,.025);
 
-            color:
-                var(--gray);
+            color: var(--gray);
         }
 
         .secondary-button:hover {
@@ -271,22 +229,39 @@
             color: white;
         }
 
+        .template-button {
+            padding: 14px 22px;
 
-        /* =========================
-           HERO
-        ========================= */
+            border:
+                1px solid rgba(155, 92, 255, .38);
+
+            background:
+                rgba(155, 92, 255, .07);
+
+            color: var(--purple-light);
+        }
+
+        .template-button:hover {
+            transform: translateY(-2px);
+
+            background:
+                rgba(155, 92, 255, .13);
+
+            border-color:
+                rgba(155, 92, 255, .65);
+
+            box-shadow:
+                0 12px 35px rgba(155, 92, 255, .12);
+        }
+
+        /* HERO */
 
         .hero {
-            max-width:
-                var(--max-width);
-
-            min-height:
-                calc(100vh - 76px);
+            max-width: var(--max-width);
+            min-height: calc(100vh - 76px);
 
             margin: auto;
-
-            padding:
-                90px 24px;
+            padding: 90px 24px;
 
             display: grid;
 
@@ -302,15 +277,12 @@
             width: fit-content;
 
             display: flex;
-
             align-items: center;
 
             gap: 9px;
 
             margin-bottom: 25px;
-
-            padding:
-                7px 13px;
+            padding: 7px 13px;
 
             border:
                 1px solid var(--border);
@@ -323,7 +295,6 @@
             color: var(--gray);
 
             font-family: monospace;
-
             font-size: 13px;
         }
 
@@ -333,20 +304,16 @@
 
             border-radius: 50%;
 
-            background:
-                var(--green);
+            background: var(--green);
 
             box-shadow:
                 0 0 10px var(--green);
         }
 
         .terminal-text {
-            color:
-                var(--purple-light);
+            color: var(--purple-light);
 
-            font-family:
-                monospace;
-
+            font-family: monospace;
             font-size: 14px;
 
             margin-bottom: 14px;
@@ -371,21 +338,16 @@
                     var(--purple)
                 );
 
-            -webkit-background-clip:
-                text;
+            -webkit-background-clip: text;
+            background-clip: text;
 
-            background-clip:
-                text;
-
-            color:
-                transparent;
+            color: transparent;
         }
 
         .hero-description {
             max-width: 600px;
 
             color: var(--gray);
-
             font-size: 18px;
 
             margin-bottom: 32px;
@@ -393,33 +355,25 @@
 
         .hero-buttons {
             display: flex;
-
             flex-wrap: wrap;
 
             gap: 13px;
         }
 
-
-        /* =========================
-           MASCOTE
-        ========================= */
+        /* MASCOTE */
 
         .hero-visual {
             display: flex;
-
             align-items: center;
             justify-content: center;
         }
 
         .mascot-area {
             width: 100%;
-
             max-width: 460px;
 
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
 
             position: relative;
@@ -438,8 +392,7 @@
             background:
                 rgba(155, 92, 255, .23);
 
-            filter:
-                blur(80px);
+            filter: blur(80px);
 
             z-index: -1;
         }
@@ -460,14 +413,10 @@
                 0 30px 100px rgba(0,0,0,.6);
         }
 
-
-        /* =========================
-           TERMINAL
-        ========================= */
+        /* TERMINAL */
 
         .terminal-card {
             width: 100%;
-
             max-width: 440px;
 
             margin-top: -12px;
@@ -490,12 +439,10 @@
             height: 45px;
 
             display: flex;
-
             align-items: center;
             justify-content: space-between;
 
-            padding:
-                0 15px;
+            padding: 0 15px;
 
             background:
                 rgba(255,255,255,.025);
@@ -503,18 +450,14 @@
             border-bottom:
                 1px solid var(--border);
 
-            color:
-                var(--gray);
+            color: var(--gray);
 
-            font-family:
-                monospace;
-
+            font-family: monospace;
             font-size: 12px;
         }
 
         .terminal-dots {
             display: flex;
-
             gap: 7px;
         }
 
@@ -522,11 +465,9 @@
             width: 9px;
             height: 9px;
 
-            background:
-                #555;
+            background: #555;
 
-            border-radius:
-                50%;
+            border-radius: 50%;
         }
 
         .terminal-body {
@@ -537,66 +478,50 @@
                 monospace;
 
             font-size: 14px;
-
             line-height: 1.9;
 
             color: #d5d5da;
         }
 
         .purple {
-            color:
-                var(--purple-light);
+            color: var(--purple-light);
         }
 
         .green {
-            color:
-                var(--green);
+            color: var(--green);
         }
 
         .yellow {
-            color:
-                #e5c07b;
+            color: #e5c07b;
         }
 
         .red {
-            color:
-                #e06c75;
+            color: #e06c75;
         }
 
         .comment {
-            color:
-                #6f737d;
+            color: #6f737d;
         }
 
         .indent {
-            padding-left:
-                25px;
+            padding-left: 25px;
         }
 
-
-        /* =========================
-           SEÇÕES
-        ========================= */
+        /* SEÇÕES */
 
         .section {
-            max-width:
-                var(--max-width);
+            max-width: var(--max-width);
 
             margin: auto;
-
-            padding:
-                110px 24px;
+            padding: 110px 24px;
         }
 
         .section-label {
             margin-bottom: 15px;
 
-            color:
-                var(--purple-light);
+            color: var(--purple-light);
 
-            font-family:
-                monospace;
-
+            font-family: monospace;
             font-size: 13px;
 
             letter-spacing: 1px;
@@ -618,18 +543,14 @@
         .section-description {
             max-width: 700px;
 
-            color:
-                var(--gray);
+            color: var(--gray);
 
             font-size: 17px;
 
             margin-bottom: 45px;
         }
 
-
-        /* =========================
-           CARDS
-        ========================= */
+        /* CARDS */
 
         .cards {
             display: grid;
@@ -664,8 +585,7 @@
         }
 
         .card:hover {
-            transform:
-                translateY(-5px);
+            transform: translateY(-5px);
 
             border-color:
                 rgba(155,92,255,.35);
@@ -687,14 +607,10 @@
         }
 
         .card p {
-            color:
-                var(--gray);
+            color: var(--gray);
         }
 
-
-        /* =========================
-           TECNOLOGIAS
-        ========================= */
+        /* TECNOLOGIAS */
 
         .technologies-section {
             border-top:
@@ -717,7 +633,6 @@
             min-height: 100px;
 
             display: flex;
-
             align-items: center;
 
             gap: 15px;
@@ -747,19 +662,13 @@
             font-size: 25px;
         }
 
-
-        /* =========================
-           PROJETOS
-        ========================= */
+        /* PROJETOS */
 
         .project-card {
             display: flex;
 
-            justify-content:
-                space-between;
-
-            align-items:
-                center;
+            justify-content: space-between;
+            align-items: center;
 
             gap: 40px;
 
@@ -768,8 +677,7 @@
             border:
                 1px solid rgba(155,92,255,.25);
 
-            border-radius:
-                18px;
+            border-radius: 18px;
 
             background:
                 radial-gradient(
@@ -781,41 +689,28 @@
         }
 
         .project-card > div {
-            max-width:
-                680px;
+            max-width: 680px;
         }
 
         .project-status {
-            color:
-                var(--green);
+            color: var(--green);
 
-            font-family:
-                monospace;
-
-            font-size:
-                12px;
+            font-family: monospace;
+            font-size: 12px;
         }
 
         .project-card h3 {
-            margin:
-                10px 0;
+            margin: 10px 0;
 
-            font-family:
-                monospace;
-
-            font-size:
-                27px;
+            font-family: monospace;
+            font-size: 27px;
         }
 
         .project-card p {
-            color:
-                var(--gray);
+            color: var(--gray);
         }
 
-
-        /* =========================
-           SONEQUINHA
-        ========================= */
+        /* SONEQUINHA */
 
         .bot-section {
             border-top:
@@ -835,7 +730,7 @@
 
             align-items: stretch;
 
-            margin-bottom: 25px;
+            margin-bottom: 22px;
         }
 
         .bot-profile,
@@ -843,8 +738,7 @@
             border:
                 1px solid rgba(155,92,255,.22);
 
-            border-radius:
-                18px;
+            border-radius: 18px;
 
             background:
                 radial-gradient(
@@ -856,29 +750,20 @@
         }
 
         .bot-profile {
-            min-height: 390px;
-
             padding: 32px;
 
             display: flex;
-
             flex-direction: column;
+            justify-content: space-between;
 
-            justify-content:
-                space-between;
+            min-height: 350px;
         }
 
-
-        /*
-           FOTO OFICIAL DO SONEQUINHA
-        */
-
         .bot-avatar {
-            width: 125px;
-            height: 125px;
+            width: 100px;
+            height: 100px;
 
             margin-bottom: 24px;
-
             padding: 4px;
 
             border:
@@ -912,13 +797,11 @@
         }
 
         .bot-profile p {
-            color:
-                var(--gray);
+            color: var(--gray);
         }
 
         .bot-badges {
             display: flex;
-
             flex-wrap: wrap;
 
             gap: 8px;
@@ -927,31 +810,24 @@
         }
 
         .bot-badge {
-            padding:
-                7px 11px;
+            padding: 7px 11px;
 
             border:
                 1px solid var(--border);
 
-            border-radius:
-                100px;
+            border-radius: 100px;
 
             background:
                 rgba(255,255,255,.025);
 
-            color:
-                var(--gray);
+            color: var(--gray);
 
-            font-family:
-                monospace;
-
-            font-size:
-                12px;
+            font-family: monospace;
+            font-size: 12px;
         }
 
         .bot-badge.online {
-            color:
-                var(--green);
+            color: var(--green);
 
             border-color:
                 rgba(113,217,158,.25);
@@ -962,20 +838,18 @@
         }
 
         .bot-terminal .terminal-card {
-            width: 100%;
             max-width: none;
+            width: 100%;
             height: 100%;
 
             margin: 0;
 
             border: 0;
-
             border-radius: 18px;
 
             box-shadow: none;
 
-            background:
-                transparent;
+            background: transparent;
         }
 
         .bot-grid {
@@ -990,25 +864,18 @@
         }
 
         .bot-command {
-            min-height:
-                185px;
+            min-height: 185px;
         }
 
         .bot-command code {
-            display:
-                inline-block;
+            display: inline-block;
 
-            margin-bottom:
-                13px;
+            margin-bottom: 13px;
 
-            color:
-                var(--purple-light);
+            color: var(--purple-light);
 
-            font-size:
-                16px;
-
-            font-weight:
-                700;
+            font-size: 16px;
+            font-weight: 700;
         }
 
         .bot-features {
@@ -1023,42 +890,31 @@
         }
 
         .bot-feature {
-            padding:
-                18px 20px;
+            padding: 18px 20px;
 
             border:
                 1px solid var(--border);
 
-            border-radius:
-                13px;
+            border-radius: 13px;
 
             background:
                 rgba(255,255,255,.02);
 
-            color:
-                var(--gray);
+            color: var(--gray);
         }
 
         .bot-feature strong {
             display: block;
 
-            color:
-                var(--white);
+            color: var(--white);
 
-            margin-bottom:
-                4px;
-        }
-
-        .bot-feature code {
-            color:
-                var(--purple-light);
+            margin-bottom: 4px;
         }
 
         .bot-note {
             margin-top: 24px;
 
-            padding:
-                20px 22px;
+            padding: 20px 22px;
 
             border-left:
                 3px solid var(--purple);
@@ -1069,18 +925,13 @@
             background:
                 rgba(155,92,255,.06);
 
-            color:
-                var(--gray);
+            color: var(--gray);
         }
 
-
-        /* =========================
-           COMUNIDADE
-        ========================= */
+        /* COMUNIDADE */
 
         .community-section {
-            padding:
-                120px 24px;
+            padding: 120px 24px;
         }
 
         .community-content {
@@ -1090,14 +941,12 @@
 
             text-align: center;
 
-            padding:
-                80px 30px;
+            padding: 80px 30px;
 
             border:
                 1px solid rgba(155,92,255,.22);
 
-            border-radius:
-                24px;
+            border-radius: 24px;
 
             background:
                 radial-gradient(
@@ -1130,29 +979,80 @@
             letter-spacing: -2px;
         }
 
-        .community-content > p:not(.terminal-text) {
+        .community-description {
             max-width: 600px;
 
             margin:
                 0 auto 30px;
 
-            color:
-                var(--gray);
+            color: var(--gray);
         }
 
+        .community-actions {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            flex-wrap: wrap;
 
-        /* =========================
-           FOOTER
-        ========================= */
+            gap: 14px;
+
+            margin-top: 30px;
+        }
+
+        .community-actions a {
+            min-width: 235px;
+        }
+
+        /* MODELO DO SERVIDOR */
+
+        .template-area {
+            max-width: 650px;
+
+            margin:
+                38px auto 0;
+
+            padding-top: 30px;
+
+            border-top:
+                1px solid var(--border);
+        }
+
+        .template-label {
+            margin-bottom: 7px;
+
+            color: var(--purple-light);
+
+            font-family: monospace;
+            font-size: 12px;
+
+            letter-spacing: .7px;
+        }
+
+        .template-area h3 {
+            margin-bottom: 8px;
+
+            font-size: 19px;
+        }
+
+        .template-area p {
+            max-width: 540px;
+
+            margin:
+                0 auto 18px;
+
+            color: var(--gray);
+
+            font-size: 14px;
+        }
+
+        /* FOOTER */
 
         .footer {
-            max-width:
-                var(--max-width);
+            max-width: var(--max-width);
 
             margin: auto;
 
-            padding:
-                45px 24px;
+            padding: 45px 24px;
 
             display: grid;
 
@@ -1166,20 +1066,18 @@
         }
 
         .footer p {
-            color:
-                var(--gray);
+            color: var(--gray);
 
-            font-size:
-                14px;
+            font-size: 14px;
         }
 
         .footer-links {
             display: flex;
+            flex-wrap: wrap;
 
             gap: 20px;
 
-            color:
-                var(--gray);
+            color: var(--gray);
         }
 
         .footer-links a:hover {
@@ -1187,14 +1085,10 @@
         }
 
         .copyright {
-            grid-column:
-                1 / -1;
+            grid-column: 1 / -1;
         }
 
-
-        /* =========================
-           RESPONSIVO
-        ========================= */
+        /* RESPONSIVO */
 
         @media (max-width: 900px) {
 
@@ -1203,8 +1097,7 @@
             }
 
             .hero {
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
 
                 text-align: center;
 
@@ -1213,30 +1106,24 @@
 
             .hero-content {
                 display: flex;
-
                 flex-direction: column;
-
                 align-items: center;
             }
 
             .hero h1 {
-                letter-spacing:
-                    -2px;
+                letter-spacing: -2px;
             }
 
             .hero-buttons {
-                justify-content:
-                    center;
+                justify-content: center;
             }
 
             .hero-visual {
-                margin-top:
-                    20px;
+                margin-top: 20px;
             }
 
             .cards {
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
 
             .tech-grid {
@@ -1245,37 +1132,30 @@
             }
 
             .project-card {
-                flex-direction:
-                    column;
+                flex-direction: column;
 
-                align-items:
-                    flex-start;
+                align-items: flex-start;
             }
 
             .bot-hero {
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
 
             .bot-grid {
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
         }
-
 
         @media (max-width: 600px) {
 
             .navbar {
                 min-height: 68px;
 
-                padding:
-                    0 16px;
+                padding: 0 16px;
             }
 
             .logo strong {
-                font-size:
-                    15px;
+                font-size: 15px;
             }
 
             .logo img {
@@ -1291,25 +1171,21 @@
                 padding:
                     55px 18px 80px;
 
-                min-height:
-                    auto;
+                min-height: auto;
             }
 
             .hero h1 {
-                font-size:
-                    45px;
+                font-size: 45px;
             }
 
             .hero-description {
-                font-size:
-                    16px;
+                font-size: 16px;
             }
 
             .hero-buttons {
                 width: 100%;
 
-                flex-direction:
-                    column;
+                flex-direction: column;
             }
 
             .hero-buttons a {
@@ -1328,65 +1204,60 @@
             }
 
             .section {
-                padding:
-                    80px 18px;
+                padding: 80px 18px;
             }
 
             .tech-grid {
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
 
             .bot-features {
-                grid-template-columns:
-                    1fr;
-            }
-
-            .bot-avatar {
-                width: 105px;
-                height: 105px;
+                grid-template-columns: 1fr;
             }
 
             .community-section {
-                padding:
-                    70px 18px;
+                padding: 70px 18px;
             }
 
             .community-content {
-                padding:
-                    55px 20px;
+                padding: 55px 20px;
+            }
+
+            .community-actions {
+                width: 100%;
+
+                flex-direction: column;
+            }
+
+            .community-actions a {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .template-button {
+                width: 100%;
             }
 
             .footer {
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
 
             .copyright {
-                grid-column:
-                    auto;
+                grid-column: auto;
             }
         }
-
     </style>
 </head>
 
-
 <body>
 
-
-    <!-- =========================
-         HEADER
-    ========================== -->
+    <!-- HEADER -->
 
     <header class="header">
 
         <nav class="navbar">
 
-            <a
-                href="#inicio"
-                class="logo"
-            >
+            <a href="#inicio" class="logo">
 
                 <img
                     src="./logo.png"
@@ -1439,13 +1310,9 @@
     </header>
 
 
-
     <main>
 
-
-        <!-- =========================
-             INÍCIO
-        ========================== -->
+        <!-- INÍCIO -->
 
         <section
             id="inicio"
@@ -1502,7 +1369,6 @@
                         💬 Entrar no Discord
                     </a>
 
-
                     <a
                         href="#sobre"
                         class="secondary-button"
@@ -1515,7 +1381,6 @@
             </div>
 
 
-
             <!-- MASCOTE + TERMINAL -->
 
             <div class="hero-visual">
@@ -1523,7 +1388,6 @@
                 <div class="mascot-area">
 
                     <div class="mascot-glow"></div>
-
 
                     <img
                         src="./mascote.png"
@@ -1537,11 +1401,9 @@
                         <div class="terminal-header">
 
                             <div class="terminal-dots">
-
                                 <span></span>
                                 <span></span>
                                 <span></span>
-
                             </div>
 
                             <p>
@@ -1643,10 +1505,7 @@
         </section>
 
 
-
-        <!-- =========================
-             SOBRE
-        ========================== -->
+        <!-- SOBRE -->
 
         <section
             id="sobre"
@@ -1675,7 +1534,6 @@
 
             <div class="cards">
 
-
                 <article class="card">
 
                     <div class="card-icon">
@@ -1693,7 +1551,6 @@
                     </p>
 
                 </article>
-
 
 
                 <article class="card">
@@ -1715,7 +1572,6 @@
                 </article>
 
 
-
                 <article class="card">
 
                     <div class="card-icon">
@@ -1734,16 +1590,12 @@
 
                 </article>
 
-
             </div>
 
         </section>
 
 
-
-        <!-- =========================
-             TECNOLOGIAS
-        ========================== -->
+        <!-- TECNOLOGIAS -->
 
         <section
             id="tecnologias"
@@ -1815,10 +1667,7 @@
         </section>
 
 
-
-        <!-- =========================
-             PROJETOS
-        ========================== -->
+        <!-- PROJETOS -->
 
         <section
             id="projetos"
@@ -1883,10 +1732,7 @@
         </section>
 
 
-
-        <!-- =========================
-             SONEQUINHA
-        ========================== -->
+        <!-- SONEQUINHA -->
 
         <section
             id="sonequinha"
@@ -1905,29 +1751,19 @@
 
             <p class="section-description">
 
-                O <strong>Sonequinha</strong> é o braço direito
-                da comunidade: recebe novos membros, orienta
-                quem acabou de chegar, ajuda a moderação
-                e mantém registros importantes do servidor.
-
-                Tudo isso sem perder a personalidade tranquila
-                do Código Lento.
+                O <strong>Sonequinha</strong> é o braço direito da comunidade:
+                recebe novos membros, orienta quem acabou de chegar,
+                ajuda a moderação e mantém registros importantes do servidor —
+                tudo sem perder a personalidade tranquila do Código Lento.
 
             </p>
 
 
-
             <div class="bot-hero">
-
-
-                <!-- PERFIL DO BOT -->
 
                 <article class="bot-profile">
 
                     <div>
-
-
-                        <!-- IMAGEM OFICIAL DO SONEQUINHA -->
 
                         <div class="bot-avatar">
 
@@ -1980,9 +1816,6 @@
                 </article>
 
 
-
-                <!-- TERMINAL DO BOT -->
-
                 <div class="bot-terminal">
 
                     <div class="terminal-card">
@@ -1990,11 +1823,9 @@
                         <div class="terminal-header">
 
                             <div class="terminal-dots">
-
                                 <span></span>
                                 <span></span>
                                 <span></span>
-
                             </div>
 
                             <p>
@@ -2007,7 +1838,6 @@
                         <div class="terminal-body">
 
                             <p>
-
                                 <span class="purple">
                                     const
                                 </span>
@@ -2017,12 +1847,10 @@
                                 <span class="green">
                                     "Sonequinha"
                                 </span>;
-
                             </p>
 
 
                             <p>
-
                                 <span class="purple">
                                     const
                                 </span>
@@ -2032,12 +1860,10 @@
                                 <span class="green">
                                     "Código Lento"
                                 </span>;
-
                             </p>
 
 
                             <p>
-
                                 <span class="purple">
                                     const
                                 </span>
@@ -2047,7 +1873,6 @@
                                 <span class="yellow">
                                     talvez
                                 </span>;
-
                             </p>
 
 
@@ -2083,7 +1908,6 @@
                                 registrarEventos();
                             </p>
 
-
                             <p>
                                 }
                             </p>
@@ -2105,16 +1929,12 @@
             </div>
 
 
-
-            <!-- COMANDOS PÚBLICOS -->
-
             <p class="terminal-text">
                 &gt; comandos_publicos
             </p>
 
 
             <div class="bot-grid">
-
 
                 <article class="card bot-command">
 
@@ -2132,7 +1952,6 @@
                     </p>
 
                 </article>
-
 
 
                 <article class="card bot-command">
@@ -2154,7 +1973,6 @@
                 </article>
 
 
-
                 <article class="card bot-command">
 
                     <code>
@@ -2173,12 +1991,8 @@
 
                 </article>
 
-
             </div>
 
-
-
-            <!-- AUTOMAÇÃO E MODERAÇÃO -->
 
             <p
                 class="terminal-text"
@@ -2190,19 +2004,16 @@
 
             <div class="bot-features">
 
-
                 <div class="bot-feature">
 
                     <strong>
                         🏠 Boas-vindas automáticas
                     </strong>
 
-                    Recebe novos membros com uma mensagem
-                    personalizada, avatar e os próximos passos
-                    dentro da comunidade.
+                    Recebe novos membros com uma mensagem personalizada,
+                    avatar e indicação dos próximos passos.
 
                 </div>
-
 
 
                 <div class="bot-feature">
@@ -2217,6 +2028,17 @@
                 </div>
 
 
+                <div class="bot-feature">
+
+                    <strong>
+                        🎫 Sistema de tickets
+                    </strong>
+
+                    Cria atendimentos privados entre o membro,
+                    a moderação e a administração da comunidade.
+
+                </div>
+
 
                 <div class="bot-feature">
 
@@ -2226,11 +2048,9 @@
 
                     A equipe pode usar
                     <code>/avisar</code>
-                    para enviar um aviso de moderação
-                    a um membro.
+                    para enviar um aviso de moderação.
 
                 </div>
-
 
 
                 <div class="bot-feature">
@@ -2241,11 +2061,9 @@
 
                     O comando
                     <code>/silenciar</code>
-                    permite aplicar um timeout temporário
-                    com duração e motivo.
+                    permite aplicar timeout temporário.
 
                 </div>
-
 
 
                 <div class="bot-feature">
@@ -2256,11 +2074,9 @@
 
                     Moderadores podem usar
                     <code>/limpar</code>
-                    para remover várias mensagens
-                    de um canal.
+                    para remover várias mensagens.
 
                 </div>
-
 
 
                 <div class="bot-feature">
@@ -2271,11 +2087,9 @@
 
                     O comando
                     <code>/expulsar</code>
-                    remove membros e registra
-                    a ação de moderação.
+                    remove membros e registra a ação.
 
                 </div>
-
 
 
                 <div class="bot-feature">
@@ -2286,11 +2100,10 @@
 
                     O comando
                     <code>/banir</code>
-                    permite banir membros e registrar
-                    o motivo da ação.
+                    permite banir membros
+                    e registrar o motivo.
 
                 </div>
-
 
 
                 <div class="bot-feature">
@@ -2300,11 +2113,9 @@
                     </strong>
 
                     Quando alguém deixa o servidor,
-                    o Sonequinha registra automaticamente
-                    a saída.
+                    o Sonequinha registra a saída.
 
                 </div>
-
 
 
                 <div class="bot-feature">
@@ -2314,11 +2125,9 @@
                     </strong>
 
                     Expulsões e banimentos recebem
-                    registros próprios, incluindo usuário,
-                    moderador e motivo quando disponível.
+                    registros próprios.
 
                 </div>
-
 
 
                 <div class="bot-feature">
@@ -2327,41 +2136,32 @@
                         💜 Presença personalizada
                     </strong>
 
-                    O Sonequinha alterna frases como
-                    “Cuidando do Código Lento”,
-                    “Use /ajuda” e
-                    “Tentando não dormir...”.
+                    O perfil do Sonequinha alterna
+                    frases personalizadas da comunidade.
 
                 </div>
-
 
             </div>
 
 
-
             <div class="bot-note">
 
-                <strong
-                    style="color: var(--white);"
-                >
+                <strong style="color: var(--white);">
                     💜 Criado por Dostoiévski — @Saenger1997
                 </strong>
 
                 <br>
 
-                O Sonequinha foi criado especialmente
-                para o Código Lento e continuará ganhando
-                novas funções conforme a comunidade evoluir.
+                O Sonequinha foi criado especialmente para o Código Lento
+                e continuará ganhando novas funções conforme
+                a comunidade evoluir.
 
             </div>
 
         </section>
 
 
-
-        <!-- =========================
-             COMUNIDADE
-        ========================== -->
+        <!-- COMUNIDADE -->
 
         <section
             id="comunidade"
@@ -2385,7 +2185,7 @@
                 </h2>
 
 
-                <p>
+                <p class="community-description">
 
                     Entre para o Código Lento,
                     conheça outros desenvolvedores,
@@ -2395,27 +2195,56 @@
                 </p>
 
 
-                <a
-                    href="https://discord.gg/waTE9gQYPR"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="discord-button"
-                >
-                    💬 Fazer parte da comunidade
-                </a>
+                <div class="community-actions">
+
+                    <a
+                        href="https://discord.gg/waTE9gQYPR"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="discord-button"
+                    >
+                        💬 Fazer parte da comunidade
+                    </a>
+
+                </div>
+
+
+                <!-- MODELO OFICIAL DO SERVIDOR -->
+
+                <div class="template-area">
+
+                    <p class="template-label">
+                        &gt; modelo_do_servidor
+                    </p>
+
+                    <h3>
+                        Gostou da organização do Código Lento?
+                    </h3>
+
+                    <p>
+                        Use nosso modelo oficial como base
+                        para criar e organizar seu próprio servidor no Discord.
+                    </p>
+
+                    <a
+                        href="https://discord.new/eCUBrNxPMnZK"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="template-button"
+                    >
+                        🧩 Usar modelo do servidor ↗
+                    </a>
+
+                </div>
 
             </div>
 
         </section>
 
-
     </main>
 
 
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
+    <!-- FOOTER -->
 
     <footer class="footer">
 
@@ -2443,6 +2272,13 @@
                 Discord
             </a>
 
+            <a
+                href="https://discord.new/eCUBrNxPMnZK"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Modelo do servidor
+            </a>
 
             <a
                 href="https://github.com/script33dt-glitch/codigo-lento"
@@ -2461,7 +2297,6 @@
         </p>
 
     </footer>
-
 
 </body>
 </html>
