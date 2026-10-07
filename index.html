@@ -13,10 +13,7 @@
         content="Código Lento — comunidade brasileira de programação para aprender, criar projetos, tirar dúvidas e evoluir no seu próprio ritmo."
     >
 
-    <meta
-        name="theme-color"
-        content="#08070b"
-    >
+    <meta name="theme-color" content="#08070b">
 
     <title>Código Lento — Comunidade de Programação</title>
 
@@ -67,28 +64,18 @@
             text-decoration: none;
         }
 
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
-        }
-
         img {
             display: block;
             max-width: 100%;
         }
 
-        /* =====================================================
-           VARIÁVEIS
-        ===================================================== */
-
         :root {
             --bg: #08070b;
             --bg-soft: #0d0b12;
             --card: rgba(17, 13, 24, 0.78);
-            --card-strong: #110d18;
 
             --purple: #9b5cff;
-            --purple-2: #6d28d9;
+            --purple-dark: #6d28d9;
             --purple-light: #d8c4ff;
 
             --text: #f5f3ff;
@@ -111,7 +98,6 @@
             position: fixed;
             inset: 0;
             z-index: -3;
-
             pointer-events: none;
 
             background-image:
@@ -142,13 +128,11 @@
             height: 500px;
 
             border-radius: 50%;
-
             filter: blur(130px);
 
             background: rgba(109, 40, 217, 0.10);
 
             pointer-events: none;
-
             z-index: -2;
         }
 
@@ -163,7 +147,7 @@
         }
 
         /* =====================================================
-           LAYOUT
+           GERAL
         ===================================================== */
 
         .container {
@@ -178,6 +162,10 @@
         section {
             padding: 105px 0;
             scroll-margin-top: 90px;
+        }
+
+        .section-heading {
+            margin-bottom: 55px;
         }
 
         .section-tag {
@@ -195,7 +183,7 @@
         }
 
         .section-title {
-            max-width: 800px;
+            max-width: 820px;
 
             margin-bottom: 18px;
 
@@ -213,12 +201,11 @@
             );
 
             line-height: 1.05;
-
             letter-spacing: -0.045em;
         }
 
         .section-description {
-            max-width: 730px;
+            max-width: 750px;
 
             color: var(--muted);
 
@@ -228,10 +215,6 @@
                 sans-serif;
 
             font-size: 1.05rem;
-        }
-
-        .section-heading {
-            margin-bottom: 55px;
         }
 
         /* =====================================================
@@ -250,7 +233,7 @@
                 1px solid rgba(155, 92, 255, 0.12);
 
             background:
-                rgba(8, 7, 11, 0.82);
+                rgba(8, 7, 11, 0.84);
 
             backdrop-filter: blur(18px);
         }
@@ -284,8 +267,7 @@
 
             border-radius: 9px;
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
         }
 
         .brand-name {
@@ -299,8 +281,7 @@
         nav {
             display: flex;
             align-items: center;
-
-            gap: 27px;
+            gap: 25px;
         }
 
         nav a {
@@ -308,7 +289,7 @@
 
             color: #aaa5b4;
 
-            font-size: 0.79rem;
+            font-size: 0.77rem;
 
             transition: 0.2s ease;
         }
@@ -339,9 +320,7 @@
         .nav-discord {
             padding: 9px 15px;
 
-            border:
-                1px solid var(--border-strong);
-
+            border: 1px solid var(--border-strong);
             border-radius: 8px;
 
             color: var(--purple-light);
@@ -352,11 +331,6 @@
 
         .nav-discord::after {
             display: none;
-        }
-
-        .nav-discord:hover {
-            background:
-                rgba(155, 92, 255, 0.14);
         }
 
         /* =====================================================
@@ -390,9 +364,7 @@
             margin-bottom: 25px;
             padding: 8px 13px;
 
-            border:
-                1px solid var(--border);
-
+            border: 1px solid var(--border);
             border-radius: 999px;
 
             background:
@@ -445,7 +417,6 @@
             );
 
             line-height: 0.88;
-
             letter-spacing: -0.07em;
 
             color: #ffffff;
@@ -453,14 +424,13 @@
 
         .hero h1 span {
             display: block;
-
             color: var(--purple);
         }
 
         .hero-text {
             max-width: 650px;
 
-            margin-bottom: 35px;
+            margin-bottom: 24px;
 
             color: var(--muted);
 
@@ -481,19 +451,17 @@
         }
 
         .hero-slogan {
-            margin-bottom: 30px;
+            margin-bottom: 32px;
 
             color: var(--purple-light);
 
-            font-size: 0.85rem;
-
-            line-height: 1.8;
+            font-size: 0.84rem;
+            line-height: 1.9;
         }
 
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
-
             gap: 13px;
         }
 
@@ -521,8 +489,7 @@
         }
 
         .button:hover {
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
         }
 
         .button-primary {
@@ -543,8 +510,7 @@
         }
 
         .button-secondary {
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
             background:
                 rgba(255, 255, 255, 0.025);
@@ -553,15 +519,14 @@
         }
 
         .button-secondary:hover {
-            border-color:
-                var(--border-strong);
+            border-color: var(--border-strong);
 
             background:
                 rgba(155, 92, 255, 0.06);
         }
 
         /* =====================================================
-           LOGO PRINCIPAL DO HERO
+           LOGO GRANDE
         ===================================================== */
 
         .hero-logo-area {
@@ -657,24 +622,8 @@
                     rgba(155, 92, 255, 0.20)
                 );
 
-            transition:
-                transform 0.35s ease,
-                filter 0.35s ease;
-
             animation:
                 logoFloat 5s ease-in-out infinite;
-        }
-
-        .hero-main-logo:hover {
-            filter:
-                drop-shadow(
-                    0 30px 70px
-                    rgba(0, 0, 0, 0.65)
-                )
-                drop-shadow(
-                    0 0 45px
-                    rgba(155, 92, 255, 0.32)
-                );
         }
 
         .hero-logo-status {
@@ -703,13 +652,11 @@
         @keyframes logoFloat {
             0%,
             100% {
-                transform:
-                    translateY(0);
+                transform: translateY(0);
             }
 
             50% {
-                transform:
-                    translateY(-10px);
+                transform: translateY(-10px);
             }
         }
 
@@ -784,15 +731,6 @@
                     0 30px 60px
                     rgba(0, 0, 0, 0.45)
                 );
-
-            transition:
-                transform 0.35s ease;
-        }
-
-        .mascot-wrap:hover img {
-            transform:
-                translateY(-7px)
-                rotate(-1deg);
         }
 
         .about-content p {
@@ -826,7 +764,7 @@
         }
 
         /* =====================================================
-           COMO COMEÇAR
+           PRIMEIROS PASSOS
         ===================================================== */
 
         .steps {
@@ -847,24 +785,18 @@
 
             overflow: hidden;
 
-            border:
-                1px solid var(--border);
-
+            border: 1px solid var(--border);
             border-radius: 12px;
 
             background: var(--card);
 
-            transition:
-                transform 0.25s ease,
-                border-color 0.25s ease;
+            transition: 0.25s ease;
         }
 
         .step-card:hover {
-            transform:
-                translateY(-5px);
+            transform: translateY(-5px);
 
-            border-color:
-                var(--border-strong);
+            border-color: var(--border-strong);
         }
 
         .step-number {
@@ -899,6 +831,7 @@
 
         .step-bg-number {
             position: absolute;
+
             right: -7px;
             bottom: -42px;
 
@@ -917,7 +850,7 @@
         }
 
         /* =====================================================
-           RECURSOS DA COMUNIDADE
+           RECURSOS
         ===================================================== */
 
         .features-grid {
@@ -943,24 +876,20 @@
             background:
                 rgba(255, 255, 255, 0.018);
 
-            transition:
-                0.25s ease;
+            transition: 0.25s ease;
         }
 
         .feature-card:hover {
-            border-color:
-                var(--border-strong);
+            border-color: var(--border-strong);
 
             background:
                 rgba(155, 92, 255, 0.045);
 
-            transform:
-                translateY(-3px);
+            transform: translateY(-3px);
         }
 
         .feature-icon {
             margin-bottom: 25px;
-
             font-size: 1.65rem;
         }
 
@@ -992,7 +921,6 @@
 
         .bot-section {
             position: relative;
-
             overflow: hidden;
         }
 
@@ -1033,8 +961,7 @@
 
         .bot-profile,
         .bot-terminal {
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
             border-radius: 13px;
 
@@ -1134,16 +1061,13 @@
         .bot-tags {
             display: flex;
             flex-wrap: wrap;
-
             gap: 8px;
         }
 
         .bot-tag {
             padding: 6px 9px;
 
-            border:
-                1px solid var(--border);
-
+            border: 1px solid var(--border);
             border-radius: 5px;
 
             color: var(--purple-light);
@@ -1162,7 +1086,6 @@
 
             display: flex;
             align-items: center;
-
             gap: 7px;
 
             border-bottom:
@@ -1194,7 +1117,6 @@
             padding: 30px;
 
             font-size: 0.78rem;
-
             line-height: 2;
         }
 
@@ -1215,7 +1137,7 @@
         }
 
         /* =====================================================
-           BOT FEATURES
+           FUNÇÕES DO BOT
         ===================================================== */
 
         .bot-features {
@@ -1230,7 +1152,7 @@
         }
 
         .bot-feature {
-            min-height: 150px;
+            min-height: 155px;
 
             padding: 21px;
 
@@ -1252,16 +1174,13 @@
 
             font-size: 0.84rem;
 
-            transition:
-                0.2s ease;
+            transition: 0.2s ease;
         }
 
         .bot-feature:hover {
-            border-color:
-                var(--border);
+            border-color: var(--border);
 
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
         }
 
         .bot-feature strong {
@@ -1331,6 +1250,22 @@
             font-size: 0.8rem;
         }
 
+        .staff-label {
+            display: inline-block;
+
+            margin-left: 6px;
+            padding: 2px 5px;
+
+            border-radius: 4px;
+
+            color: #92899d;
+
+            background:
+                rgba(255, 255, 255, 0.04);
+
+            font-size: 0.55rem;
+        }
+
         .bot-credit {
             margin-top: 28px;
 
@@ -1368,9 +1303,7 @@
 
             overflow: hidden;
 
-            border:
-                1px solid var(--border);
-
+            border: 1px solid var(--border);
             border-radius: 12px;
 
             background:
@@ -1380,16 +1313,13 @@
                     rgba(255, 255, 255, 0.012)
                 );
 
-            transition:
-                0.25s ease;
+            transition: 0.25s ease;
         }
 
         .project:hover {
-            transform:
-                translateY(-4px);
+            transform: translateY(-4px);
 
-            border-color:
-                var(--border-strong);
+            border-color: var(--border-strong);
         }
 
         .project-label {
@@ -1435,12 +1365,9 @@
             font-size: 0.77rem;
         }
 
-        .project-link:hover {
-            color: #ffffff;
-        }
-
         .project-number {
             position: absolute;
+
             right: 18px;
             bottom: -30px;
 
@@ -1454,6 +1381,118 @@
 
             font-size: 9rem;
             font-weight: 900;
+        }
+
+        /* =====================================================
+           ROADMAP
+        ===================================================== */
+
+        .roadmap-box {
+            padding: 38px;
+
+            border: 1px solid var(--border);
+            border-radius: 13px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(155, 92, 255, 0.05),
+                    rgba(255, 255, 255, 0.012)
+                );
+        }
+
+        .roadmap-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 35px;
+        }
+
+        .roadmap-top h3 {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 1.4rem;
+        }
+
+        .development-badge {
+            padding: 7px 10px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            color: var(--yellow);
+
+            font-size: 0.65rem;
+
+            white-space: nowrap;
+        }
+
+        .roadmap-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+        }
+
+        .roadmap-item {
+            padding: 20px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.05);
+
+            border-radius: 8px;
+
+            background:
+                rgba(0, 0, 0, 0.15);
+        }
+
+        .roadmap-item span {
+            display: block;
+
+            margin-bottom: 9px;
+
+            font-size: 1.35rem;
+        }
+
+        .roadmap-item strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.9rem;
+        }
+
+        .roadmap-item p {
+            color: var(--muted);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.77rem;
+        }
+
+        .roadmap-note {
+            margin-top: 24px;
+
+            color: #746e7c;
+
+            font-size: 0.7rem;
         }
 
         /* =====================================================
@@ -1482,6 +1521,7 @@
             content: "";
 
             position: absolute;
+
             left: -5px;
             top: 6px;
 
@@ -1538,9 +1578,7 @@
 
             overflow: hidden;
 
-            border:
-                1px solid var(--border);
-
+            border: 1px solid var(--border);
             border-radius: 15px;
 
             background:
@@ -1555,6 +1593,7 @@
             content: "</>";
 
             position: absolute;
+
             right: 35px;
             bottom: -65px;
 
@@ -1584,7 +1623,6 @@
             );
 
             line-height: 1.05;
-
             letter-spacing: -0.04em;
         }
 
@@ -1611,10 +1649,6 @@
             gap: 12px;
         }
 
-        /* =====================================================
-           TEMPLATE
-        ===================================================== */
-
         .template-area {
             position: relative;
             z-index: 2;
@@ -1633,10 +1667,6 @@
             margin-bottom: 10px !important;
 
             color: var(--purple) !important;
-
-            font-family:
-                "Courier New",
-                monospace !important;
 
             font-size: 0.72rem !important;
         }
@@ -1673,9 +1703,7 @@
 
             padding: 11px 15px;
 
-            border:
-                1px solid var(--border);
-
+            border: 1px solid var(--border);
             border-radius: 7px;
 
             color: var(--purple-light);
@@ -1689,14 +1717,12 @@
         }
 
         .template-button:hover {
-            border-color:
-                var(--border-strong);
+            border-color: var(--border-strong);
 
             background:
                 rgba(155, 92, 255, 0.11);
 
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
         }
 
         /* =====================================================
@@ -1745,14 +1771,13 @@
         }
 
         /* =====================================================
-           SCROLL REVEAL
+           ANIMAÇÕES
         ===================================================== */
 
         .reveal {
             opacity: 0;
 
-            transform:
-                translateY(24px);
+            transform: translateY(24px);
 
             transition:
                 opacity 0.65s ease,
@@ -1761,16 +1786,14 @@
 
         .reveal.visible {
             opacity: 1;
-
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
 
         /* =====================================================
            RESPONSIVO
         ===================================================== */
 
-        @media (max-width: 980px) {
+        @media (max-width: 1050px) {
 
             nav a:not(.nav-discord) {
                 display: none;
@@ -1786,11 +1809,6 @@
                 gap: 45px;
             }
 
-            .hero {
-                padding-top: 130px;
-                padding-bottom: 80px;
-            }
-
             .hero-logo-area {
                 min-height: 350px;
             }
@@ -1804,18 +1822,15 @@
                 height: 340px;
             }
 
-            .about-grid {
-                gap: 45px;
-            }
-
-            .mascot-wrap {
-                max-width: 320px;
-            }
-
             .steps,
             .features-grid,
             .bot-features,
             .commands-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .roadmap-grid {
                 grid-template-columns:
                     repeat(2, 1fr);
             }
@@ -1843,6 +1858,11 @@
                 padding: 8px 11px;
 
                 font-size: 0.7rem;
+            }
+
+            .hero {
+                padding-top: 125px;
+                padding-bottom: 70px;
             }
 
             .hero h1 {
@@ -1885,8 +1905,18 @@
             .features-grid,
             .bot-features,
             .commands-grid,
-            .projects-grid {
+            .projects-grid,
+            .roadmap-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .roadmap-box {
+                padding: 25px;
+            }
+
+            .roadmap-top {
+                align-items: flex-start;
+                flex-direction: column;
             }
 
             .community-box {
@@ -1896,6 +1926,20 @@
             .footer-content {
                 align-items: flex-start;
                 flex-direction: column;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
             }
         }
     </style>
@@ -1914,10 +1958,8 @@
     <header>
         <div class="container navbar">
 
-            <a
-                href="#inicio"
-                class="brand"
-            >
+            <a href="#inicio" class="brand">
+
                 <img
                     src="./logo.png"
                     alt="Código Lento"
@@ -1926,14 +1968,34 @@
                 <div class="brand-name">
                     CÓDIGO_<span>LENTO</span>
                 </div>
+
             </a>
 
             <nav>
-                <a href="#sobre">Sobre</a>
-                <a href="#comecar">Começar</a>
-                <a href="#comunidade-recursos">Comunidade</a>
-                <a href="#sonequinha">Sonequinha</a>
-                <a href="#projetos">Projetos</a>
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#comecar">
+                    Começar
+                </a>
+
+                <a href="#comunidade-recursos">
+                    Comunidade
+                </a>
+
+                <a href="#sonequinha">
+                    Sonequinha
+                </a>
+
+                <a href="#projetos">
+                    Projetos
+                </a>
+
+                <a href="#roadmap">
+                    Futuro
+                </a>
 
                 <a
                     href="https://discord.gg/waTE9gQYPR"
@@ -1943,6 +2005,7 @@
                 >
                     Discord ↗
                 </a>
+
             </nav>
 
         </div>
@@ -1951,13 +2014,14 @@
     <main>
 
         <!-- =================================================
-             HERO
+             INÍCIO
         ================================================== -->
 
         <section
             class="hero"
             id="inicio"
         >
+
             <div class="container hero-grid">
 
                 <div class="hero-content">
@@ -1974,7 +2038,9 @@
 
                     <p class="hero-text">
                         Uma comunidade brasileira para quem quer
-                        <strong>aprender programação, criar projetos e evoluir</strong>
+                        <strong>
+                            aprender programação, criar projetos e evoluir
+                        </strong>
                         sem transformar aprendizado em corrida.
                     </p>
 
@@ -2005,7 +2071,7 @@
 
                 </div>
 
-                <!-- LOGO GRANDE DO SERVIDOR -->
+                <!-- LOGO GRANDE -->
 
                 <div class="hero-logo-area">
 
@@ -2026,6 +2092,7 @@
                 </div>
 
             </div>
+
         </section>
 
         <!-- =================================================
@@ -2037,10 +2104,12 @@
             <div class="container about-grid">
 
                 <div class="mascot-wrap reveal">
+
                     <img
                         src="./mascote.png"
                         alt="Mascote do Código Lento"
                     >
+
                 </div>
 
                 <div class="about-content reveal">
@@ -2080,7 +2149,7 @@
         </section>
 
         <!-- =================================================
-             COMO COMEÇAR
+             PRIMEIROS PASSOS
         ================================================== -->
 
         <section id="comecar">
@@ -2179,7 +2248,7 @@
         </section>
 
         <!-- =================================================
-             O QUE TEM AQUI
+             COMUNIDADE
         ================================================== -->
 
         <section id="comunidade-recursos">
@@ -2206,71 +2275,105 @@
                 <div class="features-grid">
 
                     <article class="feature-card reveal">
-                        <div class="feature-icon">💻</div>
 
-                        <h3>Programação</h3>
+                        <div class="feature-icon">
+                            💻
+                        </div>
+
+                        <h3>
+                            Programação
+                        </h3>
 
                         <p>
-                            Converse sobre desenvolvimento, linguagens,
-                            ferramentas e tecnologia.
+                            Desenvolvimento, linguagens, ferramentas
+                            e tecnologia.
                         </p>
+
                     </article>
 
                     <article class="feature-card reveal">
-                        <div class="feature-icon">🆘</div>
 
-                        <h3>Ajuda</h3>
+                        <div class="feature-icon">
+                            🆘
+                        </div>
+
+                        <h3>
+                            Ajuda
+                        </h3>
 
                         <p>
-                            Travou em alguma coisa? Compartilhe sua
-                            dúvida e tente resolver junto com a
-                            comunidade.
+                            Tire dúvidas e tente resolver problemas
+                            junto com outras pessoas.
                         </p>
+
                     </article>
 
                     <article class="feature-card reveal">
-                        <div class="feature-icon">🧩</div>
 
-                        <h3>Projetos</h3>
+                        <div class="feature-icon">
+                            🧩
+                        </div>
+
+                        <h3>
+                            Projetos
+                        </h3>
 
                         <p>
-                            Mostre o que está construindo, receba
-                            feedback e acompanhe projetos de outros
-                            membros.
+                            Compartilhe o que está construindo e
+                            acompanhe projetos da comunidade.
                         </p>
+
                     </article>
 
                     <article class="feature-card reveal">
-                        <div class="feature-icon">📚</div>
 
-                        <h3>Estudos</h3>
+                        <div class="feature-icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            Estudos
+                        </h3>
 
                         <p>
-                            Compartilhe materiais, organize seu
-                            aprendizado e evolua no seu próprio ritmo.
+                            Organize seu aprendizado e compartilhe
+                            conhecimento.
                         </p>
+
                     </article>
 
                     <article class="feature-card reveal">
-                        <div class="feature-icon">🤝</div>
 
-                        <h3>Comunidade</h3>
+                        <div class="feature-icon">
+                            🤝
+                        </div>
+
+                        <h3>
+                            Comunidade
+                        </h3>
 
                         <p>
-                            Conheça pessoas que também gostam de
+                            Conheça outras pessoas interessadas em
                             programação e tecnologia.
                         </p>
+
                     </article>
 
                     <article class="feature-card reveal">
-                        <div class="feature-icon">🦥</div>
 
-                        <h3>Sonequinha</h3>
+                        <div class="feature-icon">
+                            🦥
+                        </div>
+
+                        <h3>
+                            Sonequinha
+                        </h3>
 
                         <p>
-                            Nosso bot oficial ajuda a organizar,
-                            moderar e automatizar a comunidade.
+                            Um bot próprio para ajudar a manter a
+                            comunidade organizada.
                         </p>
+
                     </article>
 
                 </div>
@@ -2302,9 +2405,8 @@
 
                     <p class="section-description">
                         O Sonequinha é o bot oficial da comunidade.
-                        Ele recebe novos membros, auxilia a moderação,
-                        organiza atendimentos e cuida de várias
-                        automações enquanto tenta não dormir.
+                        Ele fica online 24/7 para ajudar na organização,
+                        atendimento, moderação e automações do servidor.
                     </p>
 
                 </div>
@@ -2314,10 +2416,12 @@
                     <div class="bot-profile reveal">
 
                         <div class="bot-avatar">
+
                             <img
                                 src="./sonequinha.png"
                                 alt="Sonequinha — bot oficial do Código Lento"
                             >
+
                         </div>
 
                         <h3 class="bot-name">
@@ -2329,9 +2433,10 @@
                         </div>
 
                         <p class="bot-description">
-                            Bot desenvolvido especialmente para o
-                            Código Lento, focado em comunidade,
-                            automação, atendimento e moderação.
+                            Desenvolvido especialmente para o Código
+                            Lento e hospedado para permanecer disponível
+                            para a comunidade sem depender de um
+                            computador pessoal ligado.
                         </p>
 
                         <div class="bot-tags">
@@ -2353,7 +2458,7 @@
                             </span>
 
                             <span class="bot-tag">
-                                COMUNIDADE
+                                24/7
                             </span>
 
                         </div>
@@ -2400,9 +2505,9 @@
                                 <span class="code-purple">
                                     const
                                 </span>
-                                acordado =
-                                <span class="code-yellow">
-                                    talvez
+                                status =
+                                <span class="code-green">
+                                    "online"
                                 </span>;
                             </div>
 
@@ -2451,7 +2556,7 @@
 
                 </div>
 
-                <!-- FUNÇÕES DO BOT -->
+                <!-- FUNÇÕES -->
 
                 <div class="bot-features">
 
@@ -2460,8 +2565,8 @@
                             👋 Boas-vindas
                         </strong>
 
-                        Recebe novos membros e indica os primeiros
-                        lugares importantes da comunidade.
+                        Recebe novos membros e mostra os primeiros
+                        canais importantes da comunidade.
                     </div>
 
                     <div class="bot-feature reveal">
@@ -2469,17 +2574,26 @@
                             🎫 Tickets avançados
                         </strong>
 
-                        Abre atendimentos privados com formulário para
-                        assunto e descrição do problema.
+                        Cria atendimentos privados entre o membro,
+                        a moderação e a administração.
                     </div>
 
                     <div class="bot-feature reveal">
                         <strong>
-                            🙋 Assumir atendimento
+                            📝 Formulário de atendimento
                         </strong>
 
-                        Moderadores e administradores podem assumir
-                        oficialmente um ticket.
+                        Antes de criar o ticket, o membro informa
+                        assunto e descrição do que precisa.
+                    </div>
+
+                    <div class="bot-feature reveal">
+                        <strong>
+                            🙋 Assumir ticket
+                        </strong>
+
+                        A equipe pode assumir oficialmente um
+                        atendimento.
                     </div>
 
                     <div class="bot-feature reveal">
@@ -2487,9 +2601,8 @@
                             📋 Transcrições
                         </strong>
 
-                        Ao encerrar um ticket, o Sonequinha gera uma
-                        transcrição da conversa para os registros da
-                        equipe.
+                        Tickets encerrados podem gerar registros da
+                        conversa para a equipe.
                     </div>
 
                     <div class="bot-feature reveal">
@@ -2497,8 +2610,8 @@
                             🛡️ Moderação
                         </strong>
 
-                        Ajuda a equipe com avisos, silenciamentos,
-                        limpeza de mensagens, expulsões e banimentos.
+                        Avisos, silenciamentos, limpeza de mensagens,
+                        expulsões e banimentos.
                     </div>
 
                     <div class="bot-feature reveal">
@@ -2506,19 +2619,17 @@
                             🚪 Logs
                         </strong>
 
-                        Registra eventos importantes como saídas,
-                        expulsões, banimentos e movimentações dos
-                        tickets.
+                        Registra saídas, expulsões, banimentos e
+                        eventos importantes.
                     </div>
 
                     <div class="bot-feature reveal">
                         <strong>
-                            🚀 Lembrete de bump
+                            🚀 Lembretes de bump
                         </strong>
 
-                        Acompanha os bumps e lembra a comunidade
-                        quando chega a hora de ajudar novamente na
-                        divulgação do servidor.
+                        Ajuda a lembrar a comunidade quando chega a
+                        hora de realizar um novo bump.
                     </div>
 
                     <div class="bot-feature reveal">
@@ -2526,17 +2637,8 @@
                             💤 Presença dinâmica
                         </strong>
 
-                        Mantém mensagens de presença rotativas com a
-                        personalidade do Sonequinha.
-                    </div>
-
-                    <div class="bot-feature reveal">
-                        <strong>
-                            🔒 Atendimento privado
-                        </strong>
-
-                        Tickets ficam acessíveis apenas para o membro
-                        e para a equipe responsável.
+                        O status do bot muda automaticamente com
+                        mensagens da identidade do Código Lento.
                     </div>
 
                 </div>
@@ -2546,71 +2648,116 @@
                 <div class="commands-wrap reveal">
 
                     <div class="commands-title">
-                        &gt; comandos_disponíveis
+                        &gt; comandos_do_sonequinha
                     </div>
 
                     <div class="commands-grid">
 
                         <div class="command">
-                            <code>/ping</code>
+                            <code>
+                                /ping
+                            </code>
+
                             <span>
-                                Será que o Sonequinha acordou?
+                                Verifica se o Sonequinha está acordado.
                             </span>
                         </div>
 
                         <div class="command">
-                            <code>/ajuda</code>
+                            <code>
+                                /ajuda
+                            </code>
+
                             <span>
-                                Abre a central de comandos.
+                                Mostra a central de comandos.
                             </span>
                         </div>
 
                         <div class="command">
-                            <code>/servidor</code>
+                            <code>
+                                /servidor
+                            </code>
+
                             <span>
-                                Mostra informações da comunidade.
+                                Mostra informações do Código Lento.
                             </span>
                         </div>
 
                         <div class="command">
-                            <code>/avisar</code>
+                            <code>
+                                /avisar
+                                <small class="staff-label">
+                                    EQUIPE
+                                </small>
+                            </code>
+
                             <span>
-                                Envia um aviso para um membro.
+                                Envia uma advertência para um membro.
                             </span>
                         </div>
 
                         <div class="command">
-                            <code>/silenciar</code>
+                            <code>
+                                /silenciar
+                                <small class="staff-label">
+                                    EQUIPE
+                                </small>
+                            </code>
+
                             <span>
-                                Aplica silêncio temporário.
+                                Aplica um silêncio temporário.
                             </span>
                         </div>
 
                         <div class="command">
-                            <code>/limpar</code>
+                            <code>
+                                /limpar
+                                <small class="staff-label">
+                                    EQUIPE
+                                </small>
+                            </code>
+
                             <span>
-                                Limpa mensagens do canal.
+                                Remove mensagens de um canal.
                             </span>
                         </div>
 
                         <div class="command">
-                            <code>/expulsar</code>
+                            <code>
+                                /expulsar
+                                <small class="staff-label">
+                                    EQUIPE
+                                </small>
+                            </code>
+
                             <span>
-                                Remove um membro do servidor.
+                                Expulsa um membro do servidor.
                             </span>
                         </div>
 
                         <div class="command">
-                            <code>/banir</code>
+                            <code>
+                                /banir
+                                <small class="staff-label">
+                                    EQUIPE
+                                </small>
+                            </code>
+
                             <span>
                                 Bane um membro do servidor.
                             </span>
                         </div>
 
                         <div class="command">
-                            <code>/painel-ticket</code>
+                            <code>
+                                /painel-ticket
+                                <small class="staff-label">
+                                    ADMIN
+                                </small>
+                            </code>
+
                             <span>
-                                Publica a central de atendimento.
+                                Publica o painel oficial de tickets.
                             </span>
                         </div>
 
@@ -2649,9 +2796,8 @@
                     </h2>
 
                     <p class="section-description">
-                        O Código Lento também é um espaço para colocar
-                        ideias em prática. Estes são alguns dos
-                        projetos que já fazem parte da comunidade.
+                        O Código Lento não é só conversa sobre código.
+                        Também colocamos ideias em prática.
                     </p>
 
                 </div>
@@ -2669,10 +2815,10 @@
                         </h3>
 
                         <p>
-                            O site oficial da comunidade. Um espaço
-                            para apresentar nossa proposta, nossos
-                            projetos e facilitar a chegada de novos
-                            membros.
+                            O site oficial da comunidade, criado para
+                            apresentar o projeto, facilitar a entrada
+                            de novos membros e documentar nossa
+                            evolução.
                         </p>
 
                         <a
@@ -2693,7 +2839,7 @@
                     <article class="project reveal">
 
                         <div class="project-label">
-                            PROJETO_02 / BOT
+                            PROJETO_02 / DISCORD BOT
                         </div>
 
                         <h3>
@@ -2701,10 +2847,9 @@
                         </h3>
 
                         <p>
-                            Bot próprio do Código Lento criado para
-                            automatizar atendimentos, auxiliar a
-                            moderação, registrar eventos e deixar a
-                            comunidade mais organizada.
+                            Bot oficial desenvolvido para automatizar
+                            atendimentos, auxiliar a moderação,
+                            registrar eventos e cuidar da comunidade.
                         </p>
 
                         <a
@@ -2727,6 +2872,129 @@
         </section>
 
         <!-- =================================================
+             ROADMAP
+        ================================================== -->
+
+        <section id="roadmap">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-tag">
+                        06 / PRÓXIMOS PASSOS
+                    </span>
+
+                    <h2 class="section-title">
+                        O Sonequinha ainda está aprendendo.
+                    </h2>
+
+                    <p class="section-description">
+                        Algumas ideias estão sendo estudadas para as
+                        próximas versões. Elas aparecem aqui como
+                        planejamento e ainda não representam funções
+                        disponíveis no bot.
+                    </p>
+
+                </div>
+
+                <div class="roadmap-box reveal">
+
+                    <div class="roadmap-top">
+
+                        <h3>
+                            &gt; roadmap_sonequinha
+                        </h3>
+
+                        <div class="development-badge">
+                            ⚙ EM DESENVOLVIMENTO
+                        </div>
+
+                    </div>
+
+                    <div class="roadmap-grid">
+
+                        <div class="roadmap-item">
+
+                            <span>
+                                💾
+                            </span>
+
+                            <strong>
+                                Dados persistentes
+                            </strong>
+
+                            <p>
+                                Guardar informações importantes mesmo
+                                quando o bot reiniciar.
+                            </p>
+
+                        </div>
+
+                        <div class="roadmap-item">
+
+                            <span>
+                                🛡️
+                            </span>
+
+                            <strong>
+                                Histórico de moderação
+                            </strong>
+
+                            <p>
+                                Evoluir o sistema de advertências e
+                                registros da equipe.
+                            </p>
+
+                        </div>
+
+                        <div class="roadmap-item">
+
+                            <span>
+                                💡
+                            </span>
+
+                            <strong>
+                                Sugestões
+                            </strong>
+
+                            <p>
+                                Um sistema organizado para membros
+                                enviarem ideias para a comunidade.
+                            </p>
+
+                        </div>
+
+                        <div class="roadmap-item">
+
+                            <span>
+                                🧩
+                            </span>
+
+                            <strong>
+                                Projetos dos membros
+                            </strong>
+
+                            <p>
+                                Novas formas de divulgar o que a
+                                comunidade está construindo.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="roadmap-note">
+                        * Recursos do roadmap podem mudar durante o desenvolvimento.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
              CHANGELOG
         ================================================== -->
 
@@ -2737,7 +3005,7 @@
                 <div class="section-heading reveal">
 
                     <span class="section-tag">
-                        06 / CHANGELOG
+                        07 / CHANGELOG
                     </span>
 
                     <h2 class="section-title">
@@ -2756,6 +3024,24 @@
                     <article class="update reveal">
 
                         <div class="update-version">
+                            STATUS / 24_7
+                        </div>
+
+                        <h3>
+                            🟢 Sonequinha online
+                        </h3>
+
+                        <p>
+                            O bot passou a funcionar em hospedagem
+                            própria para permanecer disponível sem
+                            depender do computador do desenvolvedor.
+                        </p>
+
+                    </article>
+
+                    <article class="update reveal">
+
+                        <div class="update-version">
                             UPDATE / TICKETS_2.0
                         </div>
 
@@ -2764,7 +3050,7 @@
                         </h3>
 
                         <p>
-                            Tickets ganharam formulário, responsável
+                            Tickets receberam formulário, responsável
                             pelo atendimento, confirmação de
                             encerramento, logs e transcrições.
                         </p>
@@ -2782,9 +3068,8 @@
                         </h3>
 
                         <p>
-                            O Sonequinha agora acompanha os bumps e
-                            ajuda a lembrar a comunidade quando chega
-                            a hora de divulgar novamente o servidor.
+                            O Sonequinha ganhou um sistema para ajudar
+                            a comunidade a lembrar dos próximos bumps.
                         </p>
 
                     </article>
@@ -2792,17 +3077,17 @@
                     <article class="update reveal">
 
                         <div class="update-version">
-                            UPDATE / SONEQUINHA
+                            UPDATE / MODERATION
                         </div>
 
                         <h3>
-                            🦥 Mais automações
+                            🛡️ Ferramentas para a equipe
                         </h3>
 
                         <p>
-                            O bot oficial ganhou novas funções de
-                            comunidade, moderação, registros e
-                            atendimento.
+                            Comandos de aviso, silêncio, limpeza,
+                            expulsão e banimento ajudam na administração
+                            do servidor.
                         </p>
 
                     </article>
@@ -2810,17 +3095,16 @@
                     <article class="update reveal">
 
                         <div class="update-version">
-                            STATUS / ONLINE
+                            STATUS / BUILDING
                         </div>
 
                         <h3>
-                            💜 Código Lento
+                            💜 Código Lento continua crescendo
                         </h3>
 
                         <p>
-                            O projeto continua crescendo e novas
-                            funções serão adicionadas conforme a
-                            comunidade evoluir.
+                            Novos recursos serão desenvolvidos conforme
+                            as necessidades da comunidade aparecerem.
                         </p>
 
                     </article>
@@ -2832,7 +3116,7 @@
         </section>
 
         <!-- =================================================
-             DISCORD
+             ENTRAR NA COMUNIDADE
         ================================================== -->
 
         <section id="discord">
@@ -2842,7 +3126,7 @@
                 <div class="community-box reveal">
 
                     <span class="section-tag">
-                        07 / ENTRE NA COMUNIDADE
+                        08 / ENTRE NA COMUNIDADE
                     </span>
 
                     <h2>
@@ -2921,11 +3205,15 @@
         <div class="container footer-content">
 
             <div class="footer-left">
+
                 <strong>
                     CÓDIGO LENTO
                 </strong>
+
                 <br>
+
                 Aprenda no seu ritmo. Programe sem pressa.
+
             </div>
 
             <div class="footer-links">
@@ -2958,6 +3246,10 @@
                     Sonequinha
                 </a>
 
+                <a href="#atualizacoes">
+                    Changelog
+                </a>
+
             </div>
 
         </div>
@@ -2969,51 +3261,70 @@
     ====================================================== -->
 
     <script>
-        // ANIMAÇÕES AO ROLAR A PÁGINA
+        // =====================================================
+        // ANIMAÇÕES AO ROLAR
+        // =====================================================
 
         const revealElements =
             document.querySelectorAll(".reveal");
 
-        const revealObserver =
-            new IntersectionObserver(
-                (entries) => {
+        if ("IntersectionObserver" in window) {
 
-                    entries.forEach(
-                        (entry) => {
+            const revealObserver =
+                new IntersectionObserver(
+                    (entries) => {
 
-                            if (
-                                entry.isIntersecting
-                            ) {
+                        entries.forEach(
+                            (entry) => {
 
-                                entry.target
-                                    .classList
-                                    .add("visible");
+                                if (
+                                    entry.isIntersecting
+                                ) {
 
-                                revealObserver
-                                    .unobserve(
-                                        entry.target
-                                    );
+                                    entry.target
+                                        .classList
+                                        .add("visible");
+
+                                    revealObserver
+                                        .unobserve(
+                                            entry.target
+                                        );
+                                }
                             }
-                        }
+                        );
+
+                    },
+                    {
+                        threshold: 0.12
+                    }
+                );
+
+            revealElements.forEach(
+                (element) => {
+
+                    revealObserver.observe(
+                        element
                     );
 
-                },
-                {
-                    threshold: 0.12
                 }
             );
 
-        revealElements.forEach(
-            (element) => {
+        } else {
 
-                revealObserver.observe(
-                    element
-                );
+            revealElements.forEach(
+                (element) => {
 
-            }
-        );
+                    element.classList.add(
+                        "visible"
+                    );
 
-        // TÍTULO QUANDO A ABA FICA EM SEGUNDO PLANO
+                }
+            );
+        }
+
+        // =====================================================
+        // TÍTULO DA ABA
+        // =====================================================
 
         const tituloOriginal =
             document.title;
@@ -3022,9 +3333,7 @@
             "visibilitychange",
             () => {
 
-                if (
-                    document.hidden
-                ) {
+                if (document.hidden) {
 
                     document.title =
                         "🦥 sem pressa... | Código Lento";
