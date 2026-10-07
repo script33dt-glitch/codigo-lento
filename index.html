@@ -2,35 +2,28 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#09090b">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Código Lento — comunidade brasileira de programação para aprender, compartilhar projetos e evoluir junto."
+        content="Código Lento — comunidade brasileira de programação para aprender, criar projetos, tirar dúvidas e evoluir no seu próprio ritmo."
     >
 
-    <title>Código Lento | Comunidade de Programação</title>
+    <meta
+        name="theme-color"
+        content="#08070b"
+    >
+
+    <title>Código Lento — Comunidade de Programação</title>
 
     <style>
-        :root {
-            --bg: #09090b;
-            --bg-secondary: #0f0f13;
-            --card: #15151b;
-            --card-hover: #1b1b23;
-
-            --purple: #9b5cff;
-            --purple-light: #bd8cff;
-            --purple-dark: #6d35c5;
-
-            --green: #71d99e;
-            --white: #f5f5f7;
-            --gray: #a1a1aa;
-
-            --border: rgba(255, 255, 255, 0.08);
-
-            --max-width: 1180px;
-        }
+        /* =====================================================
+           RESET
+        ===================================================== */
 
         * {
             margin: 0;
@@ -43,49 +36,30 @@
         }
 
         body {
+            min-height: 100vh;
+            overflow-x: hidden;
+
             background:
                 radial-gradient(
-                    circle at 50% -20%,
-                    rgba(155, 92, 255, 0.18),
-                    transparent 35%
+                    circle at 50% 0%,
+                    rgba(124, 58, 237, 0.13),
+                    transparent 34%
                 ),
-                var(--bg);
+                #08070b;
 
-            color: var(--white);
+            color: #f5f3ff;
 
             font-family:
-                Inter,
-                ui-sans-serif,
-                system-ui,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
+                "Courier New",
+                Courier,
+                monospace;
 
-            line-height: 1.6;
-            overflow-x: hidden;
+            line-height: 1.7;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-
-            background-image:
-                linear-gradient(
-                    rgba(255,255,255,.018) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(255,255,255,.018) 1px,
-                    transparent 1px
-                );
-
-            background-size: 40px 40px;
-
-            pointer-events: none;
-            z-index: -1;
+        ::selection {
+            background: #9b5cff;
+            color: #ffffff;
         }
 
         a {
@@ -93,30 +67,196 @@
             text-decoration: none;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
         }
 
-        /* HEADER */
+        img {
+            display: block;
+            max-width: 100%;
+        }
 
-        .header {
-            position: sticky;
+        /* =====================================================
+           VARIÁVEIS
+        ===================================================== */
+
+        :root {
+            --bg: #08070b;
+            --bg-soft: #0d0b12;
+            --card: rgba(17, 13, 24, 0.78);
+            --card-strong: #110d18;
+
+            --purple: #9b5cff;
+            --purple-2: #6d28d9;
+            --purple-light: #d8c4ff;
+
+            --text: #f5f3ff;
+            --muted: #a8a3b3;
+
+            --border: rgba(155, 92, 255, 0.22);
+            --border-strong: rgba(155, 92, 255, 0.48);
+
+            --green: #72f1b8;
+            --yellow: #ffd166;
+
+            --max-width: 1180px;
+        }
+
+        /* =====================================================
+           FUNDO
+        ===================================================== */
+
+        .background-grid {
+            position: fixed;
+            inset: 0;
+            z-index: -3;
+
+            pointer-events: none;
+
+            background-image:
+                linear-gradient(
+                    rgba(155, 92, 255, 0.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(155, 92, 255, 0.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 42px 42px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 90%
+                );
+        }
+
+        .glow {
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            filter: blur(130px);
+
+            background: rgba(109, 40, 217, 0.10);
+
+            pointer-events: none;
+
+            z-index: -2;
+        }
+
+        .glow-one {
+            top: -220px;
+            left: -180px;
+        }
+
+        .glow-two {
+            right: -220px;
+            top: 45%;
+        }
+
+        /* =====================================================
+           LAYOUT
+        ===================================================== */
+
+        .container {
+            width: min(
+                calc(100% - 40px),
+                var(--max-width)
+            );
+
+            margin-inline: auto;
+        }
+
+        section {
+            padding: 105px 0;
+            scroll-margin-top: 90px;
+        }
+
+        .section-tag {
+            display: inline-block;
+
+            margin-bottom: 15px;
+
+            color: var(--purple);
+
+            font-size: 0.8rem;
+            font-weight: 700;
+
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            max-width: 800px;
+
+            margin-bottom: 18px;
+
+            color: #ffffff;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: clamp(
+                2rem,
+                5vw,
+                3.6rem
+            );
+
+            line-height: 1.05;
+
+            letter-spacing: -0.045em;
+        }
+
+        .section-description {
+            max-width: 730px;
+
+            color: var(--muted);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 1.05rem;
+        }
+
+        .section-heading {
+            margin-bottom: 55px;
+        }
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            position: fixed;
             top: 0;
-            z-index: 100;
+            left: 0;
+            right: 0;
 
-            background: rgba(9, 9, 11, 0.75);
+            z-index: 1000;
+
+            border-bottom:
+                1px solid rgba(155, 92, 255, 0.12);
+
+            background:
+                rgba(8, 7, 11, 0.82);
+
             backdrop-filter: blur(18px);
-
-            border-bottom: 1px solid var(--border);
         }
 
         .navbar {
-            max-width: var(--max-width);
-            min-height: 76px;
-
-            margin: auto;
-            padding: 0 24px;
+            min-height: 72px;
 
             display: flex;
             align-items: center;
@@ -125,232 +265,219 @@
             gap: 30px;
         }
 
-        .logo {
+        .brand {
             display: flex;
             align-items: center;
-            gap: 12px;
 
-            font-size: 18px;
-            font-weight: 800;
-        }
+            gap: 11px;
 
-        .logo img {
-            width: 46px;
-            height: 46px;
-
-            object-fit: cover;
-            border-radius: 50%;
-
-            border: 2px solid rgba(155, 92, 255, .5);
-
-            box-shadow:
-                0 0 25px rgba(155, 92, 255, .22);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        .nav-links a {
-            transition: .2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--white);
-        }
-
-        /* BOTÕES */
-
-        .discord-button,
-        .secondary-button,
-        .template-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 10px;
+            flex-shrink: 0;
 
             font-weight: 700;
-
-            transition:
-                transform .2s,
-                box-shadow .2s,
-                background .2s,
-                border-color .2s;
         }
 
-        .discord-button {
-            padding: 14px 22px;
+        .brand img {
+            width: 36px;
+            height: 36px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--purple),
-                    var(--purple-dark)
-                );
+            object-fit: cover;
 
-            color: white;
-
-            box-shadow:
-                0 10px 35px rgba(155, 92, 255, .20);
-        }
-
-        .discord-button:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 14px 40px rgba(155, 92, 255, .32);
-        }
-
-        .discord-button.small {
-            padding: 10px 17px;
-            font-size: 14px;
-        }
-
-        .secondary-button {
-            padding: 13px 20px;
-
-            border: 1px solid var(--border);
-
-            background:
-                rgba(255,255,255,.025);
-
-            color: var(--gray);
-        }
-
-        .secondary-button:hover {
-            background:
-                rgba(255,255,255,.06);
-
-            color: white;
-        }
-
-        .template-button {
-            padding: 14px 22px;
+            border-radius: 9px;
 
             border:
-                1px solid rgba(155, 92, 255, .38);
+                1px solid var(--border);
+        }
 
-            background:
-                rgba(155, 92, 255, .07);
+        .brand-name {
+            color: #ffffff;
+        }
+
+        .brand-name span {
+            color: var(--purple);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+
+            gap: 27px;
+        }
+
+        nav a {
+            position: relative;
+
+            color: #aaa5b4;
+
+            font-size: 0.79rem;
+
+            transition: 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        nav a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 1px;
+
+            background: var(--purple);
+
+            transition: 0.2s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-discord {
+            padding: 9px 15px;
+
+            border:
+                1px solid var(--border-strong);
+
+            border-radius: 8px;
 
             color: var(--purple-light);
-        }
-
-        .template-button:hover {
-            transform: translateY(-2px);
 
             background:
-                rgba(155, 92, 255, .13);
-
-            border-color:
-                rgba(155, 92, 255, .65);
-
-            box-shadow:
-                0 12px 35px rgba(155, 92, 255, .12);
+                rgba(155, 92, 255, 0.07);
         }
 
-        /* HERO */
+        .nav-discord::after {
+            display: none;
+        }
+
+        .nav-discord:hover {
+            background:
+                rgba(155, 92, 255, 0.14);
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
 
         .hero {
-            max-width: var(--max-width);
-            min-height: calc(100vh - 76px);
+            min-height: 100vh;
 
-            margin: auto;
-            padding: 90px 24px;
+            padding-top: 145px;
 
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
             display: grid;
 
             grid-template-columns:
-                1.05fr .95fr;
+                minmax(0, 1.15fr)
+                minmax(300px, 0.85fr);
 
             align-items: center;
 
-            gap: 70px;
+            gap: 80px;
         }
 
-        .status {
+        .hero-badge {
             width: fit-content;
 
-            display: flex;
-            align-items: center;
-
-            gap: 9px;
-
             margin-bottom: 25px;
-            padding: 7px 13px;
+            padding: 8px 13px;
 
             border:
                 1px solid var(--border);
 
-            border-radius: 100px;
+            border-radius: 999px;
 
             background:
-                rgba(255,255,255,.025);
+                rgba(155, 92, 255, 0.06);
 
-            color: var(--gray);
+            color: var(--purple-light);
 
-            font-family: monospace;
-            font-size: 13px;
+            font-size: 0.75rem;
         }
 
         .status-dot {
-            width: 8px;
-            height: 8px;
+            display: inline-block;
+
+            width: 7px;
+            height: 7px;
+
+            margin-right: 7px;
 
             border-radius: 50%;
 
             background: var(--green);
 
             box-shadow:
-                0 0 10px var(--green);
+                0 0 12px var(--green);
+
+            animation:
+                statusPulse 2s infinite;
         }
 
-        .terminal-text {
-            color: var(--purple-light);
-
-            font-family: monospace;
-            font-size: 14px;
-
-            margin-bottom: 14px;
+        @keyframes statusPulse {
+            50% {
+                opacity: 0.4;
+            }
         }
 
         .hero h1 {
-            font-size:
-                clamp(48px, 6vw, 78px);
+            max-width: 760px;
 
-            line-height: 1.03;
+            margin-bottom: 24px;
 
-            letter-spacing: -4px;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
-            margin-bottom: 25px;
+            font-size: clamp(
+                3.5rem,
+                8vw,
+                7.4rem
+            );
+
+            line-height: 0.88;
+
+            letter-spacing: -0.07em;
+
+            color: #ffffff;
         }
 
         .hero h1 span {
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--purple-light),
-                    var(--purple)
-                );
+            display: block;
 
-            -webkit-background-clip: text;
-            background-clip: text;
-
-            color: transparent;
+            color: var(--purple);
         }
 
-        .hero-description {
-            max-width: 600px;
+        .hero-text {
+            max-width: 650px;
 
-            color: var(--gray);
-            font-size: 18px;
+            margin-bottom: 35px;
 
-            margin-bottom: 32px;
+            color: var(--muted);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: clamp(
+                1rem,
+                2vw,
+                1.18rem
+            );
+        }
+
+        .hero-text strong {
+            color: #ffffff;
         }
 
         .hero-buttons {
@@ -360,199 +487,278 @@
             gap: 13px;
         }
 
-        /* MASCOTE */
+        .button {
+            min-height: 48px;
 
-        .hero-visual {
-            display: flex;
+            padding: 0 20px;
+
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+
+            gap: 9px;
+
+            border-radius: 8px;
+
+            font-size: 0.83rem;
+            font-weight: 700;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
-        .mascot-area {
-            width: 100%;
-            max-width: 460px;
+        .button:hover {
+            transform:
+                translateY(-2px);
+        }
+
+        .button-primary {
+            background: var(--purple);
+            color: #ffffff;
+
+            box-shadow:
+                0 0 30px
+                rgba(155, 92, 255, 0.18);
+        }
+
+        .button-primary:hover {
+            background: #aa74ff;
+
+            box-shadow:
+                0 0 38px
+                rgba(155, 92, 255, 0.28);
+        }
+
+        .button-secondary {
+            border:
+                1px solid var(--border);
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+            color: #d6d2dc;
+        }
+
+        .button-secondary:hover {
+            border-color:
+                var(--border-strong);
+
+            background:
+                rgba(155, 92, 255, 0.06);
+        }
+
+        /* =====================================================
+           HERO TERMINAL
+        ===================================================== */
+
+        .terminal {
+            overflow: hidden;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 13px;
+
+            background:
+                rgba(10, 8, 14, 0.88);
+
+            box-shadow:
+                0 30px 90px
+                rgba(0, 0, 0, 0.45);
+
+            transform:
+                rotate(1.5deg);
+
+            transition:
+                0.3s ease;
+        }
+
+        .terminal:hover {
+            transform:
+                rotate(0deg)
+                translateY(-4px);
+
+            border-color:
+                var(--border-strong);
+        }
+
+        .terminal-top {
+            height: 43px;
+
+            padding: 0 15px;
 
             display: flex;
-            flex-direction: column;
             align-items: center;
 
-            position: relative;
+            gap: 7px;
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.05);
+
+            background:
+                rgba(255, 255, 255, 0.018);
         }
 
-        .mascot-glow {
+        .terminal-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #343039;
+        }
+
+        .terminal-title {
+            margin-left: auto;
+
+            color: #5f5a67;
+
+            font-size: 0.65rem;
+        }
+
+        .terminal-body {
+            min-height: 310px;
+
+            padding: 25px;
+
+            color: #a8a3b3;
+
+            font-size: 0.79rem;
+
+            line-height: 2;
+        }
+
+        .terminal-purple {
+            color: var(--purple);
+        }
+
+        .terminal-green {
+            color: var(--green);
+        }
+
+        .terminal-white {
+            color: #ffffff;
+        }
+
+        .cursor {
+            display: inline-block;
+
+            width: 8px;
+            height: 15px;
+
+            margin-left: 4px;
+
+            vertical-align: middle;
+
+            background: var(--purple);
+
+            animation:
+                blink 1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* =====================================================
+           SOBRE
+        ===================================================== */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                0.85fr
+                1.15fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .mascot-wrap {
+            position: relative;
+
+            max-width: 430px;
+
+            margin-inline: auto;
+        }
+
+        .mascot-wrap::before {
+            content: "";
+
             position: absolute;
-
-            width: 330px;
-            height: 330px;
-
-            top: 10px;
+            inset: 10%;
 
             border-radius: 50%;
 
             background:
-                rgba(155, 92, 255, .23);
+                rgba(155, 92, 255, 0.18);
 
             filter: blur(80px);
 
             z-index: -1;
         }
 
-        .main-logo {
-            width: 310px;
-            height: 310px;
-
-            object-fit: cover;
-
-            border-radius: 50%;
-
-            border:
-                1px solid rgba(255,255,255,.08);
-
-            box-shadow:
-                0 0 0 10px rgba(155,92,255,.025),
-                0 30px 100px rgba(0,0,0,.6);
-        }
-
-        /* TERMINAL */
-
-        .terminal-card {
+        .mascot-wrap img {
             width: 100%;
-            max-width: 440px;
 
-            margin-top: -12px;
+            filter:
+                drop-shadow(
+                    0 30px 60px
+                    rgba(0, 0, 0, 0.45)
+                );
 
-            background:
-                rgba(15, 15, 19, .92);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 15px;
-
-            overflow: hidden;
-
-            box-shadow:
-                0 30px 80px rgba(0,0,0,.45);
+            transition:
+                transform 0.35s ease;
         }
 
-        .terminal-header {
-            height: 45px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 15px;
-
-            background:
-                rgba(255,255,255,.025);
-
-            border-bottom:
-                1px solid var(--border);
-
-            color: var(--gray);
-
-            font-family: monospace;
-            font-size: 12px;
+        .mascot-wrap:hover img {
+            transform:
+                translateY(-7px)
+                rotate(-1deg);
         }
 
-        .terminal-dots {
-            display: flex;
-            gap: 7px;
-        }
+        .about-content p {
+            margin-bottom: 20px;
 
-        .terminal-dots span {
-            width: 9px;
-            height: 9px;
-
-            background: #555;
-
-            border-radius: 50%;
-        }
-
-        .terminal-body {
-            padding: 24px;
+            color: var(--muted);
 
             font-family:
-                "Courier New",
-                monospace;
+                Arial,
+                Helvetica,
+                sans-serif;
 
-            font-size: 14px;
-            line-height: 1.9;
-
-            color: #d5d5da;
+            font-size: 1.04rem;
         }
 
-        .purple {
+        .about-content strong {
+            color: #ffffff;
+        }
+
+        .quote {
+            margin-top: 30px;
+            padding: 22px;
+
+            border-left:
+                2px solid var(--purple);
+
+            background:
+                rgba(155, 92, 255, 0.045);
+
             color: var(--purple-light);
         }
 
-        .green {
-            color: var(--green);
-        }
+        /* =====================================================
+           COMO COMEÇAR
+        ===================================================== */
 
-        .yellow {
-            color: #e5c07b;
-        }
-
-        .red {
-            color: #e06c75;
-        }
-
-        .comment {
-            color: #6f737d;
-        }
-
-        .indent {
-            padding-left: 25px;
-        }
-
-        /* SEÇÕES */
-
-        .section {
-            max-width: var(--max-width);
-
-            margin: auto;
-            padding: 110px 24px;
-        }
-
-        .section-label {
-            margin-bottom: 15px;
-
-            color: var(--purple-light);
-
-            font-family: monospace;
-            font-size: 13px;
-
-            letter-spacing: 1px;
-        }
-
-        .section h2 {
-            max-width: 760px;
-
-            font-size:
-                clamp(34px, 5vw, 52px);
-
-            line-height: 1.1;
-
-            letter-spacing: -2px;
-
-            margin-bottom: 20px;
-        }
-
-        .section-description {
-            max-width: 700px;
-
-            color: var(--gray);
-
-            font-size: 17px;
-
-            margin-bottom: 45px;
-        }
-
-        /* CARDS */
-
-        .cards {
+        .steps {
             display: grid;
 
             grid-template-columns:
@@ -561,224 +767,236 @@
             gap: 18px;
         }
 
-        .card {
-            min-height: 250px;
+        .step-card {
+            position: relative;
 
-            padding: 28px;
+            min-height: 260px;
+
+            padding: 29px;
+
+            overflow: hidden;
 
             border:
                 1px solid var(--border);
 
-            border-radius: 16px;
+            border-radius: 12px;
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,.035),
-                    rgba(255,255,255,.012)
-                );
+            background: var(--card);
 
             transition:
-                transform .25s,
-                border-color .25s,
-                background .25s;
+                transform 0.25s ease,
+                border-color 0.25s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        .step-card:hover {
+            transform:
+                translateY(-5px);
 
             border-color:
-                rgba(155,92,255,.35);
-
-            background:
-                var(--card-hover);
+                var(--border-strong);
         }
 
-        .card-icon {
-            font-size: 30px;
+        .step-number {
+            margin-bottom: 40px;
 
-            margin-bottom: 30px;
+            color: var(--purple);
+
+            font-size: 0.78rem;
         }
 
-        .card h3 {
-            font-size: 20px;
+        .step-card h3 {
+            margin-bottom: 13px;
 
-            margin-bottom: 12px;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 1.35rem;
         }
 
-        .card p {
-            color: var(--gray);
+        .step-card p {
+            color: var(--muted);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.94rem;
         }
 
-        /* TECNOLOGIAS */
+        .step-bg-number {
+            position: absolute;
+            right: -7px;
+            bottom: -42px;
 
-        .technologies-section {
-            border-top:
-                1px solid var(--border);
+            color:
+                rgba(155, 92, 255, 0.045);
 
-            border-bottom:
-                1px solid var(--border);
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 10rem;
+            font-weight: 900;
+
+            pointer-events: none;
         }
 
-        .tech-grid {
+        /* =====================================================
+           O QUE TEM NA COMUNIDADE
+        ===================================================== */
+
+        .features-grid {
             display: grid;
 
             grid-template-columns:
-                repeat(4, 1fr);
+                repeat(3, 1fr);
 
-            gap: 13px;
+            gap: 17px;
         }
 
-        .tech-card {
-            min-height: 100px;
+        .feature-card {
+            min-height: 210px;
 
-            display: flex;
-            align-items: center;
+            padding: 27px;
 
-            gap: 15px;
+            border:
+                1px solid rgba(255, 255, 255, 0.055);
 
-            padding: 20px;
+            border-radius: 11px;
 
+            background:
+                rgba(255, 255, 255, 0.018);
+
+            transition:
+                0.25s ease;
+        }
+
+        .feature-card:hover {
+            border-color:
+                var(--border-strong);
+
+            background:
+                rgba(155, 92, 255, 0.045);
+
+            transform:
+                translateY(-3px);
+        }
+
+        .feature-icon {
+            margin-bottom: 25px;
+
+            font-size: 1.65rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 9px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 1.08rem;
+        }
+
+        .feature-card p {
+            color: var(--muted);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.89rem;
+        }
+
+        /* =====================================================
+           SONEQUINHA
+        ===================================================== */
+
+        .bot-section {
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .bot-section::before {
+            content: "";
+
+            position: absolute;
+            left: 50%;
+            top: 55%;
+
+            width: 750px;
+            height: 750px;
+
+            transform:
+                translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            background:
+                rgba(109, 40, 217, 0.055);
+
+            filter: blur(120px);
+
+            pointer-events: none;
+        }
+
+        .bot-grid {
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+                0.8fr
+                1.2fr;
+
+            gap: 50px;
+        }
+
+        .bot-profile,
+        .bot-terminal {
             border:
                 1px solid var(--border);
 
             border-radius: 13px;
 
             background:
-                rgba(255,255,255,.02);
-
-            transition: .2s;
-        }
-
-        .tech-card:hover {
-            border-color:
-                rgba(155,92,255,.45);
-
-            transform:
-                translateY(-3px);
-        }
-
-        .tech-card span {
-            font-size: 25px;
-        }
-
-        /* PROJETOS */
-
-        .project-card {
-            display: flex;
-
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 40px;
-
-            padding: 35px;
-
-            border:
-                1px solid rgba(155,92,255,.25);
-
-            border-radius: 18px;
-
-            background:
-                radial-gradient(
-                    circle at top right,
-                    rgba(155,92,255,.10),
-                    transparent 40%
-                ),
-                var(--card);
-        }
-
-        .project-card > div {
-            max-width: 680px;
-        }
-
-        .project-status {
-            color: var(--green);
-
-            font-family: monospace;
-            font-size: 12px;
-        }
-
-        .project-card h3 {
-            margin: 10px 0;
-
-            font-family: monospace;
-            font-size: 27px;
-        }
-
-        .project-card p {
-            color: var(--gray);
-        }
-
-        /* SONEQUINHA */
-
-        .bot-section {
-            border-top:
-                1px solid var(--border);
-
-            border-bottom:
-                1px solid var(--border);
-        }
-
-        .bot-hero {
-            display: grid;
-
-            grid-template-columns:
-                .85fr 1.15fr;
-
-            gap: 24px;
-
-            align-items: stretch;
-
-            margin-bottom: 22px;
-        }
-
-        .bot-profile,
-        .bot-terminal {
-            border:
-                1px solid rgba(155,92,255,.22);
-
-            border-radius: 18px;
-
-            background:
-                radial-gradient(
-                    circle at top right,
-                    rgba(155,92,255,.10),
-                    transparent 42%
-                ),
-                var(--card);
+                rgba(12, 9, 17, 0.86);
         }
 
         .bot-profile {
             padding: 32px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            min-height: 350px;
         }
 
         .bot-avatar {
-            width: 100px;
-            height: 100px;
+            width: 105px;
+            height: 105px;
 
-            margin-bottom: 24px;
+            margin-bottom: 25px;
             padding: 4px;
 
+            overflow: hidden;
+
             border:
-                1px solid rgba(155,92,255,.55);
+                1px solid
+                rgba(155, 92, 255, 0.55);
 
             border-radius: 50%;
 
             background:
-                rgba(155,92,255,.08);
+                rgba(155, 92, 255, 0.08);
 
             box-shadow:
-                0 0 0 6px rgba(155,92,255,.035),
-                0 0 45px rgba(155,92,255,.28);
-
-            overflow: hidden;
+                0 0 0 6px
+                rgba(155, 92, 255, 0.035),
+                0 0 45px
+                rgba(155, 92, 255, 0.28);
         }
 
         .bot-avatar img {
@@ -790,285 +1008,616 @@
             border-radius: 50%;
         }
 
-        .bot-profile h3 {
-            font-size: 30px;
+        .bot-name {
+            margin-bottom: 5px;
 
-            margin-bottom: 8px;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 1.7rem;
         }
 
-        .bot-profile p {
-            color: var(--gray);
+        .bot-status {
+            display: flex;
+            align-items: center;
+
+            gap: 7px;
+
+            margin-bottom: 25px;
+
+            color: var(--green);
+
+            font-size: 0.72rem;
         }
 
-        .bot-badges {
+        .bot-status::before {
+            content: "";
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--green);
+
+            box-shadow:
+                0 0 10px var(--green);
+        }
+
+        .bot-description {
+            margin-bottom: 25px;
+
+            color: var(--muted);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.94rem;
+        }
+
+        .bot-tags {
             display: flex;
             flex-wrap: wrap;
 
             gap: 8px;
-
-            margin-top: 25px;
         }
 
-        .bot-badge {
-            padding: 7px 11px;
+        .bot-tag {
+            padding: 6px 9px;
 
             border:
                 1px solid var(--border);
 
-            border-radius: 100px;
+            border-radius: 5px;
 
-            background:
-                rgba(255,255,255,.025);
+            color: var(--purple-light);
 
-            color: var(--gray);
-
-            font-family: monospace;
-            font-size: 12px;
-        }
-
-        .bot-badge.online {
-            color: var(--green);
-
-            border-color:
-                rgba(113,217,158,.25);
+            font-size: 0.65rem;
         }
 
         .bot-terminal {
             overflow: hidden;
         }
 
-        .bot-terminal .terminal-card {
-            max-width: none;
-            width: 100%;
-            height: 100%;
+        .bot-code {
+            padding: 30px;
 
-            margin: 0;
+            font-size: 0.78rem;
 
-            border: 0;
-            border-radius: 18px;
-
-            box-shadow: none;
-
-            background: transparent;
+            line-height: 2;
         }
 
-        .bot-grid {
+        .code-purple {
+            color: var(--purple);
+        }
+
+        .code-green {
+            color: var(--green);
+        }
+
+        .code-yellow {
+            color: var(--yellow);
+        }
+
+        .code-muted {
+            color: #67616f;
+        }
+
+        /* =====================================================
+           BOT FEATURES
+        ===================================================== */
+
+        .bot-features {
+            margin-top: 22px;
+
             display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
-            gap: 18px;
-
-            margin-top: 18px;
-        }
-
-        .bot-command {
-            min-height: 185px;
-        }
-
-        .bot-command code {
-            display: inline-block;
-
-            margin-bottom: 13px;
-
-            color: var(--purple-light);
-
-            font-size: 16px;
-            font-weight: 700;
-        }
-
-        .bot-features {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 12px;
-
-            margin-top: 18px;
+            gap: 15px;
         }
 
         .bot-feature {
-            padding: 18px 20px;
+            min-height: 150px;
+
+            padding: 21px;
 
             border:
-                1px solid var(--border);
+                1px solid rgba(255, 255, 255, 0.055);
 
-            border-radius: 13px;
+            border-radius: 9px;
 
             background:
-                rgba(255,255,255,.02);
+                rgba(255, 255, 255, 0.017);
 
-            color: var(--gray);
+            color: var(--muted);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.84rem;
+
+            transition:
+                0.2s ease;
+        }
+
+        .bot-feature:hover {
+            border-color:
+                var(--border);
+
+            transform:
+                translateY(-2px);
         }
 
         .bot-feature strong {
             display: block;
 
-            color: var(--white);
+            margin-bottom: 9px;
 
-            margin-bottom: 4px;
+            color: #ffffff;
+
+            font-size: 0.91rem;
         }
 
-        .bot-note {
-            margin-top: 24px;
+        /* =====================================================
+           COMANDOS
+        ===================================================== */
 
-            padding: 20px 22px;
-
-            border-left:
-                3px solid var(--purple);
-
-            border-radius:
-                0 12px 12px 0;
-
-            background:
-                rgba(155,92,255,.06);
-
-            color: var(--gray);
+        .commands-wrap {
+            margin-top: 65px;
         }
 
-        /* COMUNIDADE */
-
-        .community-section {
-            padding: 120px 24px;
-        }
-
-        .community-content {
-            max-width: 950px;
-
-            margin: auto;
-
-            text-align: center;
-
-            padding: 80px 30px;
-
-            border:
-                1px solid rgba(155,92,255,.22);
-
-            border-radius: 24px;
-
-            background:
-                radial-gradient(
-                    circle at center top,
-                    rgba(155,92,255,.18),
-                    transparent 50%
-                ),
-                rgba(255,255,255,.018);
-        }
-
-        .sloth {
-            display: block;
-
-            font-size: 65px;
-
-            margin-bottom: 20px;
-        }
-
-        .community-content h2 {
-            max-width: 700px;
-
-            margin:
-                0 auto 18px;
-
-            font-size:
-                clamp(35px, 5vw, 55px);
-
-            line-height: 1.1;
-
-            letter-spacing: -2px;
-        }
-
-        .community-description {
-            max-width: 600px;
-
-            margin:
-                0 auto 30px;
-
-            color: var(--gray);
-        }
-
-        .community-actions {
-            display: flex;
-            align-items: stretch;
-            justify-content: center;
-            flex-wrap: wrap;
-
-            gap: 14px;
-
-            margin-top: 30px;
-        }
-
-        .community-actions a {
-            min-width: 235px;
-        }
-
-        /* MODELO DO SERVIDOR */
-
-        .template-area {
-            max-width: 650px;
-
-            margin:
-                38px auto 0;
-
-            padding-top: 30px;
-
-            border-top:
-                1px solid var(--border);
-        }
-
-        .template-label {
-            margin-bottom: 7px;
+        .commands-title {
+            margin-bottom: 25px;
 
             color: var(--purple-light);
 
-            font-family: monospace;
-            font-size: 12px;
+            font-size: 0.8rem;
+        }
 
-            letter-spacing: .7px;
+        .commands-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 14px;
+        }
+
+        .command {
+            padding: 18px;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.05);
+
+            border-radius: 8px;
+
+            background:
+                rgba(0, 0, 0, 0.18);
+        }
+
+        .command code {
+            display: block;
+
+            margin-bottom: 6px;
+
+            color: var(--purple);
+        }
+
+        .command span {
+            color: var(--muted);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.8rem;
+        }
+
+        .bot-credit {
+            margin-top: 28px;
+
+            color: #777180;
+
+            font-size: 0.75rem;
+        }
+
+        .bot-credit strong {
+            color: var(--purple-light);
+        }
+
+        /* =====================================================
+           PROJETOS
+        ===================================================== */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .project {
+            position: relative;
+
+            min-height: 320px;
+
+            padding: 31px;
+
+            display: flex;
+            flex-direction: column;
+
+            overflow: hidden;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(155, 92, 255, 0.06),
+                    rgba(255, 255, 255, 0.012)
+                );
+
+            transition:
+                0.25s ease;
+        }
+
+        .project:hover {
+            transform:
+                translateY(-4px);
+
+            border-color:
+                var(--border-strong);
+        }
+
+        .project-label {
+            margin-bottom: 35px;
+
+            color: var(--purple);
+
+            font-size: 0.69rem;
+        }
+
+        .project h3 {
+            margin-bottom: 12px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 1.55rem;
+        }
+
+        .project p {
+            max-width: 500px;
+
+            color: var(--muted);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.91rem;
+        }
+
+        .project-link {
+            width: fit-content;
+
+            margin-top: auto;
+            padding-top: 30px;
+
+            color: var(--purple-light);
+
+            font-size: 0.77rem;
+        }
+
+        .project-link:hover {
+            color: #ffffff;
+        }
+
+        .project-number {
+            position: absolute;
+            right: 18px;
+            bottom: -30px;
+
+            color:
+                rgba(155, 92, 255, 0.045);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 9rem;
+            font-weight: 900;
+        }
+
+        /* =====================================================
+           CHANGELOG
+        ===================================================== */
+
+        .changelog {
+            max-width: 850px;
+        }
+
+        .update {
+            position: relative;
+
+            padding:
+                0 0 38px 32px;
+
+            border-left:
+                1px solid var(--border);
+        }
+
+        .update:last-child {
+            padding-bottom: 0;
+        }
+
+        .update::before {
+            content: "";
+
+            position: absolute;
+            left: -5px;
+            top: 6px;
+
+            width: 9px;
+            height: 9px;
+
+            border-radius: 50%;
+
+            background: var(--purple);
+
+            box-shadow:
+                0 0 15px
+                rgba(155, 92, 255, 0.65);
+        }
+
+        .update-version {
+            margin-bottom: 8px;
+
+            color: var(--purple);
+
+            font-size: 0.68rem;
+        }
+
+        .update h3 {
+            margin-bottom: 7px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 1.05rem;
+        }
+
+        .update p {
+            color: var(--muted);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.88rem;
+        }
+
+        /* =====================================================
+           COMUNIDADE
+        ===================================================== */
+
+        .community-box {
+            position: relative;
+
+            padding: 65px;
+
+            overflow: hidden;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    130deg,
+                    rgba(155, 92, 255, 0.09),
+                    rgba(13, 10, 18, 0.7)
+                );
+        }
+
+        .community-box::after {
+            content: "</>";
+
+            position: absolute;
+            right: 35px;
+            bottom: -65px;
+
+            color:
+                rgba(155, 92, 255, 0.045);
+
+            font-size: 13rem;
+            font-weight: 900;
+
+            pointer-events: none;
+        }
+
+        .community-box h2 {
+            max-width: 650px;
+
+            margin-bottom: 18px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: clamp(
+                2rem,
+                5vw,
+                3.5rem
+            );
+
+            line-height: 1.05;
+
+            letter-spacing: -0.04em;
+        }
+
+        .community-box > p {
+            max-width: 630px;
+
+            margin-bottom: 30px;
+
+            color: var(--muted);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+        }
+
+        .community-actions {
+            position: relative;
+            z-index: 2;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        /* =====================================================
+           TEMPLATE
+        ===================================================== */
+
+        .template-area {
+            position: relative;
+            z-index: 2;
+
+            max-width: 650px;
+
+            margin-top: 42px;
+            padding-top: 35px;
+
+            border-top:
+                1px solid
+                rgba(155, 92, 255, 0.18);
+        }
+
+        .template-label {
+            margin-bottom: 10px !important;
+
+            color: var(--purple) !important;
+
+            font-family:
+                "Courier New",
+                monospace !important;
+
+            font-size: 0.72rem !important;
         }
 
         .template-area h3 {
             margin-bottom: 8px;
 
-            font-size: 19px;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 1.15rem;
         }
 
         .template-area p {
-            max-width: 540px;
+            margin-bottom: 18px !important;
 
-            margin:
-                0 auto 18px;
+            color: var(--muted);
 
-            color: var(--gray);
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
-            font-size: 14px;
+            font-size: 0.88rem;
         }
 
-        /* FOOTER */
+        .template-button {
+            display: inline-flex;
+            align-items: center;
 
-        .footer {
-            max-width: var(--max-width);
+            gap: 8px;
 
-            margin: auto;
+            padding: 11px 15px;
 
-            padding: 45px 24px;
+            border:
+                1px solid var(--border);
 
-            display: grid;
+            border-radius: 7px;
 
-            grid-template-columns:
-                1fr auto;
+            color: var(--purple-light);
 
-            gap: 25px;
+            background:
+                rgba(155, 92, 255, 0.055);
+
+            font-size: 0.75rem;
+
+            transition: 0.2s ease;
+        }
+
+        .template-button:hover {
+            border-color:
+                var(--border-strong);
+
+            background:
+                rgba(155, 92, 255, 0.11);
+
+            transform:
+                translateY(-2px);
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 40px 0;
 
             border-top:
-                1px solid var(--border);
+                1px solid
+                rgba(255, 255, 255, 0.045);
         }
 
-        .footer p {
-            color: var(--gray);
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-            font-size: 14px;
+            gap: 25px;
+        }
+
+        .footer-left {
+            color: #6e6975;
+
+            font-size: 0.72rem;
+        }
+
+        .footer-left strong {
+            color: var(--purple-light);
         }
 
         .footer-links {
@@ -1077,173 +1626,150 @@
 
             gap: 20px;
 
-            color: var(--gray);
+            color: #77717e;
+
+            font-size: 0.7rem;
         }
 
         .footer-links a:hover {
-            color: white;
+            color: var(--purple-light);
         }
 
-        .copyright {
-            grid-column: 1 / -1;
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform:
+                translateY(24px);
+
+            transition:
+                opacity 0.65s ease,
+                transform 0.65s ease;
         }
 
-        /* RESPONSIVO */
+        .reveal.visible {
+            opacity: 1;
 
-        @media (max-width: 900px) {
+            transform:
+                translateY(0);
+        }
 
-            .nav-links {
+        /* =====================================================
+           RESPONSIVO
+        ===================================================== */
+
+        @media (
+            max-width: 980px
+        ) {
+
+            nav a:not(.nav-discord) {
                 display: none;
             }
 
-            .hero {
-                grid-template-columns: 1fr;
-
-                text-align: center;
-
-                padding-top: 65px;
-            }
-
-            .hero-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero h1 {
-                letter-spacing: -2px;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-visual {
-                margin-top: 20px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .tech-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .project-card {
-                flex-direction: column;
-
-                align-items: flex-start;
-            }
-
-            .bot-hero {
-                grid-template-columns: 1fr;
-            }
-
+            .hero-grid,
+            .about-grid,
             .bot-grid {
                 grid-template-columns: 1fr;
             }
-        }
 
-        @media (max-width: 600px) {
-
-            .navbar {
-                min-height: 68px;
-
-                padding: 0 16px;
-            }
-
-            .logo strong {
-                font-size: 15px;
-            }
-
-            .logo img {
-                width: 40px;
-                height: 40px;
-            }
-
-            .navbar .discord-button {
-                display: none;
+            .hero-grid {
+                gap: 60px;
             }
 
             .hero {
-                padding:
-                    55px 18px 80px;
+                padding-top: 130px;
+                padding-bottom: 80px;
+            }
 
-                min-height: auto;
+            .terminal {
+                max-width: 650px;
+            }
+
+            .about-grid {
+                gap: 45px;
+            }
+
+            .mascot-wrap {
+                max-width: 320px;
+            }
+
+            .steps,
+            .features-grid,
+            .bot-features,
+            .commands-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+        @media (
+            max-width: 680px
+        ) {
+
+            .container {
+                width:
+                    min(
+                        calc(100% - 28px),
+                        var(--max-width)
+                    );
+            }
+
+            section {
+                padding: 78px 0;
+            }
+
+            .brand-name {
+                font-size: 0.83rem;
+            }
+
+            .nav-discord {
+                padding: 8px 11px;
+
+                font-size: 0.7rem;
             }
 
             .hero h1 {
-                font-size: 45px;
+                font-size:
+                    clamp(
+                        3.4rem,
+                        19vw,
+                        5.4rem
+                    );
             }
 
-            .hero-description {
-                font-size: 16px;
-            }
-
-            .hero-buttons {
-                width: 100%;
-
+            .hero-buttons,
+            .community-actions {
                 flex-direction: column;
             }
 
-            .hero-buttons a {
+            .button {
                 width: 100%;
             }
 
-            .main-logo {
-                width: 230px;
-                height: 230px;
+            .steps,
+            .features-grid,
+            .bot-features,
+            .commands-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .community-box {
+                padding: 35px 24px;
+            }
+
+            .footer-content {
+                align-items: flex-start;
+                flex-direction: column;
             }
 
             .terminal-body {
-                font-size: 12px;
+                padding: 20px;
 
-                padding: 18px;
-            }
-
-            .section {
-                padding: 80px 18px;
-            }
-
-            .tech-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .bot-features {
-                grid-template-columns: 1fr;
-            }
-
-            .community-section {
-                padding: 70px 18px;
-            }
-
-            .community-content {
-                padding: 55px 20px;
-            }
-
-            .community-actions {
-                width: 100%;
-
-                flex-direction: column;
-            }
-
-            .community-actions a {
-                width: 100%;
-                min-width: 0;
-            }
-
-            .template-button {
-                width: 100%;
-            }
-
-            .footer {
-                grid-template-columns: 1fr;
-            }
-
-            .copyright {
-                grid-column: auto;
+                font-size: 0.72rem;
             }
         }
     </style>
@@ -1251,989 +1777,1134 @@
 
 <body>
 
-    <!-- HEADER -->
+    <div class="background-grid"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
 
-    <header class="header">
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-        <nav class="navbar">
+    <header>
+        <div class="container navbar">
 
-            <a href="#inicio" class="logo">
-
+            <a
+                href="#inicio"
+                class="brand"
+            >
                 <img
                     src="./logo.png"
-                    alt="Logo Código Lento"
+                    alt="Código Lento"
                 >
 
-                <strong>
-                    𝗖ó𝗱𝗶𝗴𝗼 𝗟𝗲𝗻𝘁𝗼
-                </strong>
-
+                <div class="brand-name">
+                    CÓDIGO_<span>LENTO</span>
+                </div>
             </a>
 
-
-            <div class="nav-links">
-
+            <nav>
                 <a href="#sobre">
                     Sobre
                 </a>
 
-                <a href="#tecnologias">
-                    Tecnologias
+                <a href="#comecar">
+                    Começar
                 </a>
 
-                <a href="#projetos">
-                    Projetos
+                <a href="#comunidade-recursos">
+                    Comunidade
                 </a>
 
                 <a href="#sonequinha">
                     Sonequinha
                 </a>
 
-                <a href="#comunidade">
-                    Comunidade
+                <a href="#projetos">
+                    Projetos
                 </a>
 
-            </div>
+                <a
+                    href="https://discord.gg/waTE9gQYPR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="nav-discord"
+                >
+                    Discord ↗
+                </a>
+            </nav>
 
-
-            <a
-                href="https://discord.gg/waTE9gQYPR"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="discord-button small"
-            >
-                Entrar no Discord
-            </a>
-
-        </nav>
-
+        </div>
     </header>
-
 
     <main>
 
-        <!-- INÍCIO -->
+        <!-- =================================================
+             HERO
+        ================================================== -->
 
         <section
-            id="inicio"
             class="hero"
+            id="inicio"
         >
+            <div class="container hero-grid">
 
-            <div class="hero-content">
+                <div class="hero-content">
 
-                <div class="status">
+                    <div class="hero-badge">
+                        <span class="status-dot"></span>
+                        comunidade_online
+                    </div>
 
-                    <span class="status-dot"></span>
+                    <h1>
+                        CÓDIGO
+                        <span>LENTO.</span>
+                    </h1>
 
-                    codigo-lento.dev
+                    <p class="hero-text">
+                        Uma comunidade brasileira para quem quer
+                        <strong>aprender programação, criar projetos e evoluir</strong>
+                        sem transformar aprendizado em corrida.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="https://discord.gg/waTE9gQYPR"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary"
+                        >
+                            💜 Entrar no Código Lento
+                        </a>
+
+                        <a
+                            href="#comecar"
+                            class="button button-secondary"
+                        >
+                            &gt; como_começar
+                        </a>
+
+                    </div>
 
                 </div>
 
+                <div class="terminal">
 
-                <p class="terminal-text">
-                    &gt; iniciando_comunidade...
-                </p>
+                    <div class="terminal-top">
 
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
 
-                <h1>
+                        <span class="terminal-title">
+                            codigo-lento@comunidade
+                        </span>
 
-                    Aprenda no seu ritmo.
+                    </div>
 
-                    <br>
+                    <div class="terminal-body">
 
-                    <span>
-                        Programe sem pressa.
-                    </span>
+                        <div>
+                            <span class="terminal-purple">
+                                $
+                            </span>
+                            npm run aprender
+                        </div>
 
-                </h1>
+                        <div>
+                            <span class="terminal-green">
+                                ✓
+                            </span>
+                            pressão removida
+                        </div>
 
+                        <div>
+                            <span class="terminal-green">
+                                ✓
+                            </span>
+                            comunidade carregada
+                        </div>
 
-                <p class="hero-description">
+                        <div>
+                            <span class="terminal-green">
+                                ✓
+                            </span>
+                            projetos inicializados
+                        </div>
 
-                    Uma comunidade brasileira para quem quer aprender,
-                    praticar e evoluir no mundo da programação.
+                        <div>
+                            <span class="terminal-green">
+                                ✓
+                            </span>
+                            Sonequinha online
+                        </div>
 
-                    Do seu primeiro código ao próximo grande projeto.
+                        <br>
 
-                </p>
+                        <div>
+                            <span class="terminal-purple">
+                                const
+                            </span>
+                            ritmo =
+                            <span class="terminal-white">
+                                "seu";
+                            </span>
+                        </div>
 
+                        <div>
+                            <span class="terminal-purple">
+                                const
+                            </span>
+                            pressa =
+                            <span class="terminal-white">
+                                false;
+                            </span>
+                        </div>
 
-                <div class="hero-buttons">
+                        <br>
 
-                    <a
-                        href="https://discord.gg/waTE9gQYPR"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="discord-button"
-                    >
-                        💬 Entrar no Discord
-                    </a>
+                        <div>
+                            &gt; Aprenda no seu ritmo.
+                        </div>
 
-                    <a
-                        href="#sobre"
-                        class="secondary-button"
-                    >
-                        Conhecer a comunidade ↓
-                    </a>
+                        <div>
+                            &gt; Programe sem pressa.
+                            <span class="cursor"></span>
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
+        </section>
 
+        <!-- =================================================
+             SOBRE
+        ================================================== -->
 
-            <!-- MASCOTE + TERMINAL -->
+        <section id="sobre">
 
-            <div class="hero-visual">
+            <div class="container about-grid">
 
-                <div class="mascot-area">
-
-                    <div class="mascot-glow"></div>
-
+                <div class="mascot-wrap reveal">
                     <img
                         src="./mascote.png"
-                        alt="Bicho-preguiça mascote do Código Lento"
-                        class="main-logo"
+                        alt="Mascote do Código Lento"
                     >
-
-
-                    <div class="terminal-card">
-
-                        <div class="terminal-header">
-
-                            <div class="terminal-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-
-                            <p>
-                                codigo-lento.js
-                            </p>
-
-                        </div>
-
-
-                        <div class="terminal-body">
-
-                            <p>
-                                <span class="purple">
-                                    const
-                                </span>
-
-                                comunidade =
-
-                                <span class="green">
-                                    "Código Lento"
-                                </span>;
-                            </p>
-
-
-                            <p>
-                                <span class="purple">
-                                    const
-                                </span>
-
-                                ritmo =
-
-                                <span class="green">
-                                    "seu"
-                                </span>;
-                            </p>
-
-
-                            <p>
-                                <span class="purple">
-                                    const
-                                </span>
-
-                                pressa =
-
-                                <span class="red">
-                                    false
-                                </span>;
-                            </p>
-
-
-                            <br>
-
-
-                            <p>
-
-                                <span class="purple">
-                                    function
-                                </span>
-
-                                <span class="yellow">
-                                    aprender
-                                </span>() {
-
-                            </p>
-
-
-                            <p class="indent">
-                                compartilhar();
-                            </p>
-
-                            <p class="indent">
-                                praticar();
-                            </p>
-
-                            <p class="indent">
-                                evoluir();
-                            </p>
-
-                            <p>
-                                }
-                            </p>
-
-
-                            <br>
-
-
-                            <p class="comment">
-                                // devagar também é progresso 🦥
-                            </p>
-
-                        </div>
-
-                    </div>
-
                 </div>
 
-            </div>
+                <div class="about-content reveal">
 
-        </section>
-
-
-        <!-- SOBRE -->
-
-        <section
-            id="sobre"
-            class="section"
-        >
-
-            <div class="section-label">
-                01 / SOBRE
-            </div>
-
-
-            <h2>
-                Programação não precisa ser uma corrida.
-            </h2>
-
-
-            <p class="section-description">
-
-                O <strong>Código Lento</strong> nasceu com uma ideia
-                simples: criar um lugar onde desenvolvedores iniciantes,
-                estudantes e apaixonados por tecnologia possam aprender
-                juntos, sem pressão e sem medo de perguntar.
-
-            </p>
-
-
-            <div class="cards">
-
-                <article class="card">
-
-                    <div class="card-icon">
-                        🌱
-                    </div>
-
-                    <h3>
-                        Comece do zero
-                    </h3>
-
-                    <p>
-                        Nunca programou? Sem problema.
-                        Aprenda no seu ritmo e tire suas dúvidas
-                        junto com outros membros.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <div class="card-icon">
-                        🧠
-                    </div>
-
-                    <h3>
-                        Compartilhe conhecimento
-                    </h3>
-
-                    <p>
-                        Ajude outros desenvolvedores,
-                        compartilhe descobertas e aprenda
-                        diferentes formas de resolver problemas.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <div class="card-icon">
-                        🚀
-                    </div>
-
-                    <h3>
-                        Crie projetos
-                    </h3>
-
-                    <p>
-                        Transforme seus estudos em projetos reais
-                        e compartilhe sua evolução com toda
-                        a comunidade.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- TECNOLOGIAS -->
-
-        <section
-            id="tecnologias"
-            class="section technologies-section"
-        >
-
-            <div class="section-label">
-                02 / TECNOLOGIAS
-            </div>
-
-
-            <h2>
-                Um galho para cada tecnologia.
-            </h2>
-
-
-            <p class="section-description">
-
-                Do desenvolvimento web à programação em geral.
-                Explore diferentes tecnologias junto com a comunidade.
-
-            </p>
-
-
-            <div class="tech-grid">
-
-                <div class="tech-card">
-                    <span>🌐</span>
-                    <strong>HTML</strong>
-                </div>
-
-                <div class="tech-card">
-                    <span>🎨</span>
-                    <strong>CSS</strong>
-                </div>
-
-                <div class="tech-card">
-                    <span>⚡</span>
-                    <strong>JavaScript</strong>
-                </div>
-
-                <div class="tech-card">
-                    <span>🔷</span>
-                    <strong>TypeScript</strong>
-                </div>
-
-                <div class="tech-card">
-                    <span>🐍</span>
-                    <strong>Python</strong>
-                </div>
-
-                <div class="tech-card">
-                    <span>☕</span>
-                    <strong>Java</strong>
-                </div>
-
-                <div class="tech-card">
-                    <span>🌿</span>
-                    <strong>Git</strong>
-                </div>
-
-                <div class="tech-card">
-                    <span>🐙</span>
-                    <strong>GitHub</strong>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROJETOS -->
-
-        <section
-            id="projetos"
-            class="section"
-        >
-
-            <div class="section-label">
-                03 / PROJETOS
-            </div>
-
-
-            <h2>
-                Aprender é melhor construindo.
-            </h2>
-
-
-            <p class="section-description">
-
-                Compartilhe projetos, receba feedback e transforme
-                aquilo que você está estudando em algo real.
-
-            </p>
-
-
-            <div class="project-card">
-
-                <div>
-
-                    <span class="project-status">
-                        ● PROJETO DA COMUNIDADE
+                    <span class="section-tag">
+                        01 / SOBRE
                     </span>
 
-                    <h3>
-                        codigo-lento
-                    </h3>
+                    <h2 class="section-title">
+                        Programação não precisa ser uma corrida.
+                    </h2>
 
                     <p>
-
-                        Você está olhando para um dos primeiros
-                        projetos da comunidade.
-
-                        Este site também poderá evoluir conforme
-                        novos membros chegarem e começarem
-                        a contribuir.
-
+                        O <strong>Código Lento</strong> nasceu para
+                        reunir pessoas que querem estudar tecnologia,
+                        trocar conhecimento, construir projetos e
+                        melhorar juntas.
                     </p>
 
+                    <p>
+                        Não importa se você acabou de escrever seu
+                        primeiro <strong>Hello World</strong> ou já
+                        está desenvolvendo seus próprios projetos.
+                        Sempre existe alguma coisa nova para aprender
+                        e alguma coisa que você pode ensinar.
+                    </p>
+
+                    <div class="quote">
+                        &gt; Aprenda no seu ritmo.<br>
+                        &gt; Programe sem pressa.
+                    </div>
+
                 </div>
-
-
-                <a
-                    href="https://github.com/script33dt-glitch/codigo-lento"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="secondary-button"
-                >
-                    Ver no GitHub ↗
-                </a>
 
             </div>
 
         </section>
 
+        <!-- =================================================
+             COMO COMEÇAR
+        ================================================== -->
 
-        <!-- SONEQUINHA -->
+        <section id="comecar">
 
-        <section
-            id="sonequinha"
-            class="section bot-section"
-        >
+            <div class="container">
 
-            <div class="section-label">
-                04 / SONEQUINHA
-            </div>
+                <div class="section-heading reveal">
 
+                    <span class="section-tag">
+                        02 / PRIMEIROS PASSOS
+                    </span>
 
-            <h2>
-                O bot oficial do Código Lento.
-            </h2>
+                    <h2 class="section-title">
+                        Entrou agora? É simples.
+                    </h2>
 
+                    <p class="section-description">
+                        Nada de chegar em um servidor e ficar perdido.
+                        Em poucos passos você já consegue entender a
+                        comunidade e começar a participar.
+                    </p>
 
-            <p class="section-description">
+                </div>
 
-                O <strong>Sonequinha</strong> é o braço direito da comunidade:
-                recebe novos membros, orienta quem acabou de chegar,
-                ajuda a moderação e mantém registros importantes do servidor —
-                tudo sem perder a personalidade tranquila do Código Lento.
+                <div class="steps">
 
-            </p>
+                    <article class="step-card reveal">
 
-
-            <div class="bot-hero">
-
-                <article class="bot-profile">
-
-                    <div>
-
-                        <div class="bot-avatar">
-
-                            <img
-                                src="./sonequinha.png"
-                                alt="Sonequinha — bot oficial do Código Lento"
-                            >
-
+                        <div class="step-number">
+                            PASSO_01
                         </div>
 
+                        <h3>
+                            💜 Entre no Discord
+                        </h3>
 
-                        <p class="terminal-text">
-                            &gt; sonequinha.status
+                        <p>
+                            Entre no servidor oficial do Código Lento
+                            e conheça a comunidade.
                         </p>
 
+                        <span class="step-bg-number">
+                            01
+                        </span>
+
+                    </article>
+
+                    <article class="step-card reveal">
+
+                        <div class="step-number">
+                            PASSO_02
+                        </div>
+
+                        <h3>
+                            📜 Leia as regras
+                        </h3>
+
+                        <p>
+                            Confira as orientações da comunidade para
+                            entender como tudo funciona e manter o
+                            ambiente organizado.
+                        </p>
+
+                        <span class="step-bg-number">
+                            02
+                        </span>
+
+                    </article>
+
+                    <article class="step-card reveal">
+
+                        <div class="step-number">
+                            PASSO_03
+                        </div>
+
+                        <h3>
+                            💻 Participe
+                        </h3>
+
+                        <p>
+                            Converse, tire dúvidas, compartilhe código,
+                            mostre seus projetos e evolua junto com
+                            outras pessoas.
+                        </p>
+
+                        <span class="step-bg-number">
+                            03
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             O QUE TEM AQUI
+        ================================================== -->
+
+        <section id="comunidade-recursos">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-tag">
+                        03 / COMUNIDADE
+                    </span>
+
+                    <h2 class="section-title">
+                        O que você encontra por aqui.
+                    </h2>
+
+                    <p class="section-description">
+                        Um espaço para aprender programação sem ficar
+                        sozinho no processo.
+                    </p>
+
+                </div>
+
+                <div class="features-grid">
+
+                    <article class="feature-card reveal">
+                        <div class="feature-icon">
+                            💻
+                        </div>
+
+                        <h3>
+                            Programação
+                        </h3>
+
+                        <p>
+                            Converse sobre desenvolvimento, linguagens,
+                            ferramentas e tecnologia.
+                        </p>
+                    </article>
+
+                    <article class="feature-card reveal">
+                        <div class="feature-icon">
+                            🆘
+                        </div>
+
+                        <h3>
+                            Ajuda
+                        </h3>
+
+                        <p>
+                            Travou em alguma coisa? Compartilhe sua
+                            dúvida e tente resolver junto com a
+                            comunidade.
+                        </p>
+                    </article>
+
+                    <article class="feature-card reveal">
+                        <div class="feature-icon">
+                            🧩
+                        </div>
+
+                        <h3>
+                            Projetos
+                        </h3>
+
+                        <p>
+                            Mostre o que está construindo, receba
+                            feedback e acompanhe projetos de outros
+                            membros.
+                        </p>
+                    </article>
+
+                    <article class="feature-card reveal">
+                        <div class="feature-icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            Estudos
+                        </h3>
+
+                        <p>
+                            Compartilhe materiais, organize seu
+                            aprendizado e evolua no seu próprio ritmo.
+                        </p>
+                    </article>
+
+                    <article class="feature-card reveal">
+                        <div class="feature-icon">
+                            🤝
+                        </div>
+
+                        <h3>
+                            Comunidade
+                        </h3>
+
+                        <p>
+                            Conheça pessoas que também gostam de
+                            programação e tecnologia.
+                        </p>
+                    </article>
+
+                    <article class="feature-card reveal">
+                        <div class="feature-icon">
+                            🦥
+                        </div>
 
                         <h3>
                             Sonequinha
                         </h3>
 
-
                         <p>
-                            Bot oficial da comunidade Código Lento.
-                            Cuidando do servidor enquanto tenta não dormir.
+                            Nosso bot oficial ajuda a organizar,
+                            moderar e automatizar a comunidade.
                         </p>
-
-                    </div>
-
-
-                    <div class="bot-badges">
-
-                        <span class="bot-badge online">
-                            ● ONLINE
-                        </span>
-
-                        <span class="bot-badge">
-                            MODERAÇÃO
-                        </span>
-
-                        <span class="bot-badge">
-                            AUTOMAÇÃO
-                        </span>
-
-                        <span class="bot-badge">
-                            COMUNIDADE
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-                <div class="bot-terminal">
-
-                    <div class="terminal-card">
-
-                        <div class="terminal-header">
-
-                            <div class="terminal-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-
-                            <p>
-                                sonequinha.js
-                            </p>
-
-                        </div>
-
-
-                        <div class="terminal-body">
-
-                            <p>
-                                <span class="purple">
-                                    const
-                                </span>
-
-                                bot =
-
-                                <span class="green">
-                                    "Sonequinha"
-                                </span>;
-                            </p>
-
-
-                            <p>
-                                <span class="purple">
-                                    const
-                                </span>
-
-                                servidor =
-
-                                <span class="green">
-                                    "Código Lento"
-                                </span>;
-                            </p>
-
-
-                            <p>
-                                <span class="purple">
-                                    const
-                                </span>
-
-                                acordado =
-
-                                <span class="yellow">
-                                    talvez
-                                </span>;
-                            </p>
-
-
-                            <br>
-
-
-                            <p>
-
-                                <span class="purple">
-                                    function
-                                </span>
-
-                                <span class="yellow">
-                                    cuidarDaComunidade
-                                </span>() {
-
-                            </p>
-
-
-                            <p class="indent">
-                                receberNovosMembros();
-                            </p>
-
-                            <p class="indent">
-                                orientarComunidade();
-                            </p>
-
-                            <p class="indent">
-                                ajudarModeracao();
-                            </p>
-
-                            <p class="indent">
-                                registrarEventos();
-                            </p>
-
-                            <p>
-                                }
-                            </p>
-
-
-                            <br>
-
-
-                            <p class="comment">
-                                // devagar, atento e quase dormindo 🦥
-                            </p>
-
-                        </div>
-
-                    </div>
+                    </article>
 
                 </div>
-
-            </div>
-
-
-            <p class="terminal-text">
-                &gt; comandos_publicos
-            </p>
-
-
-            <div class="bot-grid">
-
-                <article class="card bot-command">
-
-                    <code>
-                        /ping
-                    </code>
-
-                    <h3>
-                        Será que ele acordou?
-                    </h3>
-
-                    <p>
-                        Verifica se o Sonequinha está online
-                        e respondendo aos comandos da comunidade.
-                    </p>
-
-                </article>
-
-
-                <article class="card bot-command">
-
-                    <code>
-                        /ajuda
-                    </code>
-
-                    <h3>
-                        Central de comandos
-                    </h3>
-
-                    <p>
-                        Mostra os comandos disponíveis
-                        e ajuda os membros a entender
-                        o que o bot pode fazer.
-                    </p>
-
-                </article>
-
-
-                <article class="card bot-command">
-
-                    <code>
-                        /servidor
-                    </code>
-
-                    <h3>
-                        Informações do servidor
-                    </h3>
-
-                    <p>
-                        Exibe informações do Código Lento,
-                        como dono, quantidade de membros
-                        e data de criação.
-                    </p>
-
-                </article>
-
-            </div>
-
-
-            <p
-                class="terminal-text"
-                style="margin-top: 45px;"
-            >
-                &gt; automacao_e_moderacao
-            </p>
-
-
-            <div class="bot-features">
-
-                <div class="bot-feature">
-
-                    <strong>
-                        🏠 Boas-vindas automáticas
-                    </strong>
-
-                    Recebe novos membros com uma mensagem personalizada,
-                    avatar e indicação dos próximos passos.
-
-                </div>
-
-
-                <div class="bot-feature">
-
-                    <strong>
-                        📜 Orientação para novos membros
-                    </strong>
-
-                    Direciona quem acabou de entrar
-                    para as regras e para o chat geral.
-
-                </div>
-
-
-                <div class="bot-feature">
-
-                    <strong>
-                        🎫 Sistema de tickets
-                    </strong>
-
-                    Cria atendimentos privados entre o membro,
-                    a moderação e a administração da comunidade.
-
-                </div>
-
-
-                <div class="bot-feature">
-
-                    <strong>
-                        ⚠️ Avisos
-                    </strong>
-
-                    A equipe pode usar
-                    <code>/avisar</code>
-                    para enviar um aviso de moderação.
-
-                </div>
-
-
-                <div class="bot-feature">
-
-                    <strong>
-                        🔇 Silenciamento
-                    </strong>
-
-                    O comando
-                    <code>/silenciar</code>
-                    permite aplicar timeout temporário.
-
-                </div>
-
-
-                <div class="bot-feature">
-
-                    <strong>
-                        🧹 Limpeza de mensagens
-                    </strong>
-
-                    Moderadores podem usar
-                    <code>/limpar</code>
-                    para remover várias mensagens.
-
-                </div>
-
-
-                <div class="bot-feature">
-
-                    <strong>
-                        👢 Expulsões
-                    </strong>
-
-                    O comando
-                    <code>/expulsar</code>
-                    remove membros e registra a ação.
-
-                </div>
-
-
-                <div class="bot-feature">
-
-                    <strong>
-                        🔨 Banimentos
-                    </strong>
-
-                    O comando
-                    <code>/banir</code>
-                    permite banir membros
-                    e registrar o motivo.
-
-                </div>
-
-
-                <div class="bot-feature">
-
-                    <strong>
-                        🚪 Registro de saídas
-                    </strong>
-
-                    Quando alguém deixa o servidor,
-                    o Sonequinha registra a saída.
-
-                </div>
-
-
-                <div class="bot-feature">
-
-                    <strong>
-                        🛡️ Logs de moderação
-                    </strong>
-
-                    Expulsões e banimentos recebem
-                    registros próprios.
-
-                </div>
-
-
-                <div class="bot-feature">
-
-                    <strong>
-                        💜 Presença personalizada
-                    </strong>
-
-                    O perfil do Sonequinha alterna
-                    frases personalizadas da comunidade.
-
-                </div>
-
-            </div>
-
-
-            <div class="bot-note">
-
-                <strong style="color: var(--white);">
-                    💜 Criado por Dostoiévski — @Saenger1997
-                </strong>
-
-                <br>
-
-                O Sonequinha foi criado especialmente para o Código Lento
-                e continuará ganhando novas funções conforme
-                a comunidade evoluir.
 
             </div>
 
         </section>
 
-
-        <!-- COMUNIDADE -->
+        <!-- =================================================
+             SONEQUINHA
+        ================================================== -->
 
         <section
-            id="comunidade"
-            class="community-section"
+            class="bot-section"
+            id="sonequinha"
         >
 
-            <div class="community-content">
+            <div class="container">
 
-                <span class="sloth">
-                    🦥
-                </span>
+                <div class="section-heading reveal">
 
+                    <span class="section-tag">
+                        04 / SONEQUINHA
+                    </span>
 
-                <p class="terminal-text">
-                    &gt; esperando_novo_dev...
-                </p>
+                    <h2 class="section-title">
+                        O braço direito do Código Lento.
+                    </h2>
 
-
-                <h2>
-                    Seu próximo projeto pode começar aqui.
-                </h2>
-
-
-                <p class="community-description">
-
-                    Entre para o Código Lento,
-                    conheça outros desenvolvedores,
-                    tire dúvidas, compartilhe projetos
-                    e evolua um código de cada vez.
-
-                </p>
-
-
-                <div class="community-actions">
-
-                    <a
-                        href="https://discord.gg/waTE9gQYPR"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="discord-button"
-                    >
-                        💬 Fazer parte da comunidade
-                    </a>
+                    <p class="section-description">
+                        O Sonequinha é o bot oficial da comunidade.
+                        Ele recebe novos membros, auxilia a moderação,
+                        organiza atendimentos e cuida de várias
+                        automações enquanto tenta não dormir.
+                    </p>
 
                 </div>
 
+                <div class="bot-grid">
 
-                <!-- MODELO OFICIAL DO SERVIDOR -->
+                    <div class="bot-profile reveal">
 
-                <div class="template-area">
+                        <div class="bot-avatar">
+                            <img
+                                src="./sonequinha.png"
+                                alt="Sonequinha — bot oficial do Código Lento"
+                            >
+                        </div>
 
-                    <p class="template-label">
-                        &gt; modelo_do_servidor
+                        <h3 class="bot-name">
+                            Sonequinha
+                        </h3>
+
+                        <div class="bot-status">
+                            ONLINE
+                        </div>
+
+                        <p class="bot-description">
+                            Bot desenvolvido especialmente para o
+                            Código Lento, focado em comunidade,
+                            automação, atendimento e moderação.
+                        </p>
+
+                        <div class="bot-tags">
+
+                            <span class="bot-tag">
+                                MODERAÇÃO
+                            </span>
+
+                            <span class="bot-tag">
+                                TICKETS
+                            </span>
+
+                            <span class="bot-tag">
+                                AUTOMAÇÃO
+                            </span>
+
+                            <span class="bot-tag">
+                                LOGS
+                            </span>
+
+                            <span class="bot-tag">
+                                COMUNIDADE
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="bot-terminal reveal">
+
+                        <div class="terminal-top">
+
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+
+                            <span class="terminal-title">
+                                sonequinha.js
+                            </span>
+
+                        </div>
+
+                        <div class="bot-code">
+
+                            <div>
+                                <span class="code-purple">
+                                    const
+                                </span>
+                                bot =
+                                <span class="code-green">
+                                    "Sonequinha"
+                                </span>;
+                            </div>
+
+                            <div>
+                                <span class="code-purple">
+                                    const
+                                </span>
+                                servidor =
+                                <span class="code-green">
+                                    "Código Lento"
+                                </span>;
+                            </div>
+
+                            <div>
+                                <span class="code-purple">
+                                    const
+                                </span>
+                                acordado =
+                                <span class="code-yellow">
+                                    talvez
+                                </span>;
+                            </div>
+
+                            <br>
+
+                            <div>
+                                <span class="code-purple">
+                                    function
+                                </span>
+                                cuidarDaComunidade() {
+                            </div>
+
+                            <div>
+                                &nbsp;&nbsp;receberNovosMembros();
+                            </div>
+
+                            <div>
+                                &nbsp;&nbsp;ajudarModeracao();
+                            </div>
+
+                            <div>
+                                &nbsp;&nbsp;gerenciarTickets();
+                            </div>
+
+                            <div>
+                                &nbsp;&nbsp;registrarEventos();
+                            </div>
+
+                            <div>
+                                &nbsp;&nbsp;lembrarBump();
+                            </div>
+
+                            <div>
+                                }
+                            </div>
+
+                            <br>
+
+                            <div class="code-muted">
+                                // sem pressa, mas sempre online.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FUNÇÕES -->
+
+                <div class="bot-features">
+
+                    <div class="bot-feature reveal">
+                        <strong>
+                            👋 Boas-vindas
+                        </strong>
+
+                        Recebe novos membros e indica os primeiros
+                        lugares importantes da comunidade.
+                    </div>
+
+                    <div class="bot-feature reveal">
+                        <strong>
+                            🎫 Tickets avançados
+                        </strong>
+
+                        Abre atendimentos privados com formulário para
+                        assunto e descrição do problema.
+                    </div>
+
+                    <div class="bot-feature reveal">
+                        <strong>
+                            🙋 Assumir atendimento
+                        </strong>
+
+                        Moderadores e administradores podem assumir
+                        oficialmente um ticket.
+                    </div>
+
+                    <div class="bot-feature reveal">
+                        <strong>
+                            📋 Transcrições
+                        </strong>
+
+                        Ao encerrar um ticket, o Sonequinha gera uma
+                        transcrição da conversa para os registros da
+                        equipe.
+                    </div>
+
+                    <div class="bot-feature reveal">
+                        <strong>
+                            🛡️ Moderação
+                        </strong>
+
+                        Ajuda a equipe com avisos, silenciamentos,
+                        limpeza de mensagens, expulsões e banimentos.
+                    </div>
+
+                    <div class="bot-feature reveal">
+                        <strong>
+                            🚪 Logs
+                        </strong>
+
+                        Registra eventos importantes como saídas,
+                        expulsões, banimentos e movimentações dos
+                        tickets.
+                    </div>
+
+                    <div class="bot-feature reveal">
+                        <strong>
+                            🚀 Lembrete de bump
+                        </strong>
+
+                        Acompanha o sistema de bump e lembra a
+                        comunidade quando chega a hora de ajudar na
+                        divulgação do servidor.
+                    </div>
+
+                    <div class="bot-feature reveal">
+                        <strong>
+                            💤 Presença dinâmica
+                        </strong>
+
+                        Mantém mensagens de presença rotativas com a
+                        personalidade do Sonequinha.
+                    </div>
+
+                    <div class="bot-feature reveal">
+                        <strong>
+                            🔒 Atendimento privado
+                        </strong>
+
+                        Tickets ficam acessíveis apenas para o membro
+                        e para a equipe responsável.
+                    </div>
+
+                </div>
+
+                <!-- COMANDOS -->
+
+                <div class="commands-wrap reveal">
+
+                    <div class="commands-title">
+                        &gt; comandos_disponíveis
+                    </div>
+
+                    <div class="commands-grid">
+
+                        <div class="command">
+                            <code>
+                                /ping
+                            </code>
+
+                            <span>
+                                Será que o Sonequinha acordou?
+                            </span>
+                        </div>
+
+                        <div class="command">
+                            <code>
+                                /ajuda
+                            </code>
+
+                            <span>
+                                Abre a central de comandos.
+                            </span>
+                        </div>
+
+                        <div class="command">
+                            <code>
+                                /servidor
+                            </code>
+
+                            <span>
+                                Mostra informações da comunidade.
+                            </span>
+                        </div>
+
+                        <div class="command">
+                            <code>
+                                /avisar
+                            </code>
+
+                            <span>
+                                Envia um aviso para um membro.
+                            </span>
+                        </div>
+
+                        <div class="command">
+                            <code>
+                                /silenciar
+                            </code>
+
+                            <span>
+                                Aplica silêncio temporário.
+                            </span>
+                        </div>
+
+                        <div class="command">
+                            <code>
+                                /limpar
+                            </code>
+
+                            <span>
+                                Limpa mensagens do canal.
+                            </span>
+                        </div>
+
+                        <div class="command">
+                            <code>
+                                /expulsar
+                            </code>
+
+                            <span>
+                                Remove um membro do servidor.
+                            </span>
+                        </div>
+
+                        <div class="command">
+                            <code>
+                                /banir
+                            </code>
+
+                            <span>
+                                Bane um membro do servidor.
+                            </span>
+                        </div>
+
+                        <div class="command">
+                            <code>
+                                /painel-ticket
+                            </code>
+
+                            <span>
+                                Publica a central de atendimento.
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="bot-credit">
+                        💜 Criado por
+                        <strong>
+                            Dostoiévski — @Saenger1997
+                        </strong>
+                        para o Código Lento.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             PROJETOS
+        ================================================== -->
+
+        <section id="projetos">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-tag">
+                        05 / PROJETOS
+                    </span>
+
+                    <h2 class="section-title">
+                        Construído pela comunidade.
+                    </h2>
+
+                    <p class="section-description">
+                        O Código Lento também é um espaço para colocar
+                        ideias em prática. Estes são alguns dos
+                        projetos que já fazem parte da comunidade.
                     </p>
 
-                    <h3>
-                        Gostou da organização do Código Lento?
-                    </h3>
+                </div>
+
+                <div class="projects-grid">
+
+                    <article class="project reveal">
+
+                        <div class="project-label">
+                            PROJETO_01 / WEB
+                        </div>
+
+                        <h3>
+                            Código Lento
+                        </h3>
+
+                        <p>
+                            O site oficial da comunidade. Um espaço
+                            para apresentar nossa proposta, nossos
+                            projetos e facilitar a chegada de novos
+                            membros.
+                        </p>
+
+                        <a
+                            href="https://codigo-lento.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            abrir projeto ↗
+                        </a>
+
+                        <span class="project-number">
+                            01
+                        </span>
+
+                    </article>
+
+                    <article class="project reveal">
+
+                        <div class="project-label">
+                            PROJETO_02 / BOT
+                        </div>
+
+                        <h3>
+                            Sonequinha
+                        </h3>
+
+                        <p>
+                            Bot próprio do Código Lento criado para
+                            automatizar atendimentos, auxiliar a
+                            moderação, registrar eventos e deixar a
+                            comunidade mais organizada.
+                        </p>
+
+                        <a
+                            href="#sonequinha"
+                            class="project-link"
+                        >
+                            conhecer o Sonequinha ↑
+                        </a>
+
+                        <span class="project-number">
+                            02
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             CHANGELOG
+        ================================================== -->
+
+        <section id="atualizacoes">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-tag">
+                        06 / CHANGELOG
+                    </span>
+
+                    <h2 class="section-title">
+                        Últimas atualizações.
+                    </h2>
+
+                    <p class="section-description">
+                        A comunidade continua evoluindo — no nosso
+                        ritmo, claro.
+                    </p>
+
+                </div>
+
+                <div class="changelog">
+
+                    <article class="update reveal">
+
+                        <div class="update-version">
+                            UPDATE / TICKETS_2.0
+                        </div>
+
+                        <h3>
+                            🎫 Sistema avançado de atendimento
+                        </h3>
+
+                        <p>
+                            Tickets ganharam formulário, responsável
+                            pelo atendimento, confirmação de
+                            encerramento, logs e transcrições.
+                        </p>
+
+                    </article>
+
+                    <article class="update reveal">
+
+                        <div class="update-version">
+                            UPDATE / BUMP
+                        </div>
+
+                        <h3>
+                            🚀 Lembretes de divulgação
+                        </h3>
+
+                        <p>
+                            O Sonequinha agora acompanha os bumps e
+                            ajuda a lembrar a comunidade quando chega
+                            a hora de divulgar novamente o servidor.
+                        </p>
+
+                    </article>
+
+                    <article class="update reveal">
+
+                        <div class="update-version">
+                            UPDATE / SONEQUINHA
+                        </div>
+
+                        <h3>
+                            🦥 Mais automações
+                        </h3>
+
+                        <p>
+                            O bot oficial ganhou novas funções de
+                            comunidade, moderação, registros e
+                            atendimento.
+                        </p>
+
+                    </article>
+
+                    <article class="update reveal">
+
+                        <div class="update-version">
+                            STATUS / ONLINE
+                        </div>
+
+                        <h3>
+                            💜 Código Lento
+                        </h3>
+
+                        <p>
+                            O projeto continua crescendo e novas
+                            funções serão adicionadas conforme a
+                            comunidade evoluir.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             DISCORD
+        ================================================== -->
+
+        <section id="discord">
+
+            <div class="container">
+
+                <div class="community-box reveal">
+
+                    <span class="section-tag">
+                        07 / ENTRE NA COMUNIDADE
+                    </span>
+
+                    <h2>
+                        Seu próximo projeto pode começar aqui.
+                    </h2>
 
                     <p>
-                        Use nosso modelo oficial como base
-                        para criar e organizar seu próprio servidor no Discord.
+                        Entre no Discord do Código Lento, converse com
+                        a comunidade, compartilhe seus projetos e
+                        continue aprendendo no seu próprio ritmo.
                     </p>
 
-                    <a
-                        href="https://discord.new/eCUBrNxPMnZK"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="template-button"
-                    >
-                        🧩 Usar modelo do servidor ↗
-                    </a>
+                    <div class="community-actions">
+
+                        <a
+                            href="https://discord.gg/waTE9gQYPR"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary"
+                        >
+                            💜 Entrar no Discord ↗
+                        </a>
+
+                        <a
+                            href="https://github.com/script33dt-glitch/codigo-lento"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-secondary"
+                        >
+                            GitHub ↗
+                        </a>
+
+                    </div>
+
+                    <div class="template-area">
+
+                        <p class="template-label">
+                            &gt; modelo_do_servidor
+                        </p>
+
+                        <h3>
+                            Gostou da organização do Código Lento?
+                        </h3>
+
+                        <p>
+                            Use nosso modelo oficial como base para
+                            criar e organizar seu próprio servidor no
+                            Discord.
+                        </p>
+
+                        <a
+                            href="https://discord.new/eCUBrNxPMnZK"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="template-button"
+                        >
+                            🧩 Usar modelo do servidor ↗
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -2243,60 +2914,129 @@
 
     </main>
 
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
-    <!-- FOOTER -->
+    <footer>
 
-    <footer class="footer">
+        <div class="container footer-content">
 
-        <div>
+            <div class="footer-left">
+                <strong>
+                    CÓDIGO LENTO
+                </strong>
+                <br>
+                Aprenda no seu ritmo. Programe sem pressa.
+            </div>
 
-            <strong>
-                🦥 𝗖ó𝗱𝗶𝗴𝗼 𝗟𝗲𝗻𝘁𝗼
-            </strong>
+            <div class="footer-links">
 
-            <p>
-                Aprenda no seu ritmo.
-                Programe sem pressa.
-            </p>
+                <a
+                    href="https://discord.gg/waTE9gQYPR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Discord
+                </a>
+
+                <a
+                    href="https://github.com/script33dt-glitch/codigo-lento"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://discord.new/eCUBrNxPMnZK"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Modelo do servidor
+                </a>
+
+                <a href="#sonequinha">
+                    Sonequinha
+                </a>
+
+            </div>
 
         </div>
-
-
-        <div class="footer-links">
-
-            <a
-                href="https://discord.gg/waTE9gQYPR"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Discord
-            </a>
-
-            <a
-                href="https://discord.new/eCUBrNxPMnZK"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Modelo do servidor
-            </a>
-
-            <a
-                href="https://github.com/script33dt-glitch/codigo-lento"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                GitHub
-            </a>
-
-        </div>
-
-
-        <p class="copyright">
-            © 2026 Código Lento —
-            Feito pela comunidade, para a comunidade. 💜
-        </p>
 
     </footer>
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+        // =====================================================
+        // ANIMAÇÃO DE ENTRADA DOS ELEMENTOS
+        // =====================================================
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+                                entry.target
+                                    .classList
+                                    .add("visible");
+
+                                revealObserver
+                                    .unobserve(
+                                        entry.target
+                                    );
+                            }
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+        revealElements.forEach(
+            (element) => {
+                revealObserver.observe(
+                    element
+                );
+            }
+        );
+
+        // =====================================================
+        // PEQUENO EFEITO NO TÍTULO DA ABA
+        // =====================================================
+
+        const tituloOriginal =
+            document.title;
+
+        document.addEventListener(
+            "visibilitychange",
+            () => {
+
+                if (
+                    document.hidden
+                ) {
+                    document.title =
+                        "🦥 sem pressa... | Código Lento";
+                } else {
+                    document.title =
+                        tituloOriginal;
+                }
+            }
+        );
+    </script>
 
 </body>
 </html>
