@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#09090b">
+
     <meta
         name="description"
         content="Código Lento — comunidade brasileira de programação para aprender, compartilhar projetos e evoluir junto."
@@ -143,7 +144,7 @@
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 25px;
 
             color: var(--gray);
             font-size: 14px;
@@ -308,7 +309,6 @@
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
-
             gap: 13px;
         }
 
@@ -659,6 +659,192 @@
             color: var(--gray);
         }
 
+        /* SONEQUINHA */
+
+        .bot-section {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .bot-hero {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 24px;
+            align-items: stretch;
+            margin-bottom: 25px;
+        }
+
+        .bot-profile,
+        .bot-terminal {
+            border: 1px solid rgba(155,92,255,.22);
+            border-radius: 18px;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(155,92,255,.10),
+                    transparent 42%
+                ),
+                var(--card);
+        }
+
+        .bot-profile {
+            padding: 32px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            min-height: 350px;
+        }
+
+        .bot-avatar {
+            width: 86px;
+            height: 86px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 24px;
+
+            border: 1px solid rgba(155,92,255,.35);
+            border-radius: 50%;
+
+            background: rgba(155,92,255,.10);
+
+            box-shadow:
+                0 0 40px rgba(155,92,255,.16);
+
+            font-size: 44px;
+        }
+
+        .bot-profile h3 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .bot-profile p {
+            color: var(--gray);
+        }
+
+        .bot-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            margin-top: 25px;
+        }
+
+        .bot-badge {
+            padding: 7px 11px;
+
+            border: 1px solid var(--border);
+            border-radius: 100px;
+
+            background: rgba(255,255,255,.025);
+
+            color: var(--gray);
+
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        .bot-badge.online {
+            color: var(--green);
+            border-color: rgba(113,217,158,.25);
+        }
+
+        .bot-terminal {
+            overflow: hidden;
+        }
+
+        .bot-terminal .terminal-card {
+            width: 100%;
+            max-width: none;
+            height: 100%;
+
+            margin: 0;
+
+            border: 0;
+            border-radius: 18px;
+
+            box-shadow: none;
+            background: transparent;
+        }
+
+        .bot-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+
+            margin-top: 18px;
+        }
+
+        .bot-command {
+            min-height: 185px;
+        }
+
+        .bot-command code {
+            display: inline-block;
+
+            margin-bottom: 13px;
+
+            color: var(--purple-light);
+
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .bot-features {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-top: 18px;
+        }
+
+        .bot-feature {
+            padding: 18px 20px;
+
+            border: 1px solid var(--border);
+            border-radius: 13px;
+
+            background: rgba(255,255,255,.02);
+
+            color: var(--gray);
+        }
+
+        .bot-feature strong {
+            display: block;
+
+            color: var(--white);
+
+            margin-bottom: 4px;
+        }
+
+        .bot-feature code {
+            color: var(--purple-light);
+        }
+
+        .bot-note {
+            margin-top: 24px;
+
+            padding: 20px 22px;
+
+            border-left: 3px solid var(--purple);
+            border-radius: 0 12px 12px 0;
+
+            background: rgba(155,92,255,.06);
+
+            color: var(--gray);
+        }
+
         /* COMUNIDADE */
 
         .community-section {
@@ -806,6 +992,14 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+
+            .bot-hero {
+                grid-template-columns: 1fr;
+            }
+
+            .bot-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 600px) {
@@ -870,6 +1064,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .bot-features {
+                grid-template-columns: 1fr;
+            }
+
             .community-section {
                 padding: 70px 18px;
             }
@@ -899,7 +1097,6 @@
 
             <a href="#inicio" class="logo">
 
-                <!-- LOGO DIRETO DA RAIZ -->
                 <img
                     src="./logo.png"
                     alt="Logo Código Lento"
@@ -925,6 +1122,10 @@
                     Projetos
                 </a>
 
+                <a href="#sonequinha">
+                    Sonequinha
+                </a>
+
                 <a href="#comunidade">
                     Comunidade
                 </a>
@@ -943,7 +1144,6 @@
         </nav>
 
     </header>
-
 
     <main>
 
@@ -1011,7 +1211,6 @@
 
             </div>
 
-
             <!-- MASCOTE + TERMINAL -->
 
             <div class="hero-visual">
@@ -1020,7 +1219,6 @@
 
                     <div class="mascot-glow"></div>
 
-                    <!-- MASCOTE DIRETO DA RAIZ -->
                     <img
                         src="./mascote.png"
                         alt="Bicho-preguiça mascote do Código Lento"
@@ -1045,57 +1243,31 @@
 
                         </div>
 
-
                         <div class="terminal-body">
 
                             <p>
-                                <span class="purple">
-                                    const
-                                </span>
-
+                                <span class="purple">const</span>
                                 comunidade =
-
-                                <span class="green">
-                                    "Código Lento"
-                                </span>;
+                                <span class="green">"Código Lento"</span>;
                             </p>
 
                             <p>
-                                <span class="purple">
-                                    const
-                                </span>
-
+                                <span class="purple">const</span>
                                 ritmo =
-
-                                <span class="green">
-                                    "seu"
-                                </span>;
+                                <span class="green">"seu"</span>;
                             </p>
 
                             <p>
-                                <span class="purple">
-                                    const
-                                </span>
-
+                                <span class="purple">const</span>
                                 pressa =
-
-                                <span class="red">
-                                    false
-                                </span>;
+                                <span class="red">false</span>;
                             </p>
 
                             <br>
 
                             <p>
-
-                                <span class="purple">
-                                    function
-                                </span>
-
-                                <span class="yellow">
-                                    aprender
-                                </span>() {
-
+                                <span class="purple">function</span>
+                                <span class="yellow">aprender</span>() {
                             </p>
 
                             <p class="indent">
@@ -1130,7 +1302,6 @@
 
         </section>
 
-
         <!-- SOBRE -->
 
         <section
@@ -1155,7 +1326,6 @@
 
             </p>
 
-
             <div class="cards">
 
                 <article class="card">
@@ -1176,7 +1346,6 @@
 
                 </article>
 
-
                 <article class="card">
 
                     <div class="card-icon">
@@ -1194,7 +1363,6 @@
                     </p>
 
                 </article>
-
 
                 <article class="card">
 
@@ -1218,7 +1386,6 @@
 
         </section>
 
-
         <!-- TECNOLOGIAS -->
 
         <section
@@ -1240,7 +1407,6 @@
                 Explore diferentes tecnologias junto com a comunidade.
 
             </p>
-
 
             <div class="tech-grid">
 
@@ -1288,7 +1454,6 @@
 
         </section>
 
-
         <!-- PROJETOS -->
 
         <section
@@ -1310,7 +1475,6 @@
                 aquilo que você está estudando em algo real.
 
             </p>
-
 
             <div class="project-card">
 
@@ -1337,7 +1501,6 @@
 
                 </div>
 
-
                 <a
                     href="https://github.com/script33dt-glitch/codigo-lento"
                     target="_blank"
@@ -1351,6 +1514,334 @@
 
         </section>
 
+        <!-- SONEQUINHA -->
+
+        <section
+            id="sonequinha"
+            class="section bot-section"
+        >
+
+            <div class="section-label">
+                04 / SONEQUINHA
+            </div>
+
+            <h2>
+                O bot oficial do Código Lento.
+            </h2>
+
+            <p class="section-description">
+
+                O <strong>Sonequinha</strong> é o braço direito da comunidade:
+                recebe novos membros, orienta quem acabou de chegar,
+                ajuda a moderação e mantém registros importantes do servidor.
+
+                Tudo isso sem perder a personalidade tranquila
+                do Código Lento.
+
+            </p>
+
+            <div class="bot-hero">
+
+                <article class="bot-profile">
+
+                    <div>
+
+                        <div class="bot-avatar">
+                            🦥
+                        </div>
+
+                        <p class="terminal-text">
+                            &gt; sonequinha.status
+                        </p>
+
+                        <h3>
+                            Sonequinha
+                        </h3>
+
+                        <p>
+                            Bot oficial da comunidade Código Lento.
+                            Cuidando do servidor enquanto tenta não dormir.
+                        </p>
+
+                    </div>
+
+                    <div class="bot-badges">
+
+                        <span class="bot-badge online">
+                            ● ONLINE
+                        </span>
+
+                        <span class="bot-badge">
+                            MODERAÇÃO
+                        </span>
+
+                        <span class="bot-badge">
+                            AUTOMAÇÃO
+                        </span>
+
+                        <span class="bot-badge">
+                            COMUNIDADE
+                        </span>
+
+                    </div>
+
+                </article>
+
+                <div class="bot-terminal">
+
+                    <div class="terminal-card">
+
+                        <div class="terminal-header">
+
+                            <div class="terminal-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <p>
+                                sonequinha.js
+                            </p>
+
+                        </div>
+
+                        <div class="terminal-body">
+
+                            <p>
+                                <span class="purple">const</span>
+                                bot =
+                                <span class="green">"Sonequinha"</span>;
+                            </p>
+
+                            <p>
+                                <span class="purple">const</span>
+                                servidor =
+                                <span class="green">"Código Lento"</span>;
+                            </p>
+
+                            <p>
+                                <span class="purple">const</span>
+                                acordado =
+                                <span class="yellow">talvez</span>;
+                            </p>
+
+                            <br>
+
+                            <p>
+                                <span class="purple">function</span>
+                                <span class="yellow">
+                                    cuidarDaComunidade
+                                </span>() {
+                            </p>
+
+                            <p class="indent">
+                                receberNovosMembros();
+                            </p>
+
+                            <p class="indent">
+                                orientarComunidade();
+                            </p>
+
+                            <p class="indent">
+                                ajudarModeracao();
+                            </p>
+
+                            <p class="indent">
+                                registrarEventos();
+                            </p>
+
+                            <p>
+                                }
+                            </p>
+
+                            <br>
+
+                            <p class="comment">
+                                // devagar, atento e quase dormindo 🦥
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="terminal-text">
+                &gt; comandos_publicos
+            </p>
+
+            <div class="bot-grid">
+
+                <article class="card bot-command">
+
+                    <code>/ping</code>
+
+                    <h3>
+                        Será que ele acordou?
+                    </h3>
+
+                    <p>
+                        Verifica se o Sonequinha está online
+                        e respondendo aos comandos da comunidade.
+                    </p>
+
+                </article>
+
+                <article class="card bot-command">
+
+                    <code>/ajuda</code>
+
+                    <h3>
+                        Central de comandos
+                    </h3>
+
+                    <p>
+                        Mostra os comandos disponíveis e ajuda
+                        os membros a entender o que o bot pode fazer.
+                    </p>
+
+                </article>
+
+                <article class="card bot-command">
+
+                    <code>/servidor</code>
+
+                    <h3>
+                        Informações do servidor
+                    </h3>
+
+                    <p>
+                        Exibe informações do Código Lento,
+                        como dono, quantidade de membros
+                        e data de criação.
+                    </p>
+
+                </article>
+
+            </div>
+
+            <p
+                class="terminal-text"
+                style="margin-top: 45px;"
+            >
+                &gt; automacao_e_moderacao
+            </p>
+
+            <div class="bot-features">
+
+                <div class="bot-feature">
+                    <strong>
+                        🏠 Boas-vindas automáticas
+                    </strong>
+
+                    Recebe novos membros com mensagem personalizada,
+                    avatar e os próximos passos dentro da comunidade.
+                </div>
+
+                <div class="bot-feature">
+                    <strong>
+                        📜 Orientação para novos membros
+                    </strong>
+
+                    Direciona quem acabou de entrar para
+                    as regras e para o chat geral.
+                </div>
+
+                <div class="bot-feature">
+                    <strong>
+                        ⚠️ Avisos
+                    </strong>
+
+                    A equipe pode usar <code>/avisar</code>
+                    para enviar um aviso de moderação a um membro.
+                </div>
+
+                <div class="bot-feature">
+                    <strong>
+                        🔇 Silenciamento
+                    </strong>
+
+                    O comando <code>/silenciar</code> permite
+                    aplicar um timeout temporário com duração e motivo.
+                </div>
+
+                <div class="bot-feature">
+                    <strong>
+                        🧹 Limpeza de mensagens
+                    </strong>
+
+                    Moderadores podem usar <code>/limpar</code>
+                    para remover várias mensagens de um canal.
+                </div>
+
+                <div class="bot-feature">
+                    <strong>
+                        👢 Expulsões
+                    </strong>
+
+                    O comando <code>/expulsar</code>
+                    remove membros e registra a ação de moderação.
+                </div>
+
+                <div class="bot-feature">
+                    <strong>
+                        🔨 Banimentos
+                    </strong>
+
+                    O comando <code>/banir</code>
+                    permite banir membros e registrar
+                    o motivo da ação.
+                </div>
+
+                <div class="bot-feature">
+                    <strong>
+                        🚪 Registro de saídas
+                    </strong>
+
+                    Quando alguém deixa o servidor,
+                    o Sonequinha registra automaticamente a saída.
+                </div>
+
+                <div class="bot-feature">
+                    <strong>
+                        🛡️ Logs de moderação
+                    </strong>
+
+                    Expulsões e banimentos recebem registros próprios,
+                    incluindo usuário, moderador e motivo
+                    quando disponível.
+                </div>
+
+                <div class="bot-feature">
+                    <strong>
+                        💜 Presença personalizada
+                    </strong>
+
+                    O Sonequinha alterna frases como
+                    “Cuidando do Código Lento”,
+                    “Use /ajuda” e
+                    “Tentando não dormir...”.
+                </div>
+
+            </div>
+
+            <div class="bot-note">
+
+                <strong style="color: var(--white);">
+                    💜 Criado por Dostoiévski — @Saenger1997
+                </strong>
+
+                <br>
+
+                O Sonequinha foi criado especialmente
+                para o Código Lento e continuará ganhando
+                novas funções conforme a comunidade evoluir.
+
+            </div>
+
+        </section>
 
         <!-- COMUNIDADE -->
 
@@ -1382,7 +1873,6 @@
 
                 </p>
 
-
                 <a
                     href="https://discord.gg/waTE9gQYPR"
                     target="_blank"
@@ -1397,7 +1887,6 @@
         </section>
 
     </main>
-
 
     <!-- FOOTER -->
 
@@ -1415,7 +1904,6 @@
             </p>
 
         </div>
-
 
         <div class="footer-links">
 
@@ -1436,7 +1924,6 @@
             </a>
 
         </div>
-
 
         <p class="copyright">
             © 2026 Código Lento —
