@@ -7,6 +7,8 @@
 <meta name="theme-color" content="#10091d">
 <meta name="description" content="Código Lento — comunidade brasileira de programação. Aprenda no seu ritmo, programe sem pressa.">
 <title>Código Lento | Comunidade de Programação</title>
+<link rel="icon" href="logo.png">
+
 <style>
 :root {
   --bg:#0d0915;
@@ -16,8 +18,11 @@
   --muted:#b4a8c6;
   --line:#382747;
 }
+
 * { box-sizing:border-box; }
+
 html { scroll-behavior:smooth; }
+
 body {
   margin:0;
   background:radial-gradient(ellipse at top,#392056,transparent 45%),var(--bg);
@@ -25,40 +30,95 @@ body {
   font-family:Arial,Helvetica,sans-serif;
   line-height:1.6;
 }
+
 a { color:inherit;text-decoration:none; }
-.container { max-width:1120px;margin:auto;padding:0 22px; }
+img { max-width:100%; }
+
+.container {
+  max-width:1120px;
+  margin:auto;
+  padding:0 22px;
+}
+
 header {
-  position:sticky;top:0;z-index:10;
+  position:sticky;
+  top:0;
+  z-index:10;
   background:#0d0915ee;
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
 }
+
 nav {
-  min-height:75px;display:flex;
-  align-items:center;justify-content:space-between;gap:20px;
+  min-height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
-.logo { font-size:22px;font-weight:900; }
+
+.logo {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:20px;
+  font-weight:900;
+}
+
+.logo img {
+  width:43px;
+  height:43px;
+  object-fit:contain;
+  border-radius:50%;
+}
+
 .logo span,.purple { color:var(--purple); }
-.links { display:flex;gap:20px;align-items:center;flex-wrap:wrap; }
+
+.links {
+  display:flex;
+  gap:20px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
 .links a { font-size:14px; }
 .links a:hover { color:var(--purple); }
+
 .btn {
   display:inline-block;
-  background:var(--purple);color:#190b27;
-  font-weight:bold;padding:12px 22px;
-  border-radius:12px;transition:.2s;
+  background:var(--purple);
+  color:#190b27;
+  font-weight:bold;
+  padding:12px 22px;
+  border-radius:12px;
+  transition:.2s;
 }
-.btn:hover { transform:translateY(-3px);background:#d4b6ff; }
-.btn.alt { background:#ffffff13;color:white;border:1px solid #ffffff35; }
+
+.btn:hover {
+  transform:translateY(-3px);
+  background:#d4b6ff;
+}
+
+.btn.alt {
+  background:#ffffff13;
+  color:white;
+  border:1px solid #ffffff35;
+}
+
 .hero {
   min-height:560px;
-  display:flex;align-items:center;
+  display:flex;
+  align-items:center;
   padding:85px 0;
 }
+
 .hero-grid {
-  display:grid;grid-template-columns:1.2fr .8fr;
-  gap:45px;align-items:center;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:45px;
+  align-items:center;
 }
+
 .tag {
   display:inline-block;
   color:#d9c0ff;
@@ -69,134 +129,310 @@ nav {
   font-size:12px;
   font-weight:bold;
 }
+
 h1 {
   font-size:clamp(48px,7vw,92px);
   line-height:1.05;
   letter-spacing:-4px;
   margin:25px 0;
 }
-h2 { font-size:clamp(30px,4vw,48px);line-height:1.2;margin:10px 0; }
+
+h2 {
+  font-size:clamp(30px,4vw,48px);
+  line-height:1.2;
+  margin:10px 0;
+}
+
 h3 { margin:8px 0; }
 p { color:var(--muted); }
-.hero p { font-size:18px;max-width:560px; }
-.actions { display:flex;gap:12px;flex-wrap:wrap;margin-top:28px; }
+
+.hero p {
+  font-size:18px;
+  max-width:560px;
+}
+
+.actions {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
 .mascot {
-  height:360px;
+  min-height:360px;
+  padding:24px;
   border-radius:25px;
   background:linear-gradient(145deg,#482568,#171021);
   border:1px solid #7653a6;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
   box-shadow:0 20px 80px #9b5cff25;
+  text-align:center;
 }
-.mascot .emoji {
-  font-size:145px;
+
+.mascot img {
+  width:240px;
+  height:240px;
+  object-fit:contain;
   animation:float 5s ease-in-out infinite;
 }
-@keyframes float { 50% { transform:translateY(-14px); } }
-section { padding:80px 0;scroll-margin-top:75px; }
-.kicker { color:var(--purple);font-size:12px;font-weight:bold;letter-spacing:3px; }
+
+@keyframes float {
+  50% { transform:translateY(-14px); }
+}
+
+section {
+  padding:80px 0;
+  scroll-margin-top:75px;
+}
+
+.kicker {
+  color:var(--purple);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:3px;
+}
+
 .section-head { margin-bottom:32px; }
-.grid { display:grid;grid-template-columns:repeat(3,1fr);gap:17px; }
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
 .card {
   background:linear-gradient(145deg,#211630,#140f20);
   border:1px solid var(--line);
-  border-radius:18px;padding:26px;
+  border-radius:18px;
+  padding:26px;
   transition:.2s;
 }
-.card:hover { transform:translateY(-4px);border-color:var(--purple); }
+
+.card:hover {
+  transform:translateY(-4px);
+  border-color:var(--purple);
+}
+
 .card .icon { font-size:30px; }
 .card p { font-size:14px;margin-bottom:0; }
+
 .strip {
   background:#170f22;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
+
 .bot-layout {
-  display:grid;grid-template-columns:.8fr 1.2fr;gap:20px;
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:20px;
 }
+
 .bot-profile {
-  padding:35px;border-radius:22px;
+  padding:35px;
+  border-radius:22px;
   background:linear-gradient(145deg,#452568,#1b1129);
   border:1px solid #70489d;
 }
-.bot-profile .big { font-size:90px; }
-.bot-features { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
-.feature {
-  background:var(--panel);border:1px solid var(--line);
-  border-radius:14px;padding:19px;
+
+.bot-avatar {
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  border-radius:50%;
+  border:4px solid var(--purple);
+  box-shadow:0 0 35px #b98aff40;
 }
-.feature p { font-size:13px;margin-bottom:0; }
+
+.bot-features {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.feature {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:19px;
+}
+
+.feature p {
+  font-size:13px;
+  margin-bottom:0;
+}
+
 .xp-panel {
   background:linear-gradient(130deg,#29163d,#171021);
   border:1px solid #7550aa;
-  border-radius:23px;padding:30px;
+  border-radius:23px;
+  padding:30px;
 }
-.stats { display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0; }
+
+.stats {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin:24px 0;
+}
+
 .stat {
-  background:#ffffff0b;border:1px solid #ffffff18;
-  border-radius:14px;padding:20px;
+  background:#ffffff0b;
+  border:1px solid #ffffff18;
+  border-radius:14px;
+  padding:20px;
 }
-.stat strong { display:block;font-size:30px;color:#e2c9ff; }
+
+.stat strong {
+  display:block;
+  font-size:30px;
+  color:#e2c9ff;
+}
+
 .stat small { color:var(--muted); }
-.levels { display:grid;grid-template-columns:repeat(5,1fr);gap:10px; }
-.level {
-  text-align:center;padding:15px 8px;
-  border:1px solid #ffffff22;
-  background:#ffffff0b;border-radius:12px;
+
+.levels {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
 }
-.level strong { display:block;color:#e2c9ff; }
+
+.level {
+  text-align:center;
+  padding:15px 8px;
+  border:1px solid #ffffff22;
+  background:#ffffff0b;
+  border-radius:12px;
+}
+
+.level strong {
+  display:block;
+  color:#e2c9ff;
+}
+
 .level small { color:var(--muted); }
-.commands { display:grid;grid-template-columns:1fr 1fr;gap:12px; }
+
+.commands {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
 .command {
   background:var(--panel);
   border:1px solid var(--line);
-  border-radius:13px;padding:18px;
+  border-radius:13px;
+  padding:18px;
 }
-.command code { color:var(--purple);font-size:15px; }
-.command p { font-size:13px;margin:5px 0 0; }
-.admin { font-size:11px;color:#d8baff; }
-.updates { display:grid;gap:12px; }
+
+.command code {
+  color:var(--purple);
+  font-size:15px;
+}
+
+.command p {
+  font-size:13px;
+  margin:5px 0 0;
+}
+
+.admin {
+  font-size:11px;
+  color:#d8baff;
+}
+
+.updates {
+  display:grid;
+  gap:12px;
+}
+
 .update {
-  background:var(--panel);border:1px solid var(--line);
-  padding:20px;border-radius:14px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:20px;
+  border-radius:14px;
 }
-.update p { margin:5px 0 0;font-size:14px; }
+
+.update p {
+  margin:5px 0 0;
+  font-size:14px;
+}
+
 .cta {
   text-align:center;
   background:linear-gradient(145deg,#49256d,#1a1028);
   border:1px solid #7651a6;
-  border-radius:25px;padding:65px 25px;
+  border-radius:25px;
+  padding:65px 25px;
 }
+
 footer {
-  padding:35px 0;border-top:1px solid var(--line);
-  color:var(--muted);font-size:13px;
+  padding:35px 0;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px;
 }
-footer .container { display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap; }
+
+footer .container {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
 @media(max-width:800px) {
-  .hero-grid,.bot-layout { grid-template-columns:1fr; }
-  .grid { grid-template-columns:repeat(2,1fr); }
+  .hero-grid,.bot-layout {
+    grid-template-columns:1fr;
+  }
+
+  .grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+
   .links { gap:10px; }
-  .mascot { height:260px; }
+  .mascot { min-height:260px; }
 }
+
 @media(max-width:550px) {
-  nav { flex-direction:column;padding:15px 0; }
+  nav {
+    flex-direction:column;
+    padding:15px 0;
+  }
+
   .links { justify-content:center; }
-  .grid,.bot-features,.stats,.commands { grid-template-columns:1fr; }
-  .levels { grid-template-columns:repeat(2,1fr); }
+
+  .grid,.bot-features,.stats,.commands {
+    grid-template-columns:1fr;
+  }
+
+  .levels {
+    grid-template-columns:repeat(2,1fr);
+  }
+
   h1 { letter-spacing:-2px; }
   section { padding:55px 0; }
 }
+
 @media(prefers-reduced-motion:reduce) {
-  *,*:before,*:after { animation:none!important;scroll-behavior:auto!important; }
+  *,*:before,*:after {
+    animation:none!important;
+    scroll-behavior:auto!important;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header>
   <nav class="container">
-    <a href="#inicio" class="logo">🦥 CÓDIGO<span>_LENTO</span></a>
+    <a href="#inicio" class="logo">
+      <img src="logo.png" alt="Logo do Código Lento">
+      <span>CÓDIGO_LENTO</span>
+    </a>
+
     <div class="links">
       <a href="#sobre">Sobre</a>
       <a href="#comunidade">Comunidade</a>
@@ -214,16 +450,21 @@ footer .container { display:flex;justify-content:space-between;gap:20px;flex-wra
   <div class="container hero-grid">
     <div>
       <span class="tag">🟢 COMUNIDADE DE PROGRAMAÇÃO // BRASIL</span>
+
       <h1>EVOLUA.<br><span class="purple">SEM PRESSA.</span></h1>
+
       <p>Uma comunidade para aprender programação, compartilhar projetos, tirar dúvidas e crescer junto. Aqui, cada linha de código conta.</p>
+
       <div class="actions">
         <a class="btn discord-link" href="https://discord.gg/" target="_blank" rel="noopener noreferrer">💜 Entrar no Discord ↗</a>
         <a class="btn alt" href="#sobre">Explorar o servidor ↓</a>
       </div>
+
       <p><small>Aprenda no seu ritmo. Programe sem pressa.</small></p>
     </div>
+
     <div class="mascot">
-      <div class="emoji">🦥</div>
+      <img src="mascote.png" alt="Mascote oficial do Código Lento">
       <strong>CÓDIGO LENTO // V2.0</strong>
     </div>
   </div>
@@ -236,10 +477,25 @@ footer .container { display:flex;justify-content:space-between;gap:20px;flex-wra
       <h2>Programação não é corrida.</h2>
       <p>Do primeiro Hello World ao próximo projeto, o Código Lento é um lugar para estudar, criar e trocar experiências sem pressão.</p>
     </div>
+
     <div class="grid">
-      <article class="card"><div class="icon">🚪</div><h3>01. Entre no Discord</h3><p>Conheça nossa comunidade e seus canais.</p></article>
-      <article class="card"><div class="icon">💻</div><h3>02. Escolha seu caminho</h3><p>Explore as linguagens e personalize seu perfil.</p></article>
-      <article class="card"><div class="icon">🏆</div><h3>03. Participe e evolua</h3><p>Converse, compartilhe projetos e ganhe XP.</p></article>
+      <article class="card">
+        <div class="icon">🚪</div>
+        <h3>01. Entre no Discord</h3>
+        <p>Conheça nossa comunidade e seus canais.</p>
+      </article>
+
+      <article class="card">
+        <div class="icon">💻</div>
+        <h3>02. Escolha seu caminho</h3>
+        <p>Explore as linguagens e personalize seu perfil.</p>
+      </article>
+
+      <article class="card">
+        <div class="icon">🏆</div>
+        <h3>03. Participe e evolua</h3>
+        <p>Converse, compartilhe projetos e ganhe XP.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -251,6 +507,7 @@ footer .container { display:flex;justify-content:space-between;gap:20px;flex-wra
       <h2>Tem espaço pra você.</h2>
       <p>Seja iniciante ou experiente, todo mundo tem algo para aprender e ensinar.</p>
     </div>
+
     <div class="grid">
       <article class="card"><div class="icon">💻</div><h3>Programação</h3><p>HTML, CSS, JavaScript, Python e tecnologia.</p></article>
       <article class="card"><div class="icon">📚</div><h3>Estudos</h3><p>Compartilhe materiais e tire suas dúvidas.</p></article>
@@ -269,13 +526,15 @@ footer .container { display:flex;justify-content:space-between;gap:20px;flex-wra
       <h2>Conheça o Sonequinha. 🦥</h2>
       <p>O bot oficial do Código Lento organiza o servidor e deixa tudo mais divertido.</p>
     </div>
+
     <div class="bot-layout">
       <div class="bot-profile">
-        <div class="big">🦥</div>
+        <img class="bot-avatar" src="sonequinha.png" alt="Foto oficial do bot Sonequinha">
         <h2>Sonequinha</h2>
         <p>Automação, moderação, inteligência artificial e evolução da comunidade.</p>
         <span class="tag">discord.js • XP • IA • TICKETS</span>
       </div>
+
       <div class="bot-features">
         <div class="feature"><h3>👋 Boas-vindas</h3><p>Recebe membros reais e ignora bots.</p></div>
         <div class="feature"><h3>🎫 Tickets</h3><p>Atendimento organizado para a comunidade.</p></div>
@@ -295,15 +554,19 @@ footer .container { display:flex;justify-content:space-between;gap:20px;flex-wra
       <h2>Seu progresso conta. 🏆</h2>
       <p>Participe das conversas, acumule experiência e suba de nível!</p>
     </div>
+
     <div class="xp-panel">
       <h3>✨ XP automático por mensagens</h3>
       <p>Sem cadastro e sem comandos para ativar.</p>
+
       <div class="stats">
         <div class="stat"><strong>15–25</strong><small>XP por mensagem válida</small></div>
         <div class="stat"><strong>60s</strong><small>Intervalo entre ganhos</small></div>
         <div class="stat"><strong>TOP 10</strong><small>Ranking com /rank</small></div>
       </div>
+
       <h3>Primeiros níveis</h3>
+
       <div class="levels">
         <div class="level"><strong>Nível 1</strong><small>100 XP</small></div>
         <div class="level"><strong>Nível 2</strong><small>400 XP</small></div>
@@ -311,6 +574,7 @@ footer .container { display:flex;justify-content:space-between;gap:20px;flex-wra
         <div class="level"><strong>Nível 4</strong><small>1.600 XP</small></div>
         <div class="level"><strong>Nível 5</strong><small>2.500 XP</small></div>
       </div>
+
       <p>🎉 Ao subir de nível, o Sonequinha anuncia sua conquista no canal de level-up.</p>
       <p><small>🚫 Evite spam. Participe naturalmente para evoluir.</small></p>
     </div>
@@ -324,6 +588,7 @@ footer .container { display:flex;justify-content:space-between;gap:20px;flex-wra
       <h2>O que você pode fazer.</h2>
       <p>Conheça alguns dos recursos disponíveis no Sonequinha.</p>
     </div>
+
     <div class="commands">
       <div class="command"><code>/rank</code><p>Veja o TOP 10 de XP ou o perfil de um membro.</p></div>
       <div class="command"><code>/perguntar</code><p>Faça perguntas para a inteligência artificial.</p></div>
@@ -342,6 +607,7 @@ footer .container { display:flex;justify-content:space-between;gap:20px;flex-wra
       <h2>A comunidade continua evoluindo.</h2>
       <p>Confira algumas das melhorias recentes do Código Lento.</p>
     </div>
+
     <div class="updates">
       <article class="update"><h3>🏆 Sistema de XP e ranking</h3><p>Experiência automática, níveis, classificação e gerenciamento administrativo.</p></article>
       <article class="update"><h3>🧠 IA e desafios de programação</h3><p>Novos recursos para tirar dúvidas e praticar código.</p></article>
@@ -376,7 +642,7 @@ footer .container { display:flex;justify-content:space-between;gap:20px;flex-wra
 </footer>
 
 <script>
-// SUBSTITUA PELO CONVITE PERMANENTE DO SEU DISCORD
+// COLOQUE AQUI O CONVITE PERMANENTE DO SEU DISCORD
 const DISCORD_INVITE = "https://discord.gg/";
 
 document.querySelectorAll(".discord-link").forEach(link => {
